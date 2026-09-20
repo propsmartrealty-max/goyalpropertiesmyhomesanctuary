@@ -178,19 +178,36 @@ function closeBrochureModal() {
   }
 }
 
+// Client-Side Input Sanitizer
+function cleanInput(str, max = 100) {
+  if (typeof str !== "string") return "";
+  return str.replace(/<[^>]*>?/gm, "").trim().slice(0, max);
+}
+
+function isValidPhoneClient(phone) {
+  const cleaned = phone.replace(/[\s\-\(\)]/g, "");
+  return /^(?:\+91|91|0)?[6-9]\d{9}$/.test(cleaned) || /^\+?[1-9]\d{7,14}$/.test(cleaned);
+}
+
 // Handle Visit Form Submit (dispatches to Cloudflare edge /api/lead + GA4)
 async function handleVisitSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById("visit-name").value.trim();
-  const phone = document.getElementById("visit-phone").value.trim();
-  const date = document.getElementById("visit-date").value;
-  const time = document.getElementById("visit-time").value;
-  const config = document.getElementById("visit-config").value;
+  const name = cleanInput(document.getElementById("visit-name").value, 80);
+  const phone = cleanInput(document.getElementById("visit-phone").value, 20);
+  const date = cleanInput(document.getElementById("visit-date").value, 20);
+  const time = cleanInput(document.getElementById("visit-time").value, 20);
+  const config = cleanInput(document.getElementById("visit-config").value, 50);
   const cabRequested = document.getElementById("visit-cab").checked;
-  const pickupAddress = document.getElementById("visit-pickup-address").value.trim();
+  const pickupAddress = cleanInput(document.getElementById("visit-pickup-address").value, 150);
+  const honeypot = document.getElementById("visit-website")?.value || "";
 
-  if (!name || !phone) {
-    showToast("Name and phone number are required", "error");
+  if (!name || name.length < 2) {
+    showToast("Please enter your full name", "error");
+    return;
+  }
+
+  if (!isValidPhoneClient(phone)) {
+    showToast("Please enter a valid 10-digit mobile number", "error");
     return;
   }
 
@@ -221,14 +238,11 @@ async function handleVisitSubmit(e) {
         time,
         config,
         cab: cabRequested,
-        address: pickupAddress
+        address: pickupAddress,
+        website: honeypot
       })
-    }).catch(() => {
-      // Graceful fallback for non-Cloudflare local dev environments
-    });
-  } catch (err) {
-    // Continue
-  }
+    }).catch(() => {});
+  } catch (err) {}
 
   // WhatsApp Deep-Link for immediate sales desk dispatch
   const message = `Hello Goyal Properties, I would like to confirm my VIP Site Tour for *Goyal My Home Sanctuary, Mamurdi Pune*.%0a%0a*Name:* ${encodeURIComponent(name)}%0a*Phone:* ${encodeURIComponent(phone)}%0a*Configuration:* ${encodeURIComponent(config)}%0a*Date:* ${encodeURIComponent(date)}%0a*Time Slot:* ${encodeURIComponent(time)}%0a*Cab Pickup:* ${cabRequested ? 'Yes (' + encodeURIComponent(pickupAddress || 'Address will be provided') + ')' : 'Self Drive'}%0a%0aPlease share navigation pin and booking pass.`;
@@ -246,11 +260,17 @@ async function handleVisitSubmit(e) {
 // Handle Brochure Download Submit
 async function handleBrochureSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById("brochure-name").value.trim();
-  const phone = document.getElementById("brochure-phone").value.trim();
+  const name = cleanInput(document.getElementById("brochure-name").value, 80);
+  const phone = cleanInput(document.getElementById("brochure-phone").value, 20);
+  const honeypot = document.getElementById("brochure-website")?.value || "";
 
-  if (!name || !phone) {
-    showToast("Name and phone number are required", "error");
+  if (!name || name.length < 2) {
+    showToast("Please enter your full name", "error");
+    return;
+  }
+
+  if (!isValidPhoneClient(phone)) {
+    showToast("Please enter a valid 10-digit mobile number", "error");
     return;
   }
 
@@ -273,7 +293,8 @@ async function handleBrochureSubmit(e) {
       body: JSON.stringify({
         type: "brochure-download",
         name,
-        phone
+        phone,
+        website: honeypot
       })
     }).catch(() => {});
   } catch (err) {}

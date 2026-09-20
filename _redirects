@@ -1,4 +1,18 @@
-# Cloudflare Pages Clean URLs & Canonical Redirects
-/index.html    /    301
-/home          /    301
-/index         /    301
+# ==============================================================================
+# CLOUDFLARE PAGES CLEAN URLS & CANONICAL REDIRECTS
+# ==============================================================================
+
+# Canonical URL Normalization
+/index.html    /                  301
+/home          /                  301
+/index         /                  301
+
+# Clean Semantic Section Deep-Links
+/brochure      /#residences       301
+/floorplans    /#residences       301
+/location      /#connectivity     301
+/amenities     /#amenities        301
+/gallery       /#gallery          301
+/masterplan    /#master-plan      301
+/contact       /#connectivity     301
+/faq           /#faq-directory    301

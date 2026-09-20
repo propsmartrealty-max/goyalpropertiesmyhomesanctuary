@@ -218,13 +218,47 @@ function switchTourView(viewKey) {
 // Hero Quick Lead Handler
 function handleHeroLeadSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById("hero-lead-name").value.trim();
-  const phone = document.getElementById("hero-lead-phone").value.trim();
-  const config = document.getElementById("hero-lead-config").value;
+  const nameRaw = document.getElementById("hero-lead-name")?.value || "";
+  const phoneRaw = document.getElementById("hero-lead-phone")?.value || "";
+  const config = document.getElementById("hero-lead-config")?.value || "2 BHK Luxe";
+  const honeypot = document.getElementById("hero-lead-website")?.value || "";
 
-  if (!name || !phone) {
-    if (typeof showToast === "function") showToast("Please enter your name and phone", "error");
+  const name = nameRaw.replace(/<[^>]*>?/gm, "").trim().slice(0, 80);
+  const phone = phoneRaw.replace(/[\s\-\(\)]/g, "").trim().slice(0, 20);
+
+  if (!name || name.length < 2) {
+    if (typeof showToast === "function") showToast("Please enter your full name", "error");
     return;
+  }
+
+  const isValidPhone = /^(?:\+91|91|0)?[6-9]\d{9}$/.test(phone) || /^\+?[1-9]\d{7,14}$/.test(phone);
+  if (!isValidPhone) {
+    if (typeof showToast === "function") showToast("Please enter a valid 10-digit mobile number", "error");
+    return;
+  }
+
+  // Dispatch to Cloudflare Pages edge /api/lead
+  try {
+    fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "hero-priority-dossier",
+        name,
+        phone,
+        config,
+        website: honeypot
+      })
+    }).catch(() => {});
+  } catch (err) {}
+
+  if (typeof trackGoogleEvent === "function") {
+    trackGoogleEvent("generate_lead", {
+      lead_type: "hero_priority_dossier",
+      configuration: config,
+      currency: "INR",
+      value: 750
+    });
   }
 
   if (typeof launchConfetti === "function") launchConfetti();

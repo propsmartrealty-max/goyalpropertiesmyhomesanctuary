@@ -24,18 +24,49 @@ An avant-garde, ultra-luxurious, responsive real estate web application built fo
 
 ---
 
-## ⚡ Cloudflare Advanced Pages Optimizations
+## ⚡ Cloudflare Advanced Pages & Edge Worker Architecture
 
-1. **`_headers` Configuration:**
-   - **HTTP/3 & Strict Security:** `Strict-Transport-Security (HSTS)`, `Content-Security-Policy (CSP)`, `X-Frame-Options: SAMEORIGIN`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy`.
+1. **`_headers` Security Hardening:**
+   - **Strict-Transport-Security (HSTS):** `max-age=31536000; includeSubDomains; preload`
+   - **Content-Security-Policy (CSP):** Strict allowlist for Google Maps iframes, Google Analytics, Lucide icons, fonts, and WhatsApp endpoints with `upgrade-insecure-requests`.
+   - **Cross-Origin Isolation:** `Cross-Origin-Opener-Policy: same-origin-allow-popups` and `Cross-Origin-Resource-Policy: same-origin`.
+   - **Browser Permissions Policy:** Disables camera, mic, usb, payment, and FLoC privacy tracking.
    - **Edge Caching Matrix:**
      - Static assets (`/css/*`, `/js/*`, `/assets/*`, `favicon.svg`): `public, max-age=31536000, immutable`.
-     - HTML documents: `public, max-age=0, must-revalidate` (instant cache purging & stale-while-revalidate).
-     - XML & Manifest: `max-age=86400`.
-2. **`_redirects` Configuration:**
-   - Canonical 301 redirects from `/index.html`, `/home`, and `/index` to root `/`.
-3. **Cloudflare Serverless Edge Function (`functions/api/lead.js`):**
-   - Handles `POST /api/lead` at Cloudflare's edge network with CORS support and CRM webhook forwarding (`CRM_WEBHOOK_URL`).
+     - HTML documents: `public, max-age=0, must-revalidate` (instant global edge purge on git push).
+     - Dynamic API (`/api/*`): `no-store, no-cache, must-revalidate`.
+2. **`_redirects` Clean URL Routing:**
+   - Canonical 301 redirects from `/index.html`, `/home`, `/index` to root `/`.
+   - Clean vanity anchors (`/brochure`, `/floorplans`, `/location`, `/amenities`, `/gallery`, `/masterplan`, `/faq`).
+3. **Hardened Cloudflare Edge Function (`functions/api/lead.js`):**
+   - **Honeypot Anti-Bot Shield:** Traps and silently neutralizes automated spam scrapers.
+   - **Input Sanitization:** Strips HTML/script tags, control chars, and limits string lengths.
+   - **Phone Validation:** Strict Indian/international regex checks (`/^(\+91)?[6-9]\d{9}$/`).
+   - **Dynamic Origin Matching:** Restricts CORS headers strictly to verified production and preview origins.
+   - **Webhook Timeout Resilience:** Protected CRM dispatches via `AbortSignal.timeout(4000)`.
+
+---
+
+## 🌐 Production DNS & Cloudflare Edge Hardening Configuration
+
+| Record Type | Host / Name | Target / Value | TTL / Proxy | Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| **CNAME** | `@` (Apex) | `goyalpropertiesmyhomesanctuary.pages.dev` | Auto / Proxied (Orange Cloud) | Cloudflare CNAME Flattening to Pages |
+| **CNAME** | `www` | `goyalpropertiesmyhomesanctuary.pages.dev` | Auto / Proxied (Orange Cloud) | Subdomain routing |
+| **TXT** | `@` | `v=spf1 -all` | Auto | Prevents email spoofing & phishing |
+| **TXT** | `_dmarc` | `v=DMARC1; p=reject; sp=reject; aspf=s;` | Auto | Strict DMARC enforcement |
+| **CAA** | `@` | `0 issue "letsencrypt.org"` / `0 issue "digicert.com"` | Auto | Restricts SSL certificate authorities |
+
+### Recommended Cloudflare Edge Dashboard Settings:
+- **SSL/TLS Encryption Mode:** `Full (Strict)`
+- **Minimum TLS Version:** `TLS 1.2` or `TLS 1.3`
+- **Always Use HTTPS:** `Enabled`
+- **Automatic HTTPS Rewrites:** `Enabled`
+- **Early Hints (103):** `Enabled` (preloads Google Fonts & CSS)
+- **Brotli Compression:** `Enabled`
+- **HTTP/3 (QUIC):** `Enabled`
+- **Bot Fight Mode:** `Enabled`
+- **Email Address Obfuscation:** `Enabled`
 
 ---
 
