@@ -21,12 +21,12 @@ export const MICRO_MARKETS = [
 ];
 
 export const CONFIGURATIONS = [
-  { id: '2-bhk-classic', name: '2 BHK Classic', carpet: '638 - 745 sq.ft', price: '₹62 - 68 Lakhs*', tag: 'High-Efficiency Living' },
-  { id: '2-bhk-premier', name: '2 BHK Premier', carpet: '704 - 820 sq.ft', price: '₹71 - 77 Lakhs*', tag: 'Spacious Master Suite' },
-  { id: '2-bhk-signature', name: '2 BHK Signature', carpet: '760 - 895 sq.ft', price: '₹79 - 86 Lakhs*', tag: 'Corner Unit with Dual Deck' },
-  { id: '3-bhk-classic', name: '3 BHK Classic', carpet: '848 - 1045 sq.ft', price: '₹94 - 1.05 Cr*', tag: 'Family Luxury & Forest View' },
-  { id: '3-bhk-premier', name: '3 BHK Premier', carpet: '924 - 1180 sq.ft', price: '₹1.08 - 1.18 Cr*', tag: 'Grand Living-Dining Deck' },
-  { id: '3-bhk-signature', name: '3 BHK Signature', carpet: '1036 - 1290 sq.ft', price: '₹1.22 - 1.35 Cr*', tag: 'Presidential Sky Suite' },
+  { id: '2-bhk-classic', name: '2 BHK Classic', carpet: '638 - 745 sq.ft', price: '₹69 Lakhs*', tag: 'High-Efficiency Living' },
+  { id: '2-bhk-premier', name: '2 BHK Premier', carpet: '704 - 820 sq.ft', price: '₹74 Lakhs*', tag: 'Spacious Master Suite' },
+  { id: '2-bhk-signature', name: '2 BHK Signature', carpet: '760 - 895 sq.ft', price: '₹79 Lakhs*', tag: 'Corner Unit with Dual Deck' },
+  { id: '3-bhk-classic', name: '3 BHK Classic', carpet: '848 - 1045 sq.ft', price: '₹86 Lakhs*', tag: 'Family Luxury & Forest View' },
+  { id: '3-bhk-premier', name: '3 BHK Premier', carpet: '924 - 1180 sq.ft', price: '₹97 Lakhs*', tag: 'Grand Living-Dining Deck' },
+  { id: '3-bhk-signature', name: '3 BHK Signature', carpet: '1036 - 1290 sq.ft', price: '₹1.05 Cr*', tag: 'Presidential Sky Suite' },
   { id: '4-bhk-duplex', name: '4 BHK Duplex', carpet: '1850 sq.ft', price: '₹1.85 - 2.15 Cr*', tag: 'Double-Height Ceiling Sky Villa' },
   { id: 'penthouse-sky-villa', name: 'Penthouse Sky Villa', carpet: '2400 sq.ft', price: '₹2.40 - 2.85 Cr*', tag: 'Private Terrace & Plunge Pool' }
 ];

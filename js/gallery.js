@@ -438,7 +438,7 @@ function renderGallery(cat = "all") {
         <div class="relative h-64 sm:h-72 overflow-hidden bg-stone-100">
           <img
             src="${item.image}"
-            alt="${item.title}"
+            alt="${item.title} - Goyal My Home Sanctuary, Mamurdi Pune West"
             class="w-full h-full object-cover"
             loading="lazy"
           />
@@ -508,7 +508,10 @@ function updateLightboxContent() {
   const badge = document.getElementById("gallery-lb-badge");
   const counter = document.getElementById("gallery-lb-counter");
 
-  if (img) img.src = item.image;
+  if (img) {
+    img.src = item.image;
+    img.alt = `${item.title} - Goyal My Home Sanctuary, Mamurdi Pune West`;
+  }
   if (title) title.textContent = item.title;
   if (sub) sub.textContent = item.subtitle;
   if (badge) badge.textContent = item.badge;

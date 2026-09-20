@@ -313,7 +313,10 @@ function openImageModal(src, title, caption) {
   const t = document.getElementById("lightbox-title");
   const c = document.getElementById("lightbox-caption");
 
-  if (img) img.src = src;
+  if (img) {
+    img.src = src;
+    img.alt = title ? `${title} - Goyal My Home Sanctuary Mamurdi` : "Goyal My Home Sanctuary Authentic Display Suite";
+  }
   if (t) t.textContent = title || "Sample Flat Showcase";
   if (c) c.textContent = caption || "";
 

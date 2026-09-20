@@ -26,12 +26,12 @@ const MICRO_MARKETS = {
 };
 
 const CONFIGURATIONS = {
-  '2-bhk-classic': { name: '2 BHK Classic', carpet: '638 - 745 sq.ft', price: '₹62 - 68 Lakhs*', tag: 'High-Efficiency Living', rooms: '2 Beds, 2 Baths, Living-Dining, Utility Balcony' },
-  '2-bhk-premier': { name: '2 BHK Premier', carpet: '704 - 820 sq.ft', price: '₹71 - 77 Lakhs*', tag: 'Spacious Master Suite', rooms: '2 Beds, 2 Baths, Extended Master Suite, Double Balcony' },
-  '2-bhk-signature': { name: '2 BHK Signature', carpet: '760 - 895 sq.ft', price: '₹79 - 86 Lakhs*', tag: 'Corner Unit with Dual Deck', rooms: '2 Beds, 2 Baths, Corner Panoramic Living Deck, Walk-in Wardrobe' },
-  '3-bhk-classic': { name: '3 BHK Classic', carpet: '848 - 1045 sq.ft', price: '₹94 - 1.05 Cr*', tag: 'Family Luxury & Forest View', rooms: '3 Beds, 3 Baths, Dedicated Dining Foyer, Master Sky Balcony' },
-  '3-bhk-premier': { name: '3 BHK Premier', carpet: '924 - 1180 sq.ft', price: '₹1.08 - 1.18 Cr*', tag: 'Grand Living-Dining Deck', rooms: '3 Beds, 3 Baths, Grand 22-ft Living Deck, Italian Tile Finishes' },
-  '3-bhk-signature': { name: '3 BHK Signature', carpet: '1036 - 1290 sq.ft', price: '₹1.22 - 1.35 Cr*', tag: 'Presidential Sky Suite', rooms: '3 Beds, 3 Baths, Private Elevator Access, 270-deg Biophilic Vista' },
+  '2-bhk-classic': { name: '2 BHK Classic', carpet: '638 - 745 sq.ft', price: '₹69 Lakhs*', tag: 'High-Efficiency Living', rooms: '2 Beds, 2 Baths, Living-Dining, Utility Balcony' },
+  '2-bhk-premier': { name: '2 BHK Premier', carpet: '704 - 820 sq.ft', price: '₹74 Lakhs*', tag: 'Spacious Master Suite', rooms: '2 Beds, 2 Baths, Extended Master Suite, Double Balcony' },
+  '2-bhk-signature': { name: '2 BHK Signature', carpet: '760 - 895 sq.ft', price: '₹79 Lakhs*', tag: 'Corner Unit with Dual Deck', rooms: '2 Beds, 2 Baths, Corner Panoramic Living Deck, Walk-in Wardrobe' },
+  '3-bhk-classic': { name: '3 BHK Classic', carpet: '848 - 1045 sq.ft', price: '₹86 Lakhs*', tag: 'Family Luxury & Forest View', rooms: '3 Beds, 3 Baths, Dedicated Dining Foyer, Master Sky Balcony' },
+  '3-bhk-premier': { name: '3 BHK Premier', carpet: '924 - 1180 sq.ft', price: '₹97 Lakhs*', tag: 'Grand Living-Dining Deck', rooms: '3 Beds, 3 Baths, Grand 22-ft Living Deck, Italian Tile Finishes' },
+  '3-bhk-signature': { name: '3 BHK Signature', carpet: '1036 - 1290 sq.ft', price: '₹1.05 Cr*', tag: 'Presidential Sky Suite', rooms: '3 Beds, 3 Baths, Private Elevator Access, 270-deg Biophilic Vista' },
   '4-bhk-duplex': { name: '4 BHK Duplex', carpet: '1850 sq.ft', price: '₹1.85 - 2.15 Cr*', tag: 'Double-Height Ceiling Sky Villa', rooms: '4 Beds, 4 Baths, Double Height Living, Private Sky Terrace' },
   'penthouse-sky-villa': { name: 'Penthouse Sky Villa', carpet: '2400 sq.ft', price: '₹2.40 - 2.85 Cr*', tag: 'Private Terrace & Plunge Pool', rooms: '5 Beds, 5 Baths, Rooftop Plunge Pool, 360-deg Horizon Views' }
 };
@@ -623,6 +623,29 @@ ${JSON.stringify(schemaJsonLd, null, 2)}
         <p class="text-lg text-gray-300 mb-6 leading-relaxed">
           ${intent.focus} Engineered with 100% monolithic MIVAN concrete in West Pune's premier 26-acre biophilic forest township.
         </p>
+
+        
+        <!-- Unit & Elevation Architectural Showcase Image -->
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl mb-8 group">
+          <img
+            id="hero-programmatic-img"
+            src="/assets/images/scraped/elevation-main.jpg"
+            alt="${config.name} at Goyal My Home Sanctuary in ${market.name}, Pune West - MIVAN High-Rise Tower"
+            class="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0c1410] via-transparent to-transparent opacity-80"></div>
+          <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs">
+            <span class="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[#d4af37] font-semibold border border-[#d4af37]/30">
+              ${config.name} • ${config.carpet}
+            </span>
+            <span class="text-gray-300 font-mono text-[11px] bg-black/60 px-2.5 py-1 rounded-md backdrop-blur-sm">
+              MahaRERA: PR1261012502725
+            </span>
+          </div>
+        </div>
 
         <!-- Quick Spec Matrix -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 mb-8">
