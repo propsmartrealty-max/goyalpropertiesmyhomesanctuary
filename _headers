@@ -18,22 +18,28 @@
   Cache-Control: public, max-age=0, must-revalidate
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
   Cache-Tag: sanctuary-html
-  Link: </css/style.css>; rel=preload; as=style, <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+
+/404.html
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex, follow
 
 /
   Cache-Control: public, max-age=0, must-revalidate
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
   Cache-Tag: sanctuary-html
+  Link: </css/style.css>; rel=preload; as=style, </assets/images/scraped/elevation-main.jpg>; rel=preload; as=image; fetchpriority=high, <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin
 
 /blog
   Cache-Control: public, max-age=0, must-revalidate
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
   Cache-Tag: sanctuary-html
+  Link: <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin
 
 /blog/*
   Cache-Control: public, max-age=0, must-revalidate
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
   Cache-Tag: sanctuary-html
+  Link: <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin
 
 # API & Edge Functions: Zero-Cache Dynamic Responses
 /api/*
