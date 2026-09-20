@@ -173,7 +173,155 @@ export async function onRequestPost(context) {
       }
     };
 
-    // 8. CRM / Webhook Dispatch (Secure Timeout Protected)
+    // 8. Automated Email & Lead Notification Dispatch to propsmartrealty@gmail.com
+    const targetLeadEmail = (env && env.LEAD_NOTIFICATION_EMAIL) || "propsmartrealty@gmail.com";
+    const senderFromEmail = (env && env.SENDER_EMAIL) || "leads@goyalmyhomesanctuary.com";
+    const senderFromName = (env && env.SENDER_NAME) || "Goyal My Home Sanctuary Concierge";
+
+    const emailSubject = `⚡ [NEW LEAD] ${name} (${phoneClean}) - ${config} | Goyal My Home Sanctuary`;
+    const emailPlainText = [
+      `=== NEW LEAD NOTIFICATION: GOYAL MY HOME SANCTUARY ===`,
+      `Lead ID: ${leadId}`,
+      `Date/Time: ${leadRecord.timestamp}`,
+      `Lead Type: ${type}`,
+      `Customer Name: ${name}`,
+      `Mobile Number: ${phoneClean}`,
+      `Configuration: ${config}`,
+      `Preferred Visit Date: ${date || "N/A"}`,
+      `Preferred Visit Slot: ${time || "N/A"}`,
+      `Chauffeur Cab Pickup: ${cab ? "YES" : "NO"}`,
+      `Pickup Address: ${cab ? (address || "To be confirmed") : "Self Drive / N/A"}`,
+      ``,
+      `--- Network Telemetry ---`,
+      `Cloudflare Ray ID: ${rayId}`,
+      `Visitor Country: ${ipCountry}`,
+      `Client IP: ${clientIp}`,
+      `User-Agent: ${leadRecord.telemetry.userAgent}`,
+      `======================================================`
+    ].join("\n");
+
+    const emailHtmlText = `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background: #FAF8F5; border: 1px solid #E6DEC9; border-radius: 12px; overflow: hidden; color: #1E1711;">
+        <div style="background: linear-gradient(135deg, #1E1711 0%, #2A1F17 100%); padding: 24px 28px; color: #F5EFEB; border-bottom: 3px solid #C49A45;">
+          <h2 style="margin: 0 0 6px 0; font-size: 20px; font-weight: 700; letter-spacing: 0.5px; color: #E8CA83;">Goyal My Home Sanctuary</h2>
+          <p style="margin: 0; font-size: 13px; color: #E6DEC9; font-family: monospace;">VIP Priority Lead Alert &bull; Mamurdi, Pune</p>
+        </div>
+        <div style="padding: 24px 28px;">
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px;">
+            <tr style="border-bottom: 1px solid #EFEAE1;">
+              <td style="padding: 10px 0; color: #6E5F53; font-weight: 600; width: 38%;">Lead ID</td>
+              <td style="padding: 10px 0; font-family: monospace; font-weight: 700; color: #1E1711;">${leadId}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #EFEAE1;">
+              <td style="padding: 10px 0; color: #6E5F53; font-weight: 600;">Customer Name</td>
+              <td style="padding: 10px 0; font-weight: 700; font-size: 16px; color: #1E1711;">${name}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #EFEAE1;">
+              <td style="padding: 10px 0; color: #6E5F53; font-weight: 600;">Mobile Number</td>
+              <td style="padding: 10px 0;">
+                <a href="tel:${phoneClean}" style="color: #A37930; font-weight: 700; text-decoration: none; font-size: 16px;">${phoneClean}</a>
+                &nbsp;|&nbsp;
+                <a href="https://wa.me/${phoneClean.replace(/[^0-9]/g, "")}" style="color: #059669; font-weight: 600; text-decoration: none; font-size: 13px;">Open WhatsApp</a>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #EFEAE1;">
+              <td style="padding: 10px 0; color: #6E5F53; font-weight: 600;">Configuration</td>
+              <td style="padding: 10px 0; font-weight: 600; color: #1E1711;">${config}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #EFEAE1;">
+              <td style="padding: 10px 0; color: #6E5F53; font-weight: 600;">Lead Category</td>
+              <td style="padding: 10px 0; text-transform: uppercase; font-size: 12px; font-weight: 700; color: #78350F;">${type}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #EFEAE1;">
+              <td style="padding: 10px 0; color: #6E5F53; font-weight: 600;">Preferred Date &amp; Time</td>
+              <td style="padding: 10px 0; color: #1E1711;">${date || "Not specified"} ${time ? `(${time})` : ""}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #EFEAE1;">
+              <td style="padding: 10px 0; color: #6E5F53; font-weight: 600;">Chauffeur Cab Pickup</td>
+              <td style="padding: 10px 0; font-weight: 600; color: ${cab ? "#047857" : "#4B5563"};">
+                ${cab ? `YES - Pickup: ${address || "Address pending confirmation"}` : "Self-drive / Not requested"}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 0; color: #6E5F53; font-weight: 600;">Timestamp</td>
+              <td style="padding: 10px 0; color: #6E5F53; font-size: 12px; font-family: monospace;">${leadRecord.timestamp}</td>
+            </tr>
+          </table>
+
+          <div style="background: #FFFFFF; border: 1px dashed #D3C5AB; border-radius: 8px; padding: 14px 18px; font-size: 11px; color: #8C7B6D; font-family: monospace;">
+            <div>Cloudflare Edge Ray: ${rayId} | Geo: ${ipCountry} | IP: ${clientIp}</div>
+            <div style="margin-top: 4px;">Target Dispatch: ${targetLeadEmail}</div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // 8a. Native Cloudflare Workers / Pages MailChannels Edge Dispatch
+    try {
+      const mailChannelsPayload = {
+        personalizations: [
+          {
+            to: [{ email: targetLeadEmail, name: "Propsmart Realty Desk" }]
+          }
+        ],
+        from: {
+          email: senderFromEmail,
+          name: senderFromName
+        },
+        reply_to: {
+          email: targetLeadEmail,
+          name: name
+        },
+        subject: emailSubject,
+        content: [
+          {
+            type: "text/plain",
+            value: emailPlainText
+          },
+          {
+            type: "text/html",
+            value: emailHtmlText
+          }
+        ]
+      };
+
+      await fetch("https://api.mailchannels.net/tx/v1/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(mailChannelsPayload),
+        signal: AbortSignal.timeout(4000)
+      }).catch(err => {
+        console.warn(`[MailChannels Warning] Edge email delivery attempt: ${err.message}`);
+      });
+    } catch (mailErr) {
+      console.warn(`[Mail Dispatch Warning] ${mailErr.message}`);
+    }
+
+    // 8b. Resend / SendGrid API Dispatch (if configured in env)
+    if (env && env.RESEND_API_KEY) {
+      try {
+        await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${env.RESEND_API_KEY}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            from: senderFromEmail,
+            to: [targetLeadEmail],
+            reply_to: targetLeadEmail,
+            subject: emailSubject,
+            html: emailHtmlText,
+            text: emailPlainText
+          }),
+          signal: AbortSignal.timeout(4000)
+        }).catch(() => {});
+      } catch (e) {}
+    }
+
+    // 8c. Downstream CRM / Webhook Dispatch (Secure Timeout Protected)
     if (env && env.CRM_WEBHOOK_URL) {
       try {
         await fetch(env.CRM_WEBHOOK_URL, {
@@ -181,9 +329,13 @@ export async function onRequestPost(context) {
           headers: {
             "Content-Type": "application/json",
             "X-Sanctuary-Key": env.CRM_API_KEY || "internal-edge",
-            "X-Cloudflare-Ray": rayId
+            "X-Cloudflare-Ray": rayId,
+            "X-Target-Recipient": targetLeadEmail
           },
-          body: JSON.stringify(leadRecord),
+          body: JSON.stringify({
+            ...leadRecord,
+            recipientEmail: targetLeadEmail
+          }),
           signal: AbortSignal.timeout(4000) // 4-second timeout guarantee
         });
       } catch (crmErr) {
