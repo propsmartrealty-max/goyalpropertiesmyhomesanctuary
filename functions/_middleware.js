@@ -75,30 +75,56 @@ function isSearchBot(userAgent = '', request = null) {
 }
 
 class GoogleSEOInjector {
-  constructor(canonicalUrl) {
+  constructor(canonicalUrl, request) {
     this.canonicalUrl = canonicalUrl;
+    this.request = request;
   }
 
   element(element) {
-    // Inject Googlebot explicit indexing directives and Google ecosystem resource hints
+    // Astro-grade Streaming Head Optimizations for Google Core Web Vitals & Search Engine Authority
+    const rayId = this.request.headers.get('cf-ray') || 'edge';
+    const colo = this.request.cf?.colo || 'PUN';
+
     element.append(
-      `<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
-      `<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
-      `<link rel="alternate" type="application/rss+xml" title="The Sanctuary Journal RSS Feed" href="https://goyalmyhomesanctuary.com/feed.xml" />\n` +
-      `<link rel="dns-prefetch" href="//fonts.googleapis.com" />\n` +
-      `<link rel="dns-prefetch" href="//fonts.gstatic.com" />\n` +
-      `<link rel="dns-prefetch" href="//www.google-analytics.com" />\n` +
-      `<link rel="dns-prefetch" href="//www.googletagmanager.com" />\n` +
-      `<link rel="dns-prefetch" href="//maps.google.com" />\n`,
+      `\n  <!-- Astro Edge Engine: Direct Googlebot & Global Crawler Directives -->\n` +
+      `  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
+      `  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
+      `  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
+      `  <link rel="alternate" type="application/rss+xml" title="The Sanctuary Journal RSS Feed" href="https://goyalmyhomesanctuary.com/feed.xml" />\n` +
+      `  <!-- Google Ecosystem DNS Prefetch & Preconnect Engine -->\n` +
+      `  <link rel="dns-prefetch" href="//fonts.googleapis.com" />\n` +
+      `  <link rel="dns-prefetch" href="//fonts.gstatic.com" />\n` +
+      `  <link rel="dns-prefetch" href="//www.google-analytics.com" />\n` +
+      `  <link rel="dns-prefetch" href="//www.googletagmanager.com" />\n` +
+      `  <link rel="dns-prefetch" href="//maps.google.com" />\n` +
+      `  <link rel="preconnect" href="https://fonts.googleapis.com" />\n` +
+      `  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\n` +
+      `  <!-- Edge Telemetry Metadata -->\n` +
+      `  <meta name="astro-edge-node" content="${colo}" />\n` +
+      `  <meta name="astro-edge-ray" content="${rayId}" />\n`,
       { html: true }
     );
   }
 }
 
-class EdgePerformanceInjector {
+class AstroPerformanceOptimizer {
   element(element) {
-    element.setAttribute('data-cf-edge', 'active');
-    element.setAttribute('data-cf-edge-speed', 'ultra');
+    // Flagship Core Web Vitals & Zero-CLS Attributes
+    element.setAttribute('data-astro-edge-rendered', 'true');
+    element.setAttribute('data-astro-hydration', 'none');
+    element.setAttribute('data-cf-edge-speed', 'flagship-http3');
+  }
+}
+
+class ImageLazyLoadOptimizer {
+  element(element) {
+    // Google Core Web Vitals: Ensure native lazy loading and async decoding on secondary images
+    if (!element.hasAttribute('loading') && !element.hasAttribute('data-no-lazy')) {
+      element.setAttribute('loading', 'lazy');
+    }
+    if (!element.hasAttribute('decoding')) {
+      element.setAttribute('decoding', 'async');
+    }
   }
 }
 
@@ -161,8 +187,9 @@ export async function onRequest(context) {
     newHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800');
     
     const rewriter = new HTMLRewriter()
-      .on('head', new GoogleSEOInjector(canonicalUrl))
-      .on('html', new EdgePerformanceInjector());
+      .on('head', new GoogleSEOInjector(canonicalUrl, request))
+      .on('html', new AstroPerformanceOptimizer())
+      .on('img', new ImageLazyLoadOptimizer());
 
     const transformedResponse = rewriter.transform(new Response(response.body, {
       status: response.status,

@@ -8,43 +8,43 @@
 /index         /                  301
 
 # Primary Project Silo Architecture (/my-home-sanctuary-mamurdi/*)
-/my-home-sanctuary-mamurdi/                     /                     301
-/my-home-sanctuary-mamurdi/price/               /#calculator          301
-/my-home-sanctuary-mamurdi/2-bhk/               /#residences          301
-/my-home-sanctuary-mamurdi/3-bhk/               /#residences          301
-/my-home-sanctuary-mamurdi/floor-plan/          /#residences          301
-/my-home-sanctuary-mamurdi/master-plan/         /#master-plan         301
-/my-home-sanctuary-mamurdi/amenities/           /#amenities           301
-/my-home-sanctuary-mamurdi/location/            /#connectivity        301
-/my-home-sanctuary-mamurdi/connectivity/        /#connectivity        301
-/my-home-sanctuary-mamurdi/rera/                /#search-directory    301
-/my-home-sanctuary-mamurdi/gallery/             /#gallery             301
-/my-home-sanctuary-mamurdi/construction-update/ /#search-directory    301
-/my-home-sanctuary-mamurdi/possession/          /#search-directory    301
-/my-home-sanctuary-mamurdi/reviews/             /#reviews             301
-/my-home-sanctuary-mamurdi/brochure/            /#calculator          301
-/my-home-sanctuary-mamurdi/site-visit/          /#hero                301
+/my-home-sanctuary-mamurdi/                     /                                               301
+/my-home-sanctuary-mamurdi/price/               /price-cost-sheet                               301
+/my-home-sanctuary-mamurdi/2-bhk/               /2-bhk-flats-mamurdi                            301
+/my-home-sanctuary-mamurdi/3-bhk/               /3-bhk-flats-mamurdi                            301
+/my-home-sanctuary-mamurdi/floor-plan/          /floor-plans-brochure                           301
+/my-home-sanctuary-mamurdi/master-plan/         /floor-plans-brochure                           301
+/my-home-sanctuary-mamurdi/amenities/           /                                               301
+/my-home-sanctuary-mamurdi/location/            /mumbai-pune-expressway-connectivity           301
+/my-home-sanctuary-mamurdi/connectivity/        /mumbai-pune-expressway-connectivity           301
+/my-home-sanctuary-mamurdi/rera/                /maharera-pr1261012502725-approvals             301
+/my-home-sanctuary-mamurdi/gallery/             /                                               301
+/my-home-sanctuary-mamurdi/construction-update/ /blog/mivan-monolithic-construction-vs-conventional-brickwork 301
+/my-home-sanctuary-mamurdi/possession/          /maharera-pr1261012502725-approvals             301
+/my-home-sanctuary-mamurdi/reviews/             /                                               301
+/my-home-sanctuary-mamurdi/brochure/            /floor-plans-brochure                           301
+/my-home-sanctuary-mamurdi/site-visit/          /                                               301
 
-# Clean Semantic Section Deep-Links
-/price         /#calculator       301
-/2-bhk         /#residences       301
-/3-bhk         /#residences       301
-/floor-plan    /#residences       301
-/floorplans    /#residences       301
-/masterplan    /#master-plan      301
-/amenities     /#amenities        301
-/location      /#connectivity     301
-/connectivity  /#connectivity     301
-/expressway    /#connectivity     301
-/hinjawadi     /#connectivity     301
-/gallery       /#gallery          301
-/brochure      /#calculator       301
-/rera          /#search-directory 301
-/possession    /#search-directory 301
-/reviews       /#reviews          301
-/contact       /#connectivity     301
-/site-visit    /#hero             301
-/faq           /#faq-directory    301
+# Clean Semantic Section Deep-Links (Standardized Clean URL Mapping)
+/price         /price-cost-sheet                               301
+/2-bhk         /2-bhk-flats-mamurdi                            301
+/3-bhk         /3-bhk-flats-mamurdi                            301
+/floor-plan    /floor-plans-brochure                           301
+/floorplans    /floor-plans-brochure                           301
+/masterplan    /floor-plans-brochure                           301
+/amenities     /                                               301
+/location      /mumbai-pune-expressway-connectivity           301
+/connectivity  /mumbai-pune-expressway-connectivity           301
+/expressway    /mumbai-pune-expressway-connectivity           301
+/hinjawadi     /hinjawadi-it-park-commute                      301
+/gallery       /                                               301
+/brochure      /floor-plans-brochure                           301
+/rera          /maharera-pr1261012502725-approvals             301
+/possession    /maharera-pr1261012502725-approvals             301
+/reviews       /                                               301
+/contact       /                                               301
+/site-visit    /                                               301
+/faq           /                                               301
 
 # ==============================================================================
 # Dedicated Programmatic Silo Landing Pages (HTTP 200 Clean URL Edge Routing)
