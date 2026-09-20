@@ -7,12 +7,41 @@
 /home          /                  301
 /index         /                  301
 
+# Primary Project Silo Architecture (/my-home-sanctuary-mamurdi/*)
+/my-home-sanctuary-mamurdi/                     /                     301
+/my-home-sanctuary-mamurdi/price/               /#calculator          301
+/my-home-sanctuary-mamurdi/2-bhk/               /#residences          301
+/my-home-sanctuary-mamurdi/3-bhk/               /#residences          301
+/my-home-sanctuary-mamurdi/floor-plan/          /#residences          301
+/my-home-sanctuary-mamurdi/master-plan/         /#master-plan         301
+/my-home-sanctuary-mamurdi/amenities/           /#amenities           301
+/my-home-sanctuary-mamurdi/location/            /#connectivity        301
+/my-home-sanctuary-mamurdi/connectivity/        /#connectivity        301
+/my-home-sanctuary-mamurdi/rera/                /#search-directory    301
+/my-home-sanctuary-mamurdi/gallery/             /#gallery             301
+/my-home-sanctuary-mamurdi/construction-update/ /#search-directory    301
+/my-home-sanctuary-mamurdi/possession/          /#search-directory    301
+/my-home-sanctuary-mamurdi/reviews/             /#reviews             301
+/my-home-sanctuary-mamurdi/brochure/            /#calculator          301
+/my-home-sanctuary-mamurdi/site-visit/          /#hero                301
+
 # Clean Semantic Section Deep-Links
-/brochure      /#residences       301
+/price         /#calculator       301
+/2-bhk         /#residences       301
+/3-bhk         /#residences       301
+/floor-plan    /#residences       301
 /floorplans    /#residences       301
-/location      /#connectivity     301
-/amenities     /#amenities        301
-/gallery       /#gallery          301
 /masterplan    /#master-plan      301
+/amenities     /#amenities        301
+/location      /#connectivity     301
+/connectivity  /#connectivity     301
+/expressway    /#connectivity     301
+/hinjawadi     /#connectivity     301
+/gallery       /#gallery          301
+/brochure      /#calculator       301
+/rera          /#search-directory 301
+/possession    /#search-directory 301
+/reviews       /#reviews          301
 /contact       /#connectivity     301
+/site-visit    /#hero             301
 /faq           /#faq-directory    301
