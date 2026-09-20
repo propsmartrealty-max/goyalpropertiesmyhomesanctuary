@@ -1,45 +1,114 @@
-# Robots.txt for Goyal My Home Sanctuary
-# Optimized for Googlebot, Googlebot-Image, Bingbot, Applebot, and Global Search Engines
+# ==============================================================================
+# ROBOTS.TXT: GOYAL MY HOME SANCTUARY, MAMURDI, PUNE WEST
+# High-Authority Crawl Directives for Google, Bing, Apple, & Global Search Engines
+# ==============================================================================
 
+# 1. Googlebot (Desktop, Mobile, Smartphone, Web Rendering Engine)
 User-agent: Googlebot
+User-agent: Googlebot-Mobile
+User-agent: Googlebot-News
+Allow: /
+Allow: /blog
+Allow: /blog/*
+Allow: /pages/*
+Allow: /css/*
+Allow: /js/*
+Allow: /assets/*
+Allow: /favicon.svg
+Allow: /sitemap.xml
+Allow: /feed.xml
+Allow: /manifest.webmanifest
+Disallow: /api/
+
+# 2. Googlebot Image Indexer (Google Images Search Ecosystem)
+User-agent: Googlebot-Image
+Allow: /
+Allow: /assets/
+Allow: /assets/images/*
+Allow: /favicon.svg
+
+# 3. Googlebot Video Indexer (Google Video & Discover Carousels)
+User-agent: Googlebot-Video
+Allow: /
+Allow: /assets/
+
+# 4. Google StoreBot & Inspection Tools (Rich Snippet & Merchant Intelligence)
+User-agent: Storebot-Google
+User-agent: Google-InspectionTool
+User-agent: Google-Other
+Allow: /
+Disallow: /api/
+
+# 5. Microsoft Bingbot & MSN (Bing Search, Windows Search, Bing News)
+User-agent: Bingbot
+User-agent: msnbot
+User-agent: msnbot-media
 Allow: /
 Allow: /blog/
 Allow: /pages/
 Allow: /css/
 Allow: /js/
 Allow: /assets/
-Allow: /favicon.svg
+Disallow: /api/
 
-User-agent: Googlebot-Image
-Allow: /
-Allow: /assets/
-
-User-agent: Bingbot
+# 6. Applebot (Apple Intelligence, Siri Suggestions, Spotlight Search)
+User-agent: Applebot
+User-agent: Applebot-Extended
 Allow: /
 Allow: /blog/
 Allow: /pages/
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Disallow: /api/
 
-User-agent: Applebot
-Allow: /
-
+# 7. Privacy & Alternate Search Engines (DuckDuckGo, Yahoo, Yandex, Baidu)
 User-agent: DuckDuckBot
-Allow: /
-
+User-agent: Slurp
 User-agent: YandexBot
-Allow: /
-
 User-agent: Baiduspider
+User-agent: Qwantify
 Allow: /
+Allow: /blog/
+Allow: /pages/
+Disallow: /api/
 
+# 8. Social Crawlers (Facebook Open Graph, Twitter/X Cards, LinkedIn, Pinterest)
 User-agent: Twitterbot
-Allow: /
-
 User-agent: facebookexternalhit
+User-agent: LinkedInBot
+User-agent: Pinterestbot
+User-agent: WhatsApp
 Allow: /
+Allow: /assets/
+Disallow: /api/
 
+# 9. Modern AI & LLM Search Crawlers (Perplexity, ChatGPT Search, Claude, Google Extended)
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: Amazonbot
+Allow: /
+Allow: /blog/
+Allow: /pages/
+Allow: /assets/
+Disallow: /api/
+
+# 10. Default Directives for All Other Crawlers
 User-agent: *
 Allow: /
+Allow: /blog/
+Allow: /pages/
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Disallow: /api/
 
-# Canonical Sitemap Declaration
+# ==============================================================================
+# SITEMAP & DISCOVERY DECLARATIONS (RFC 9309 Compliant)
+# ==============================================================================
 Sitemap: https://goyalmyhomesanctuary.com/sitemap.xml
-
+Sitemap: https://goyalmyhomesanctuary.com/sitemap-images.xml

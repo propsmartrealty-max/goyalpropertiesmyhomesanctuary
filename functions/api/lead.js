@@ -115,9 +115,10 @@ export async function onRequestPost(context) {
       );
     }
 
-    // 4. Cloudflare Bot Management Verification (if enabled)
+    // 4. Cloudflare Bot Management Verification (with Verified Search Engine Whitelisting)
+    const isVerifiedBot = Boolean(request.cf?.botManagement?.verifiedBot);
     const botScore = request.cf?.botManagement?.score;
-    if (typeof botScore === "number" && botScore < 15) {
+    if (!isVerifiedBot && typeof botScore === "number" && botScore < 15) {
       console.warn(`[Threat Shield] Dropped suspicious bot score (${botScore}) from IP: ${clientIp}`);
       return new Response(
         JSON.stringify({ success: false, error: "Access denied by automated threat intelligence" }),

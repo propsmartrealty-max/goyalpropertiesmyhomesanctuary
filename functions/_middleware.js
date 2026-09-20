@@ -10,38 +10,86 @@
  */
 
 const KNOWN_BOTS = [
+  // Googlebot Ecosystem
   'googlebot',
   'googlebot-image',
+  'googlebot-video',
   'googlebot-mobile',
+  'googlebot-news',
+  'storebot-google',
+  'google-inspectiontool',
+  'google-other',
+  'google-extended',
+  'apis-google',
+  'mediapartners-google',
+  'adsbot-google',
+  // Microsoft Bing & MSN
   'bingbot',
+  'msnbot',
+  'msnbot-media',
+  'bingpreview',
+  // Yahoo / Inktomi
   'slurp',
+  // Apple Intelligence & Spotlight
+  'applebot',
+  'applebot-extended',
+  // DuckDuckGo & Privacy Search
   'duckduckbot',
+  'qwantify',
+  // International Search (Baidu, Yandex, Naver, Seznam)
   'baiduspider',
   'yandexbot',
-  'applebot',
+  'yandeximages',
+  'yandexmobilebot',
+  'yeti',
+  'seznambot',
+  // Social Media Scrapers (OpenGraph / Rich Cards)
   'facebookexternalhit',
+  'facebookcatalog',
   'twitterbot',
   'linkedinbot',
+  'pinterestbot',
+  'whatsapp',
+  'telegrambot',
+  'slackbot',
+  'skypeuripreview',
+  // AI Search & LLM Engines
+  'gptbot',
+  'chatgpt-user',
+  'perplexitybot',
+  'claudebot',
+  'anthropic-ai',
+  'amazonbot',
+  'cohere-ai',
   'petalbot'
 ];
 
-function isSearchBot(userAgent = '') {
-  const ua = userAgent.toLowerCase();
+function isSearchBot(userAgent = '', request = null) {
+  // 1. Check Cloudflare verified bot detection if available
+  if (request && request.cf?.botManagement?.verifiedBot) {
+    return true;
+  }
+  // 2. Check user-agent matching against comprehensive known crawler list
+  const ua = (userAgent || '').toLowerCase();
   return KNOWN_BOTS.some(bot => ua.includes(bot));
 }
 
-// Edge HTMLRewriter class to inject real-time Google SEO directives
 class GoogleSEOInjector {
   constructor(canonicalUrl) {
     this.canonicalUrl = canonicalUrl;
   }
 
   element(element) {
-    // Inject Googlebot explicit indexing directive
+    // Inject Googlebot explicit indexing directives and Google ecosystem resource hints
     element.append(
       `<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
       `<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
-      `<link rel="alternate" type="application/rss+xml" title="The Sanctuary Journal RSS Feed" href="https://goyalmyhomesanctuary.com/feed.xml" />\n`,
+      `<link rel="alternate" type="application/rss+xml" title="The Sanctuary Journal RSS Feed" href="https://goyalmyhomesanctuary.com/feed.xml" />\n` +
+      `<link rel="dns-prefetch" href="//fonts.googleapis.com" />\n` +
+      `<link rel="dns-prefetch" href="//fonts.gstatic.com" />\n` +
+      `<link rel="dns-prefetch" href="//www.google-analytics.com" />\n` +
+      `<link rel="dns-prefetch" href="//www.googletagmanager.com" />\n` +
+      `<link rel="dns-prefetch" href="//maps.google.com" />\n`,
       { html: true }
     );
   }
@@ -58,7 +106,7 @@ export async function onRequest(context) {
   const { request, next, env } = context;
   const url = new URL(request.url);
   const userAgent = request.headers.get('user-agent') || '';
-  const isBot = isSearchBot(userAgent);
+  const isBot = isSearchBot(userAgent, request);
 
   // 1. Canonical Host Normalization (www -> apex domain)
   if (url.hostname === 'www.goyalmyhomesanctuary.com') {
