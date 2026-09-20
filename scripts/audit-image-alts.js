@@ -10,7 +10,7 @@ function getFiles(dir, exts = ['.html', '.js']) {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
     if (stat.isDirectory()) {
-      if (file !== 'node_modules' && file !== '.git' && file !== 'scratch') {
+      if (file !== 'node_modules' && file !== '.git' && file !== 'scratch' && file !== 'scripts') {
         results = results.concat(getFiles(filePath, exts));
       }
     } else if (exts.some(ext => file.endsWith(ext))) {
