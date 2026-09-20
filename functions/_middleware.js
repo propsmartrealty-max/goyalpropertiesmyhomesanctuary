@@ -147,10 +147,10 @@ export async function onRequest(context) {
   }
 
   // 3. Cloudflare Edge Cache for Search Bots (Ultra-Fast Response)
-  const cache = caches.default;
+  const cache = typeof caches !== 'undefined' ? caches.default : null;
   const cacheKey = new Request(url.toString(), request);
   
-  if (isBot && request.method === 'GET') {
+  if (cache && isBot && request.method === 'GET') {
     const cachedResponse = await cache.match(cacheKey);
     if (cachedResponse) {
       const response = new Response(cachedResponse.body, cachedResponse);
@@ -186,23 +186,31 @@ export async function onRequest(context) {
   if (contentType.includes('text/html')) {
     newHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800');
     
-    const rewriter = new HTMLRewriter()
-      .on('head', new GoogleSEOInjector(canonicalUrl, request))
-      .on('html', new AstroPerformanceOptimizer())
-      .on('img', new ImageLazyLoadOptimizer());
+    if (typeof HTMLRewriter !== 'undefined') {
+      const rewriter = new HTMLRewriter()
+        .on('head', new GoogleSEOInjector(canonicalUrl, request))
+        .on('html', new AstroPerformanceOptimizer())
+        .on('img', new ImageLazyLoadOptimizer());
 
-    const transformedResponse = rewriter.transform(new Response(response.body, {
+      const transformedResponse = rewriter.transform(new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: newHeaders
+      }));
+
+      // Cache the transformed response for bots
+      if (cache && isBot && response.status === 200) {
+        context.waitUntil(cache.put(cacheKey, transformedResponse.clone()));
+      }
+
+      return transformedResponse;
+    }
+
+    return new Response(response.body, {
       status: response.status,
       statusText: response.statusText,
       headers: newHeaders
-    }));
-
-    // Cache the transformed response for bots
-    if (isBot && response.status === 200) {
-      context.waitUntil(cache.put(cacheKey, transformedResponse.clone()));
-    }
-
-    return transformedResponse;
+    });
   }
 
   return new Response(response.body, {

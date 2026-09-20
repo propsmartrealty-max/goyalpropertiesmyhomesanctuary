@@ -73,3 +73,21 @@
   Content-Type: application/rss+xml; charset=utf-8
   Cache-Control: public, max-age=3600, must-revalidate
 
+/sitemap-core.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/sitemap-market-*.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/market
+  Cache-Control: public, max-age=0, s-maxage=604800, stale-while-revalidate=86400
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-market
+
+/market/*
+  Cache-Control: public, max-age=0, s-maxage=604800, stale-while-revalidate=86400
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-market
+
