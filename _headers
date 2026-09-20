@@ -20,6 +20,12 @@
 /
   Cache-Control: public, max-age=0, must-revalidate
 
+/blog
+  Cache-Control: public, max-age=0, must-revalidate
+
+/blog/*
+  Cache-Control: public, max-age=0, must-revalidate
+
 # API & Edge Functions: Zero-Cache Dynamic Responses
 /api/*
   Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate

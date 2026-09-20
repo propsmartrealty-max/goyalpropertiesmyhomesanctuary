@@ -57,3 +57,14 @@
 /hinjawadi-it-park-commute           /pages/hinjawadi-it-park-commute.html           200
 /maharera-pr1261012502725-approvals  /pages/maharera-pr1261012502725-approvals.html  200
 /mamurdi-vs-ravet-kiwale-comparison  /pages/mamurdi-vs-ravet-kiwale-comparison.html  200
+
+# ==============================================================================
+# The Sanctuary Journal & Blog Research Articles (HTTP 200 Clean URL Edge Routing)
+# ==============================================================================
+/blog                                                        /blog/index.html                                                        200
+/blog/pune-real-estate-market-forecast-2026                 /blog/pune-real-estate-market-forecast-2026.html                 200
+/blog/mamurdi-the-next-growth-corridor-pune-west             /blog/mamurdi-the-next-growth-corridor-pune-west.html             200
+/blog/goyal-my-home-sanctuary-complete-buyers-guide         /blog/goyal-my-home-sanctuary-complete-buyers-guide.html         200
+/blog/2bhk-3bhk-4bhk-duplex-flats-mamurdi-pune              /blog/2bhk-3bhk-4bhk-duplex-flats-mamurdi-pune.html              200
+/blog/mumbai-pune-expressway-hinjawadi-connectivity-analysis /blog/mumbai-pune-expressway-hinjawadi-connectivity-analysis.html 200
+/blog/mivan-monolithic-construction-vs-conventional-brickwork /blog/mivan-monolithic-construction-vs-conventional-brickwork.html 200

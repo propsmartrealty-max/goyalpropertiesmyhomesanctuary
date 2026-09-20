@@ -1,0 +1,57 @@
+name: Search Engine Indexing & Ping Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  validate-and-ping:
+    name: Validate Schemas and Ping Search Engines
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate XML Sitemap Integrity
+        run: |
+          python3 -c "
+          import xml.etree.ElementTree as ET
+          tree = ET.parse('sitemap.xml')
+          root = tree.getroot()
+          urls = [elem.text for elem in root.findall('{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
+          print(f'Sitemap valid! Found {len(urls)} URLs.')
+          assert len(urls) >= 20, 'Sitemap should contain at least 20 URLs'
+          "
+
+      - name: Validate JSON-LD Structured Data
+        run: |
+          python3 -c "
+          import glob, json, re
+          pages = ['index.html'] + glob.glob('pages/*.html') + glob.glob('blog/*.html')
+          pattern = re.compile(r'<script[^>]*type=[\'\"]application/ld\+json[\'\"][^>]*>(.*?)</script>', re.DOTALL)
+          for p in pages:
+              with open(p, 'r', encoding='utf-8') as f:
+                  matches = pattern.findall(f.read())
+              for m in matches:
+                  json.loads(m.strip())
+          print(f'All JSON-LD schemas validated across {len(pages)} pages.')
+          "
+
+      - name: Ping Google & Bing with Updated Sitemap
+        run: |
+          echo "Pinging Google Search Console sitemap endpoint..."
+          curl -s -o /dev/null -w "%{http_code}\n" "https://www.google.com/ping?sitemap=https://goyalmyhomesanctuary.com/sitemap.xml" || true
+          
+          echo "Pinging Bing Search sitemap endpoint..."
+          curl -s -o /dev/null -w "%{http_code}\n" "https://www.bing.com/ping?sitemap=https://goyalmyhomesanctuary.com/sitemap.xml" || true
+
+      - name: Completed Indexing Dispatch
+        run: echo "Search engine notification completed for Goyal My Home Sanctuary Mamurdi."
