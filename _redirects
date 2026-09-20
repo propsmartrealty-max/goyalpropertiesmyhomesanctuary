@@ -45,3 +45,15 @@
 /contact       /#connectivity     301
 /site-visit    /#hero             301
 /faq           /#faq-directory    301
+
+# ==============================================================================
+# Dedicated Programmatic Silo Landing Pages (HTTP 200 Clean URL Edge Routing)
+# ==============================================================================
+/2-bhk-flats-mamurdi                 /pages/2-bhk-flats-mamurdi.html                 200
+/3-bhk-flats-mamurdi                 /pages/3-bhk-flats-mamurdi.html                 200
+/price-cost-sheet                    /pages/price-cost-sheet.html                    200
+/floor-plans-brochure                /pages/floor-plans-brochure.html                200
+/mumbai-pune-expressway-connectivity /pages/mumbai-pune-expressway-connectivity.html 200
+/hinjawadi-it-park-commute           /pages/hinjawadi-it-park-commute.html           200
+/maharera-pr1261012502725-approvals  /pages/maharera-pr1261012502725-approvals.html  200
+/mamurdi-vs-ravet-kiwale-comparison  /pages/mamurdi-vs-ravet-kiwale-comparison.html  200
