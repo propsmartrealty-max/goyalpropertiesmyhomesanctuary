@@ -1,0 +1,37 @@
+{
+  "name": "Goyal My Home Sanctuary - Mamurdi Pune",
+  "short_name": "My Home Sanctuary",
+  "description": "Avant-garde 26-acre biophilic luxury residences in Mamurdi, Pune West. 72% green canopy, 75+ lifestyle amenities, and G+28 monolithic MIVAN engineering.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#06070a",
+  "theme_color": "#06070a",
+  "categories": ["lifestyle", "real estate", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Residences",
+      "url": "/#residences",
+      "description": "Inspect 2 & 3 BHK CAD floor plans"
+    },
+    {
+      "name": "Schedule VIP Visit",
+      "url": "/#visit-modal",
+      "description": "Book a site tour with complimentary cab"
+    },
+    {
+      "name": "EMI Calculator",
+      "url": "/#calculator",
+      "description": "Calculate monthly home loan amortizations"
+    }
+  ]
+}

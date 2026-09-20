@@ -1,0 +1,12 @@
+{
+  "name": "goyal-my-home-sanctuary",
+  "version": "1.0.0",
+  "description": "World-Class Luxury Real Estate Website for Goyal My Home Sanctuary, Mamurdi Pune",
+  "scripts": {
+    "start": "npx serve -l 3000",
+    "dev": "python3 -m http.server 3000"
+  },
+  "keywords": ["real-estate", "goyal-properties", "luxury-apartments", "pune", "mamurdi"],
+  "author": "Goyal Properties",
+  "license": "ISC"
+}

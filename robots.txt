@@ -1,0 +1,27 @@
+# Robots.txt for Goyal My Home Sanctuary
+# Optimized for Googlebot, Googlebot-Image, and General Web Crawlers
+
+User-agent: Googlebot
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Allow: /favicon.svg
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+# Sitemap Index Declaration
+Sitemap: https://goyalmyhomesanctuary.com/sitemap.xml

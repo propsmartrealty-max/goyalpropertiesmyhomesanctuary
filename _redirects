@@ -1,0 +1,4 @@
+# Cloudflare Pages Clean URLs & Canonical Redirects
+/index.html    /    301
+/home          /    301
+/index         /    301
