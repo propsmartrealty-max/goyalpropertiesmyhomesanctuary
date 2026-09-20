@@ -170,11 +170,11 @@ export async function onRequest(context) {
   const contentType = newHeaders.get('content-type') || '';
   const canonicalUrl = `https://goyalmyhomesanctuary.in${url.pathname}`;
 
-  // Inject HTTP Canonical Link Header (High priority for Googlebot & Bingbot)
-  newHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
-  
-  // Inject X-Robots-Tag Header
-  newHeaders.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+  // Inject HTTP Canonical Link Header & Robots Directives strictly for HTML documents
+  if (contentType.includes('text/html')) {
+    newHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
+    newHeaders.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+  }
   
   // Server-Timing & Edge Telemetry
   newHeaders.set('Server-Timing', `worker;dur=${duration};desc="Cloudflare SEO Worker", edge;dur=2.0`);
