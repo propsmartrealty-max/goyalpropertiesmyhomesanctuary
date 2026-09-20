@@ -248,7 +248,7 @@ async function handleVisitSubmit(e) {
   const message = `Hello Goyal Properties, I would like to confirm my VIP Site Tour for *Goyal My Home Sanctuary, Mamurdi Pune*.%0a%0a*Name:* ${encodeURIComponent(name)}%0a*Phone:* ${encodeURIComponent(phone)}%0a*Configuration:* ${encodeURIComponent(config)}%0a*Date:* ${encodeURIComponent(date)}%0a*Time Slot:* ${encodeURIComponent(time)}%0a*Cab Pickup:* ${cabRequested ? 'Yes (' + encodeURIComponent(pickupAddress || 'Address will be provided') + ')' : 'Self Drive'}%0a%0aPlease share navigation pin and booking pass.`;
 
   setTimeout(() => {
-    const waUrl = `https://api.whatsapp.com/send?phone=917744009295&text=${message}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=919175319441&text=${message}`;
     const openWa = confirm("Your VIP pass is generated! Would you like to receive the Google Maps navigation pin and booking voucher directly on WhatsApp?");
     if (openWa) {
       trackGoogleEvent("whatsapp_dispatch", { phone });
@@ -330,7 +330,7 @@ STRATEGIC LOCATION:
 - 15 Mins: Hinjawadi IT Park (Phase 1 & 2)
 
 VIP SALES CONCIERGE:
-Phone: +91 77440 09295
+Phone: +91 91753 19441
 Google Maps: https://www.google.com/maps/place/My+Home+Sanctuary/@18.66376,73.7112087,879m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bc2b1002632e9cb:0x85357e0bc6be7a2!8m2!3d18.66376!4d73.7137836!16s%2Fg%2F11yfq11z0t
 Official Portal: https://goyalmyhomesanctuary.com
 ===================================================================

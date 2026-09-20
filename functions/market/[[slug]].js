@@ -224,6 +224,20 @@ function renderDirectoryHub() {
   <title>Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi</title>
   <meta name="description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
   <link rel="canonical" href="https://goyalmyhomesanctuary.com/market">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi">
+  <meta property="og:description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
+  <meta property="og:image" content="https://goyalmyhomesanctuary.com/assets/images/scraped/elevation-main.jpg">
+  <meta property="og:url" content="https://goyalmyhomesanctuary.com/market">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi">
+  <meta name="twitter:description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
+  <meta name="twitter:image" content="https://goyalmyhomesanctuary.com/assets/images/scraped/elevation-main.jpg">
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
