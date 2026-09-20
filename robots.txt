@@ -114,13 +114,13 @@ Disallow: /api/
 # ==============================================================================
 # SITEMAP & DISCOVERY DECLARATIONS (RFC 9309 Compliant)
 # ==============================================================================
-Sitemap: https://goyalmyhomesanctuary.com/sitemap.xml
-Sitemap: https://goyalmyhomesanctuary.com/sitemap-core.xml
-Sitemap: https://goyalmyhomesanctuary.com/sitemap-images.xml
-Sitemap: https://goyalmyhomesanctuary.com/sitemap-market-1.xml
-Sitemap: https://goyalmyhomesanctuary.com/sitemap-market-2.xml
-Sitemap: https://goyalmyhomesanctuary.com/sitemap-market-3.xml
-Sitemap: https://goyalmyhomesanctuary.com/sitemap-market-4.xml
-Sitemap: https://goyalmyhomesanctuary.com/sitemap-market-5.xml
-Sitemap: https://goyalmyhomesanctuary.com/sitemap-market-6.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-core.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-images.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-1.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-2.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-3.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-4.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-5.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-6.xml
 

@@ -90,7 +90,7 @@ class GoogleSEOInjector {
       `  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
       `  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
       `  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
-      `  <link rel="alternate" type="application/rss+xml" title="The Sanctuary Journal RSS Feed" href="https://goyalmyhomesanctuary.com/feed.xml" />\n` +
+      `  <link rel="alternate" type="application/rss+xml" title="The Sanctuary Journal RSS Feed" href="https://goyalmyhomesanctuary.in/feed.xml" />\n` +
       `  <!-- Google Ecosystem DNS Prefetch & Preconnect Engine -->\n` +
       `  <link rel="dns-prefetch" href="//fonts.googleapis.com" />\n` +
       `  <link rel="dns-prefetch" href="//fonts.gstatic.com" />\n` +
@@ -134,9 +134,9 @@ export async function onRequest(context) {
   const userAgent = request.headers.get('user-agent') || '';
   const isBot = isSearchBot(userAgent, request);
 
-  // 1. Canonical Host Normalization (www -> apex domain)
-  if (url.hostname === 'www.goyalmyhomesanctuary.com') {
-    url.hostname = 'goyalmyhomesanctuary.com';
+  // 1. Canonical Host Normalization (redirect any .com or www traffic to apex goyalmyhomesanctuary.in)
+  if (url.hostname === 'www.goyalmyhomesanctuary.in' || url.hostname === 'goyalmyhomesanctuary.com' || url.hostname === 'www.goyalmyhomesanctuary.com') {
+    url.hostname = 'goyalmyhomesanctuary.in';
     return Response.redirect(url.toString(), 301);
   }
 
@@ -168,7 +168,7 @@ export async function onRequest(context) {
   // 5. Clone and Enhance Headers for SEO and Edge Performance
   const newHeaders = new Headers(response.headers);
   const contentType = newHeaders.get('content-type') || '';
-  const canonicalUrl = `https://goyalmyhomesanctuary.com${url.pathname}`;
+  const canonicalUrl = `https://goyalmyhomesanctuary.in${url.pathname}`;
 
   // Inject HTTP Canonical Link Header (High priority for Googlebot & Bingbot)
   newHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);

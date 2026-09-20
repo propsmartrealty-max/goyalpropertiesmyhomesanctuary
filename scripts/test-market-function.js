@@ -33,9 +33,9 @@ async function testRoute(name, urlStr, params) {
 }
 
 async function run() {
-  await testRoute('Directory Hub', 'https://goyalmyhomesanctuary.com/market', { slug: [] });
-  await testRoute('Mamurdi 2 BHK Price', 'https://goyalmyhomesanctuary.com/market/mamurdi-2-bhk-classic-price-cost-sheet-it-professionals', { slug: ['mamurdi-2-bhk-classic-price-cost-sheet-it-professionals'] });
-  await testRoute('Kiwale 3 BHK Plans', 'https://goyalmyhomesanctuary.com/market/kiwale-3-bhk-signature-floor-plans-brochure-families-top-schools', { slug: ['kiwale-3-bhk-signature-floor-plans-brochure-families-top-schools'] });
+  await testRoute('Directory Hub', 'https://goyalmyhomesanctuary.in/market', { slug: [] });
+  await testRoute('Mamurdi 2 BHK Price', 'https://goyalmyhomesanctuary.in/market/mamurdi-2-bhk-classic-price-cost-sheet-it-professionals', { slug: ['mamurdi-2-bhk-classic-price-cost-sheet-it-professionals'] });
+  await testRoute('Kiwale 3 BHK Plans', 'https://goyalmyhomesanctuary.in/market/kiwale-3-bhk-signature-floor-plans-brochure-families-top-schools', { slug: ['kiwale-3-bhk-signature-floor-plans-brochure-families-top-schools'] });
   console.log('\n✓ ALL TESTS PASSED SUCCESSFULLY!\n');
 }
 

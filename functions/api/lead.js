@@ -32,8 +32,8 @@ function getAllowedOrigin(request) {
   const host = request.headers.get("host") || "";
   
   const allowedExact = [
-    "https://goyalmyhomesanctuary.com",
-    "https://www.goyalmyhomesanctuary.com"
+    "https://goyalmyhomesanctuary.in",
+    "https://www.goyalmyhomesanctuary.in"
   ];
   
   if (allowedExact.includes(origin)) return origin;
@@ -176,7 +176,7 @@ export async function onRequestPost(context) {
 
     // 8. Automated Email & Lead Notification Dispatch to propsmartrealty@gmail.com
     const targetLeadEmail = (env && env.LEAD_NOTIFICATION_EMAIL) || "propsmartrealty@gmail.com";
-    const senderFromEmail = (env && env.SENDER_EMAIL) || "leads@goyalmyhomesanctuary.com";
+    const senderFromEmail = (env && env.SENDER_EMAIL) || "leads@goyalmyhomesanctuary.in";
     const senderFromName = (env && env.SENDER_NAME) || "Goyal My Home Sanctuary Concierge";
 
     const emailSubject = `⚡ [NEW LEAD] ${name} (${phoneClean}) - ${config} | Goyal My Home Sanctuary`;

@@ -61,7 +61,7 @@ export function generatePermutations() {
       for (const intent of SEARCH_INTENTS) {
         for (const persona of BUYER_PERSONAS) {
           const slug = `${market.id}-${config.id}-${intent.id}-${persona.id}`;
-          const canonicalUrl = `https://goyalmyhomesanctuary.com/market/${slug}`;
+          const canonicalUrl = `https://goyalmyhomesanctuary.in/market/${slug}`;
           items.push({
             slug,
             canonicalUrl,
@@ -121,17 +121,17 @@ export function buildSitemaps(items) {
   let indexXml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   indexXml += `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
   indexXml += `  <sitemap>\n`;
-  indexXml += `    <loc>https://goyalmyhomesanctuary.com/sitemap-core.xml</loc>\n`;
+  indexXml += `    <loc>https://goyalmyhomesanctuary.in/sitemap-core.xml</loc>\n`;
   indexXml += `    <lastmod>${now}</lastmod>\n`;
   indexXml += `  </sitemap>\n`;
   indexXml += `  <sitemap>\n`;
-  indexXml += `    <loc>https://goyalmyhomesanctuary.com/sitemap-images.xml</loc>\n`;
+  indexXml += `    <loc>https://goyalmyhomesanctuary.in/sitemap-images.xml</loc>\n`;
   indexXml += `    <lastmod>${now}</lastmod>\n`;
   indexXml += `  </sitemap>\n`;
 
   for (let i = 1; i <= totalChunks; i++) {
     indexXml += `  <sitemap>\n`;
-    indexXml += `    <loc>https://goyalmyhomesanctuary.com/sitemap-market-${i}.xml</loc>\n`;
+    indexXml += `    <loc>https://goyalmyhomesanctuary.in/sitemap-market-${i}.xml</loc>\n`;
     indexXml += `    <lastmod>${now}</lastmod>\n`;
     indexXml += `  </sitemap>\n`;
   }

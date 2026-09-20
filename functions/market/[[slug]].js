@@ -223,20 +223,20 @@ function renderDirectoryHub() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi</title>
   <meta name="description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
-  <link rel="canonical" href="https://goyalmyhomesanctuary.com/market">
+  <link rel="canonical" href="https://goyalmyhomesanctuary.in/market">
   
   <!-- Open Graph -->
   <meta property="og:title" content="Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi">
   <meta property="og:description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
-  <meta property="og:image" content="https://goyalmyhomesanctuary.com/assets/images/scraped/elevation-main.jpg">
-  <meta property="og:url" content="https://goyalmyhomesanctuary.com/market">
+  <meta property="og:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
+  <meta property="og:url" content="https://goyalmyhomesanctuary.in/market">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi">
   <meta name="twitter:description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
-  <meta name="twitter:image" content="https://goyalmyhomesanctuary.com/assets/images/scraped/elevation-main.jpg">
+  <meta name="twitter:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/css/styles.css">
@@ -249,10 +249,10 @@ function renderDirectoryHub() {
     "@graph": [
       {
         "@type": "CollectionPage",
-        "@id": "https://goyalmyhomesanctuary.com/market#collection",
+        "@id": "https://goyalmyhomesanctuary.in/market#collection",
         "name": "Pune Real Estate Market Hub | Goyal My Home Sanctuary",
         "description": "Comprehensive real estate intelligence matrix for Goyal My Home Sanctuary in Mamurdi, PCMC Pune West.",
-        "url": "https://goyalmyhomesanctuary.com/market"
+        "url": "https://goyalmyhomesanctuary.in/market"
       },
       {
         "@type": "BreadcrumbList",
@@ -261,13 +261,13 @@ function renderDirectoryHub() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://goyalmyhomesanctuary.com/"
+            "item": "https://goyalmyhomesanctuary.in/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Pune Real Estate Market Hub",
-            "item": "https://goyalmyhomesanctuary.com/market"
+            "item": "https://goyalmyhomesanctuary.in/market"
           }
         ]
       }
@@ -401,7 +401,7 @@ function renderProgrammaticLandingPage(data) {
   const { slug, market, marketKey, config, configKey, intent, intentKey, persona, personaKey } = data;
   const pageTitle = `${config.name} in ${market.name} Pune | ${intent.title} | Goyal My Home Sanctuary`;
   const pageDescription = `Explore ${config.name} (${config.carpet}) at Goyal My Home Sanctuary, ${market.name} Pune West. ${intent.focus} Specially tailored for ${persona.title}. Starting ${config.price}. MahaRERA: PR1261012502725.`;
-  const canonicalUrl = `https://goyalmyhomesanctuary.com/market/${slug}`;
+  const canonicalUrl = `https://goyalmyhomesanctuary.in/market/${slug}`;
 
   // Structured Data (JSON-LD)
   const schemaJsonLd = {
@@ -409,11 +409,11 @@ function renderProgrammaticLandingPage(data) {
     "@graph": [
       {
         "@type": "ApartmentComplex",
-        "@id": "https://goyalmyhomesanctuary.com/#project",
+        "@id": "https://goyalmyhomesanctuary.in/#project",
         "name": "Goyal My Home Sanctuary",
         "alternateName": "My Home Sanctuary Mamurdi",
         "description": "26-acre luxury biophilic residential development by Goyal Properties in Mamurdi, Pune West featuring 72% green canopy, 75+ world-class amenities and MIVAN high-rise towers.",
-        "url": "https://goyalmyhomesanctuary.com",
+        "url": "https://goyalmyhomesanctuary.in",
         "telephone": "+919175319441",
         "address": {
           "@type": "PostalAddress",
@@ -454,25 +454,25 @@ function renderProgrammaticLandingPage(data) {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://goyalmyhomesanctuary.com/"
+            "item": "https://goyalmyhomesanctuary.in/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Pune Real Estate Hub",
-            "item": "https://goyalmyhomesanctuary.com/market"
+            "item": "https://goyalmyhomesanctuary.in/market"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": `${market.name} Properties`,
-            "item": `https://goyalmyhomesanctuary.com/pages/${marketKey === 'mamurdi' ? 'mamurdi-real-estate-flats' : 'kiwale-real-estate-properties'}`
+            "item": `https://goyalmyhomesanctuary.in/pages/${marketKey === 'mamurdi' ? 'mamurdi-real-estate-flats' : 'kiwale-real-estate-properties'}`
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": config.name,
-            "item": `https://goyalmyhomesanctuary.com/pages/${configKey.startsWith('2-bhk') ? '2-bhk-flats-mamurdi' : '3-bhk-flats-mamurdi'}`
+            "item": `https://goyalmyhomesanctuary.in/pages/${configKey.startsWith('2-bhk') ? '2-bhk-flats-mamurdi' : '3-bhk-flats-mamurdi'}`
           },
           {
             "@type": "ListItem",
@@ -549,7 +549,7 @@ function renderProgrammaticLandingPage(data) {
   <meta property="og:description" content="${pageDescription}">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://goyalmyhomesanctuary.com/assets/images/scraped/elevation-main.jpg">
+  <meta property="og:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
   
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/css/styles.css">
@@ -983,7 +983,7 @@ export async function onRequest(context) {
       'Cache-Control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=86400',
       'X-Robots-Tag': 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
       'X-Programmatic-SEO': 'Goyal-Sanctuary-Matrix-v1',
-      'Link': `<https://goyalmyhomesanctuary.com${url.pathname}>; rel="canonical"`
+      'Link': `<https://goyalmyhomesanctuary.in${url.pathname}>; rel="canonical"`
     }
   });
 }

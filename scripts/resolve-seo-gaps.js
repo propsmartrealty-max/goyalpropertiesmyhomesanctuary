@@ -59,7 +59,7 @@ function addMissingTwitterCards() {
 
         const pageTitle = titleMatch ? titleMatch[1] : 'Goyal My Home Sanctuary Mamurdi';
         const pageDesc = descMatch ? descMatch[1] : 'Luxury 2 & 3 BHK flats in Mamurdi Pune West near Mumbai-Pune Expressway.';
-        const pageImg = imgMatch ? imgMatch[1] : 'https://goyalmyhomesanctuary.com/assets/images/scraped/elevation-main.jpg';
+        const pageImg = imgMatch ? imgMatch[1] : 'https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg';
 
         const twitterBlock = `\n  <!-- Twitter Card -->\n` +
           `  <meta name="twitter:card" content="summary_large_image" />\n` +
@@ -138,7 +138,7 @@ function create404Page() {
   <title>Page Not Found (404) | Goyal My Home Sanctuary Mamurdi</title>
   <meta name="description" content="The requested page could not be found. Explore luxury 2 & 3 BHK flats, sanctioned floor plans, pricing cost sheets, and Pune market guides at Goyal My Home Sanctuary Mamurdi." />
   <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://goyalmyhomesanctuary.com/404" />
+  <link rel="canonical" href="https://goyalmyhomesanctuary.in/404" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -274,7 +274,7 @@ function updateStaticMarketHub() {
   
   // We can call functions/market/[[slug]].js onRequest with empty slug!
   import('../functions/market/[[slug]].js').then(async (mod) => {
-    const req = new Request('https://goyalmyhomesanctuary.com/market');
+    const req = new Request('https://goyalmyhomesanctuary.in/market');
     const res = await mod.onRequest({ request: req, params: { slug: [] } });
     const fullHtml = await res.text();
     fs.writeFileSync(marketIndexPath, fullHtml, 'utf8');

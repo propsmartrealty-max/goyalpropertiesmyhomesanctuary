@@ -332,7 +332,7 @@ STRATEGIC LOCATION:
 VIP SALES CONCIERGE:
 Phone: +91 91753 19441
 Google Maps: https://www.google.com/maps/place/My+Home+Sanctuary/@18.66376,73.7112087,879m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bc2b1002632e9cb:0x85357e0bc6be7a2!8m2!3d18.66376!4d73.7137836!16s%2Fg%2F11yfq11z0t
-Official Portal: https://goyalmyhomesanctuary.com
+Official Portal: https://goyalmyhomesanctuary.in
 ===================================================================
 `;
     const blob = new Blob([brochureText], { type: "text/plain;charset=utf-8" });

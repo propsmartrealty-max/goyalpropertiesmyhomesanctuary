@@ -34,7 +34,7 @@ console.log(`✓ All 9 XML sitemaps exist and have valid root XML declarations.`
 
 // 2. Check sitemap-images.xml images exist on disk
 const imgSitemap = fs.readFileSync(path.join(ROOT_DIR, 'sitemap-images.xml'), 'utf8');
-const imgLocs = [...imgSitemap.matchAll(/<image:loc>https:\/\/goyalmyhomesanctuary\.com\/([^<]+)<\/image:loc>/g)].map(m => m[1]);
+const imgLocs = [...imgSitemap.matchAll(/<image:loc>https:\/\/goyalmyhomesanctuary\.(?:in|com)\/([^<]+)<\/image:loc>/g)].map(m => m[1]);
 let missingImgs = 0;
 for (const imgRel of imgLocs) {
   const diskPath = path.join(ROOT_DIR, imgRel);

@@ -48,10 +48,10 @@ jobs:
       - name: Ping Google & Bing with Updated Sitemap
         run: |
           echo "Pinging Google Search Console sitemap endpoint..."
-          curl -s -o /dev/null -w "%{http_code}\n" "https://www.google.com/ping?sitemap=https://goyalmyhomesanctuary.com/sitemap.xml" || true
+          curl -s -o /dev/null -w "%{http_code}\n" "https://www.google.com/ping?sitemap=https://goyalmyhomesanctuary.in/sitemap.xml" || true
           
           echo "Pinging Bing Search sitemap endpoint..."
-          curl -s -o /dev/null -w "%{http_code}\n" "https://www.bing.com/ping?sitemap=https://goyalmyhomesanctuary.com/sitemap.xml" || true
+          curl -s -o /dev/null -w "%{http_code}\n" "https://www.bing.com/ping?sitemap=https://goyalmyhomesanctuary.in/sitemap.xml" || true
 
       - name: Completed Indexing Dispatch
         run: echo "Search engine notification completed for Goyal My Home Sanctuary Mamurdi."

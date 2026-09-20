@@ -5,7 +5,7 @@ import { onRequest as marketHandler } from '../functions/market/[[slug]].js';
 async function testFullEdgePipeline(urlPath, slugArray) {
   console.log(`\n--- Simulating Cloudflare Edge Pipeline for ${urlPath} ---`);
   
-  const req = new Request(`https://goyalmyhomesanctuary.com${urlPath}`, {
+  const req = new Request(`https://goyalmyhomesanctuary.in${urlPath}`, {
     headers: {
       'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
       'cf-ray': '8c1092837482910-BOM'
