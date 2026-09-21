@@ -1,0 +1,490 @@
+/* ==========================================================================
+   THE TRAVERTINE SANCTUARY - HAUTE ARCHITECTURAL BEIGE DESIGN SYSTEM
+   Warm French Limestone • Travertine Beige • Brushed Bronze • Deep Espresso
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Warm Beige & Limestone Palette */
+  --beige-50: #faf8f5;
+  --beige-100: #f5f1e8;
+  --beige-200: #eee8dc;
+  --beige-300: #e2d8c6;
+  --beige-400: #d4c6af;
+  --beige-500: #bfaf95;
+
+  /* Deep Espresso & Charcoal (High-Contrast Luxury Typography) */
+  --espresso-950: #14110e;
+  --espresso-900: #1e1a16;
+  --espresso-800: #2d2722;
+  --espresso-700: #423b34;
+  --espresso-600: #5c534a;
+  --espresso-500: #7a7065;
+  --espresso-400: #998e82;
+
+  /* Brushed Bronze & Warm Gold Accents */
+  --bronze-200: #faeed4;
+  --bronze-300: #eccf94;
+  --bronze-400: #d4a648;
+  --bronze-500: #b88628;
+  --bronze-600: #966917;
+  --bronze-gradient: linear-gradient(135deg, #e5be6b 0%, #b88628 50%, #875e12 100%);
+  --bronze-glow: rgba(184, 134, 40, 0.2);
+
+  /* Biophilic Sage Green */
+  --sage-50: #f2f7f5;
+  --sage-100: #e2ece7;
+  --sage-500: #416a5c;
+  --sage-700: #26463c;
+  --sage-900: #142721;
+
+  /* Typography */
+  --font-display: 'Cinzel', serif;
+  --font-interface: 'Outfit', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  /* Elevation & Shadows */
+  --shadow-hud: 0 10px 35px -5px rgba(30, 26, 22, 0.08);
+  --shadow-bento: 0 8px 30px rgba(30, 26, 22, 0.05);
+  --shadow-card-hover: 0 16px 40px -10px rgba(30, 26, 22, 0.12), 0 0 25px rgba(184, 134, 40, 0.1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--beige-100);
+  color: var(--espresso-800);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-interface);
+  background: var(--beige-100);
+  color: var(--espresso-800);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Typography Utility */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-interface {
+  font-family: var(--font-interface);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-bronze {
+  color: var(--bronze-500);
+}
+
+.text-bronze-gradient {
+  background: var(--bronze-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Container */
+.arch-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1600px) {
+  .arch-container {
+    max-width: 1520px;
+  }
+}
+
+/* Floating Architectural HUD Navbar (Frosted Limestone) */
+.hud-nav {
+  background: rgba(245, 241, 232, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 198, 175, 0.7);
+  box-shadow: var(--shadow-hud);
+}
+
+.hud-nav.scrolled {
+  background: rgba(250, 248, 245, 0.96);
+  border-color: rgba(184, 134, 40, 0.35);
+}
+
+/* Bento Grid Cards (Warm Ivory on Limestone) */
+.bento-card {
+  background: #ffffff;
+  border: 1px solid var(--beige-300);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-bento);
+  color: var(--espresso-900);
+}
+
+.bento-card:hover {
+  border-color: var(--bronze-400);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Dark Bento Accent for key Hero Highlights */
+.bento-card-dark {
+  background: var(--espresso-950);
+  color: #ffffff;
+  border: 1px solid rgba(184, 134, 40, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(20, 17, 14, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card-dark:hover {
+  border-color: var(--bronze-300);
+  transform: translateY(-4px);
+}
+
+/* Modern Minimalist Buttons */
+.btn-bronze {
+  background: var(--bronze-gradient);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 22px -3px rgba(184, 134, 40, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.btn-bronze:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px 0 rgba(184, 134, 40, 0.45);
+  filter: brightness(1.04);
+}
+
+.btn-ghost-arch {
+  background: #ffffff;
+  color: var(--espresso-900);
+  border: 1.5px solid var(--beige-300);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.8rem 1.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(30, 26, 22, 0.04);
+}
+
+.btn-ghost-arch:hover {
+  background: var(--beige-50);
+  border-color: var(--bronze-500);
+  color: var(--bronze-600);
+  transform: translateY(-2px);
+}
+
+/* Lighting Mode Indicator */
+.mode-pill {
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--beige-300);
+  background: #ffffff;
+  color: var(--espresso-600);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mode-pill.active {
+  background: var(--espresso-900);
+  color: #ffffff;
+  border-color: var(--espresso-900);
+  box-shadow: 0 2px 10px rgba(30, 26, 22, 0.15);
+}
+
+/* Custom Beige Sliders */
+input[type="range"].arch-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--beige-300);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"].arch-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bronze-gradient);
+  box-shadow: 0 2px 10px rgba(184, 134, 40, 0.4);
+  border: 2.5px solid #ffffff;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+input[type="range"].arch-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Modals */
+.arch-modal-backdrop {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arch-modal-backdrop.open {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.arch-modal-content {
+  transform: translateY(16px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #ffffff;
+  color: var(--espresso-900);
+  border: 1px solid var(--beige-300);
+}
+
+.arch-modal-backdrop.open .arch-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+/* Floating Action Dock */
+.floating-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.floating-action-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(30, 26, 22, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+.floating-action-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(184, 134, 40, 0.35);
+}
+
+/* Architectural Grid Pattern on Beige */
+.bg-cad-grid {
+  background-image: linear-gradient(to right, rgba(140, 120, 95, 0.08) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(140, 120, 95, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Hotspots on Beige Masterplan */
+.plan-hotspot {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--espresso-950);
+  border: 2.5px solid #ffffff;
+  color: #ffffff;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease;
+}
+
+.plan-hotspot:hover {
+  background: var(--bronze-500);
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+/* Modal Animations & Lightbox Styles */
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+/* Master Gallery Styles */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background-color: #faf8f5;
+  border: 1px solid var(--beige-300);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(30, 26, 22, 0.12);
+  border-color: var(--bronze-500);
+}
+
+.gallery-card img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Plan Blueprint & High-Res View Switcher */
+.plan-view-btn.active {
+  background-color: var(--espresso-950);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.plan-view-btn {
+  color: var(--espresso-700);
+  transition: all 0.2s ease;
+}
+
+/* ==========================================================================
+   GOOGLE MOBILE STANDARDS & CORE WEB VITALS OPTIMIZATIONS
+   Thumb-Zone Ergonomics • 48px Tap Targets • Zero Layout Shift (CLS)
+   ========================================================================== */
+
+/* Elimination of 300ms touch delay & iOS tap highlight */
+html, body, button, a, input, select, textarea {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(184, 134, 40, 0.15);
+}
+
+/* Fluid Viewport Containment */
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* iOS Safari 16px Font Threshold: Prevents destructive auto-zoom on focus */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  /* Bottom clearance for persistent Mobile Action Bar */
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 12px));
+  }
+
+  /* Enforce Google Lighthouse 44-48px Touch Target Standard */
+  button, 
+  .btn-bronze, 
+  .btn-ghost-arch, 
+  .mode-pill,
+  .plan-view-btn {
+    min-height: 44px;
+  }
+
+  .mode-pill {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.8125rem;
+  }
+
+  /* Mobile Drawer Dynamic Viewport Height Support */
+  #mobile-drawer {
+    height: 100dvh;
+    max-height: -webkit-fill-available;
+  }
+
+  /* Modal scrolling container responsiveness */
+  .arch-modal-content {
+    max-height: 88dvh;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Gallery card heights on narrow phones */
+  .gallery-card {
+    border-radius: 1rem;
+  }
+
+  /* Hotspot pins touch accessibility */
+  .plan-hotspot {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  /* Hide redundant desktop floating dock on mobile */
+  .floating-dock {
+    display: none !important;
+  }
+}
+
+/* Persistent Mobile Thumb-Zone Action Bar */
+.mobile-action-bar {
+  background: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(212, 198, 175, 0.8);
+  box-shadow: 0 -8px 24px rgba(20, 17, 14, 0.08);
+}
+
+.mobile-action-bar a,
+.mobile-action-bar button {
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
