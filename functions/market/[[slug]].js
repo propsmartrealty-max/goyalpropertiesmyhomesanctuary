@@ -962,6 +962,20 @@ ${JSON.stringify(schemaJsonLd, null, 2)}
       }
     });
   </script>
+  <!-- Mobile Sticky Action Bar -->
+  <aside aria-label="Quick Mobile Actions" class="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#070b09]/95 backdrop-blur-md border-t border-[#d4af37]/30 px-3 py-2.5 flex items-center justify-between gap-2 shadow-2xl safe-area-pb">
+    <a href="https://wa.me/919175319441?text=Hello%20Goyal%20Properties,%20I%20am%20interested%20in%20the%20${encodeURIComponent(config.name)}%20in%20${encodeURIComponent(market.name)}%20at%20Goyal%20My%20Home%20Sanctuary.%20Please%20share%20the%20cost%20sheet." target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs py-2.5 px-3 rounded-xl shadow-md active:scale-95 transition-all">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.588 1.961.92 3.16.92 3.182 0 5.768-2.587 5.769-5.766.001-3.181-2.586-5.767-5.769-5.767zm7.558 5.766c-.001 4.168-3.391 7.558-7.559 7.558-1.332 0-2.58-.35-3.67-1.002l-4.108 1.077 1.097-4.008c-.732-1.144-1.127-2.477-1.127-3.855.001-4.168 3.392-7.558 7.56-7.558 4.168 0 7.559 3.391 7.56 7.558z"/></svg>
+      <span>WhatsApp Quote</span>
+    </a>
+    <a href="tel:+919175319441" class="flex-1 inline-flex items-center justify-center gap-1.5 gold-bg text-black font-bold text-xs py-2.5 px-3 rounded-xl shadow-md active:scale-95 transition-all">
+      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
+      <span>Call Desk</span>
+    </a>
+    <a href="#lead-form" class="inline-flex items-center justify-center p-2.5 bg-white/10 hover:bg-white/20 text-white rounded-xl border border-white/10" aria-label="Cost Sheet">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+    </a>
+  </aside>
 </body>
 </html>`;
 }
