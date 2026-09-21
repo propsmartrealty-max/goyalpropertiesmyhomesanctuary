@@ -47,27 +47,8 @@
 /faq           /                                               301
 
 # ==============================================================================
-# Dedicated Programmatic Silo Landing Pages (HTTP 200 Clean URL Edge Routing)
+# Legacy /pages/ Directory Redirects (Canonical 301 to Apex Clean URLs)
 # ==============================================================================
-/2-bhk-flats-mamurdi                 /pages/2-bhk-flats-mamurdi.html                 200
-/3-bhk-flats-mamurdi                 /pages/3-bhk-flats-mamurdi.html                 200
-/price-cost-sheet                    /pages/price-cost-sheet.html                    200
-/floor-plans-brochure                /pages/floor-plans-brochure.html                200
-/mumbai-pune-expressway-connectivity /pages/mumbai-pune-expressway-connectivity.html 200
-/hinjawadi-it-park-commute           /pages/hinjawadi-it-park-commute.html           200
-/maharera-pr1261012502725-approvals  /pages/maharera-pr1261012502725-approvals.html  200
-/mamurdi-vs-ravet-kiwale-comparison  /pages/mamurdi-vs-ravet-kiwale-comparison.html  200
-/pcmc-real-estate-market-guide       /pages/pcmc-real-estate-market-guide.html       200
-/kiwale-real-estate-properties       /pages/kiwale-real-estate-properties.html       200
-/mamurdi-real-estate-flats           /pages/mamurdi-real-estate-flats.html           200
+/pages/:slug                         /:slug                                          301
+/pages/                              /                                               301
 
-# ==============================================================================
-# The Sanctuary Journal & Blog Research Articles (HTTP 200 Clean URL Edge Routing)
-# ==============================================================================
-/blog                                                        /blog/index.html                                                        200
-/blog/pune-real-estate-market-forecast-2026                 /blog/pune-real-estate-market-forecast-2026.html                 200
-/blog/mamurdi-the-next-growth-corridor-pune-west             /blog/mamurdi-the-next-growth-corridor-pune-west.html             200
-/blog/goyal-my-home-sanctuary-complete-buyers-guide         /blog/goyal-my-home-sanctuary-complete-buyers-guide.html         200
-/blog/2bhk-3bhk-4bhk-duplex-flats-mamurdi-pune              /blog/2bhk-3bhk-4bhk-duplex-flats-mamurdi-pune.html              200
-/blog/mumbai-pune-expressway-hinjawadi-connectivity-analysis /blog/mumbai-pune-expressway-hinjawadi-connectivity-analysis.html 200
-/blog/mivan-monolithic-construction-vs-conventional-brickwork /blog/mivan-monolithic-construction-vs-conventional-brickwork.html 200
