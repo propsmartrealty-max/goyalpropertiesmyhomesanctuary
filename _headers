@@ -23,6 +23,61 @@
   Cache-Control: public, max-age=0, must-revalidate
   X-Robots-Tag: noindex, follow
 
+/2-bhk-flats-mamurdi
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/3-bhk-flats-mamurdi
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/price-cost-sheet
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/floor-plans-brochure
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/mumbai-pune-expressway-connectivity
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/hinjawadi-it-park-commute
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/maharera-pr1261012502725-approvals
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/mamurdi-vs-ravet-kiwale-comparison
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/pcmc-real-estate-market-guide
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/kiwale-real-estate-properties
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
+/mamurdi-real-estate-flats
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  Cache-Tag: sanctuary-html
+
 /
   Cache-Control: public, max-age=0, must-revalidate
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
