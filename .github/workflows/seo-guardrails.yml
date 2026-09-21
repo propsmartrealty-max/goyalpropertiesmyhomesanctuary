@@ -1,0 +1,40 @@
+name: Continuous SEO & Infrastructure Guardrails
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  seo-quality-gate:
+    name: Zero-Error SEO & Infrastructure Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Audit HTML Structure & SEO Tags
+        run: node scripts/deep-seo-audit.js
+
+      - name: Audit XML Sitemaps, Redirects & Image Assets
+        run: node scripts/audit-infrastructure.js
+
+      - name: Audit Mobile PWA, Breadcrumbs & Schemas
+        run: node scripts/forensic-audit.js
+
+      - name: Audit Google Image Alt Tags
+        run: node scripts/audit-image-alts.js
+
+      - name: Test Cloudflare Pages Edge SSR Routing
+        run: node scripts/test-market-function.js
+
+      - name: Broadcast URLs to IndexNow (Bing, Yandex, Global Engines)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: node scripts/ping-indexnow.js

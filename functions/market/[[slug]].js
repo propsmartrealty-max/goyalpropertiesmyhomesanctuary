@@ -605,9 +605,9 @@ ${JSON.stringify(schemaJsonLd, null, 2)}
         <li><span>/</span></li>
         <li><a href="/market" class="hover:text-[#d4af37]">Pune Real Estate</a></li>
         <li><span>/</span></li>
-        <li><a href="/pages/${marketKey === 'mamurdi' ? 'mamurdi-real-estate-flats' : 'kiwale-real-estate-properties'}" class="hover:text-[#d4af37]">${market.name}</a></li>
+        <li><a href="/${marketKey === 'mamurdi' ? 'mamurdi-real-estate-flats' : 'kiwale-real-estate-properties'}" class="hover:text-[#d4af37]">${market.name}</a></li>
         <li><span>/</span></li>
-        <li><a href="/pages/${configKey.startsWith('2-bhk') ? '2-bhk-flats-mamurdi' : '3-bhk-flats-mamurdi'}" class="hover:text-[#d4af37]">${config.name}</a></li>
+        <li><a href="/${configKey.startsWith('2-bhk') ? '2-bhk-flats-mamurdi' : '3-bhk-flats-mamurdi'}" class="hover:text-[#d4af37]">${config.name}</a></li>
         <li><span>/</span></li>
         <li class="text-[#d4af37] font-medium truncate max-w-xs">${intent.title}</li>
       </ol>
