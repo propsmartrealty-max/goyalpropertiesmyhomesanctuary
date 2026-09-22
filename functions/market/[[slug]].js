@@ -227,7 +227,7 @@ function renderDirectoryHub() {
   
   <!-- Open Graph -->
   <meta property="og:locale" content="en_IN">
-  <meta property="og:site_name" content="Goyal My Home Sanctuary">
+  <meta property="og:site_name" content="Goyal My Home Sanctuary, Mamurdi">
   <meta property="og:title" content="Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi">
   <meta property="og:description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
   <meta property="og:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
@@ -553,7 +553,7 @@ function renderProgrammaticLandingPage(data) {
   
   <!-- Open Graph / Social Tags -->
   <meta property="og:locale" content="en_IN">
-  <meta property="og:site_name" content="Goyal My Home Sanctuary">
+  <meta property="og:site_name" content="Goyal My Home Sanctuary, Mamurdi">
   <meta property="og:title" content="${pageTitle}">
   <meta property="og:description" content="${pageDescription}">
   <meta property="og:url" content="${canonicalUrl}">

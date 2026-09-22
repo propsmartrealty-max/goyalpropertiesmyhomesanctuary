@@ -64,8 +64,8 @@ for (const file of htmlFiles) {
   if (!ogImg) {
     gaps.push({ file: relPath, category: 'Social/OpenGraph', issue: 'Missing og:image' });
   }
-  if (!content.includes('og:site_name')) {
-    gaps.push({ file: relPath, category: 'Social/OpenGraph', issue: 'Missing og:site_name' });
+  if (!content.includes('og:site_name') || !content.includes('Goyal My Home Sanctuary, Mamurdi')) {
+    gaps.push({ file: relPath, category: 'Social/OpenGraph', issue: 'Missing or mismatched og:site_name (expected "Goyal My Home Sanctuary, Mamurdi")' });
   }
   if (!content.includes('og:locale')) {
     gaps.push({ file: relPath, category: 'Social/OpenGraph', issue: 'Missing og:locale' });
