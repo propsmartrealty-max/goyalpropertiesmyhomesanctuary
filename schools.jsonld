@@ -1,0 +1,89 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://goyalmyhomesanctuary.in/schools.jsonld#symbiosis-skills-university",
+      "name": "Symbiosis Skills and Professional University (SSPU)",
+      "description": "Premier state skills university offering cutting-edge engineering, data science, and management programs, located within 5 minutes of Goyal My Home Sanctuary.",
+      "url": "https://sspu.ac.in",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Village Kiwale, Adjoining Pune-Mumbai Expressway",
+        "addressLocality": "PCMC, Pune",
+        "postalCode": "412101",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.6672,
+        "longitude": 73.7225
+      },
+      "distance": "2.5 km (5 mins drive)"
+    },
+    {
+      "@type": "School",
+      "@id": "https://goyalmyhomesanctuary.in/schools.jsonld#akshara-international-school",
+      "name": "Akshara International School",
+      "description": "Leading CBSE international school with world-class sports infrastructure, STEM labs, and daily dedicated school bus pickup from Goyal My Home Sanctuary.",
+      "url": "https://akshara.in",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Wakad-Tathawade Corridor",
+        "addressLocality": "PCMC, Pune",
+        "postalCode": "411057",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "distance": "6.0 km (12 mins drive)"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://goyalmyhomesanctuary.in/schools.jsonld#indira-institutes",
+      "name": "Indira National School & Group of Institutes",
+      "description": "Renowned educational campus spanning K-12 schooling, engineering, architecture, and business management.",
+      "url": "https://indiraiimp.edu.in",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tathawade, New Pune-Mumbai Highway",
+        "addressLocality": "PCMC, Pune",
+        "postalCode": "411033",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "distance": "5.5 km (10 mins drive)"
+    },
+    {
+      "@type": "Hospital",
+      "@id": "https://goyalmyhomesanctuary.in/schools.jsonld#aditya-birla-hospital",
+      "name": "Aditya Birla Memorial Hospital",
+      "description": "NABH and JCI accredited multi-specialty quaternary care hospital offering 24/7 cardiac, trauma, and emergency healthcare.",
+      "url": "https://adityabirlahospital.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Aditya Birla Hospital Marg, Chinchwad",
+        "addressLocality": "PCMC, Pune",
+        "postalCode": "411033",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "distance": "7.5 km (14 mins drive)"
+    },
+    {
+      "@type": "Hospital",
+      "@id": "https://goyalmyhomesanctuary.in/schools.jsonld#ojas-hospital",
+      "name": "Ojas Multi-Specialty Hospital",
+      "description": "Advanced multi-specialty healthcare and diagnostic facility serving the Mamurdi, Kiwale, and Ravet residential corridors.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ravet BRTS Road",
+        "addressLocality": "PCMC, Pune",
+        "postalCode": "412101",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "distance": "3.8 km (7 mins drive)"
+    }
+  ]
+}

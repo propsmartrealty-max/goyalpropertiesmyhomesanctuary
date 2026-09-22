@@ -271,6 +271,19 @@ if (res15.status !== 200 || !data15.rental_yield_analysis.gross_rental_yield || 
 }
 console.log('  ✓ PCMC Market Capital Growth & Rental Yield Engine passed cleanly.');
 
-console.log('\n✓ ALL 15 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 16: Educational & Healthcare Transit Matrix API
+const { onRequestGet: transitGet } = await import('../functions/api/transit-matrix.js');
+const req16 = new Request('https://goyalmyhomesanctuary.in/api/transit-matrix?category=school');
+const res16 = await transitGet({ request: req16 });
+const data16 = await res16.json();
+
+console.log(`[Transit Matrix API]: Status ${res16.status}, Filtered Schools: ${data16.total_institutions}`);
+if (res16.status !== 200 || data16.total_institutions < 3) {
+  console.error('✗ Transit Matrix API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Educational & Healthcare Transit Matrix Engine passed cleanly.');
+
+console.log('\n✓ ALL 16 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 

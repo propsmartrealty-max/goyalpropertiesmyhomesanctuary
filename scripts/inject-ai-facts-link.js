@@ -188,6 +188,29 @@ for (const file of htmlFiles) {
     }
   }
 
+  // 15. Inject schools.jsonld link in <head> if missing
+  if (!content.includes('href="/schools.jsonld"')) {
+    const loansTag = '<link rel="alternate" type="application/ld+json" href="/loans.jsonld" title="Goyal My Home Sanctuary Pre-Approved Bank Loan & APF Catalog" />';
+    if (content.includes(loansTag)) {
+      content = content.replace(
+        loansTag,
+        `${loansTag}\n  <link rel="alternate" type="application/ld+json" href="/schools.jsonld" title="Goyal My Home Sanctuary Nearby Educational & Healthcare Infrastructure" />`
+      );
+      changed = true;
+    }
+  }
+
+  // 16. Inject headless transit-engine.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/transit-engine.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/transit-engine.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
   if (changed) {
     fs.writeFileSync(file, content, 'utf8');
     updatedCount++;

@@ -140,6 +140,18 @@ if (!loansJson['@graph'] || loansJson['@graph'][0]['@type'] !== 'FinancialProduc
 }
 console.log(`✓ loans.jsonld Approved Bank Loan & APF Catalog verified with ${loansJson['@graph'].length} financial products.`);
 
+const schoolsPath = path.join(ROOT_DIR, 'schools.jsonld');
+if (!fs.existsSync(schoolsPath)) {
+  console.error(`✗ Missing schools.jsonld`);
+  process.exit(1);
+}
+const schoolsJson = JSON.parse(fs.readFileSync(schoolsPath, 'utf8'));
+if (!schoolsJson['@graph'] || schoolsJson['@graph'][0]['@type'] !== 'EducationalOrganization') {
+  console.error(`✗ Invalid schools.jsonld EducationalOrganization schema`);
+  process.exit(1);
+}
+console.log(`✓ schools.jsonld Educational & Healthcare Infrastructure verified with ${schoolsJson['@graph'].length} institutions.`);
+
 const embeddingsPath = path.join(ROOT_DIR, 'embeddings.json');
 if (!fs.existsSync(embeddingsPath)) {
   console.error(`✗ Missing embeddings.json`);
@@ -155,6 +167,13 @@ if (!fs.existsSync(aiTxtPath) || !fs.readFileSync(aiTxtPath, 'utf8').includes('a
 }
 console.log(`✓ .well-known/ai.txt verified for AI crawler discovery.`);
 
+const mtaStsPath = path.join(ROOT_DIR, '.well-known', 'mta-sts.txt');
+if (!fs.existsSync(mtaStsPath) || !fs.readFileSync(mtaStsPath, 'utf8').includes('version: STSv1')) {
+  console.error(`✗ Missing or malformed .well-known/mta-sts.txt`);
+  process.exit(1);
+}
+console.log(`✓ .well-known/mta-sts.txt verified for RFC 8461 SMTP domain security.`);
+
 // 7. Verify Headless Engines and Edge API Routes
 const commuteEnginePath = path.join(ROOT_DIR, 'js', 'commute-engine.js');
 const tourDeskPath = path.join(ROOT_DIR, 'js', 'international-tour-desk.js');
@@ -166,6 +185,7 @@ const vectorSearchPath = path.join(ROOT_DIR, 'js', 'vector-search.js');
 const offlineQueuePath = path.join(ROOT_DIR, 'js', 'offline-queue.js');
 const taxEnginePath = path.join(ROOT_DIR, 'js', 'tax-engine.js');
 const marketIndexPath = path.join(ROOT_DIR, 'js', 'market-index.js');
+const transitEnginePath = path.join(ROOT_DIR, 'js', 'transit-engine.js');
 
 const aiConciergePath = path.join(ROOT_DIR, 'functions', 'api', 'ai-concierge.js');
 const commuteCalcPath = path.join(ROOT_DIR, 'functions', 'api', 'commute-calculator.js');
@@ -181,24 +201,28 @@ const pushSubscribePath = path.join(ROOT_DIR, 'functions', 'api', 'push-subscrib
 const taxCalcPath = path.join(ROOT_DIR, 'functions', 'api', 'tax-calculator.js');
 const healthPath = path.join(ROOT_DIR, 'functions', 'api', 'health.js');
 const marketIndexApiPath = path.join(ROOT_DIR, 'functions', 'api', 'market-index.js');
+const transitMatrixApiPath = path.join(ROOT_DIR, 'functions', 'api', 'transit-matrix.js');
 
 const googleDispatcherPath = path.join(ROOT_DIR, 'scripts', 'google-indexing-dispatcher.js');
 const gscBatchPath = path.join(ROOT_DIR, 'scripts', 'google-search-console-batch.js');
 const pingSearchEnginesPath = path.join(ROOT_DIR, 'scripts', 'ping-search-engines.js');
+const validateSchemasPath = path.join(ROOT_DIR, 'scripts', 'validate-schema-graphs.js');
 
 if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(tourDeskPath) || !fs.existsSync(leadTelemetryPath) ||
     !fs.existsSync(webVitalsPath) || !fs.existsSync(solarVastuEnginePath) || !fs.existsSync(currencyEnginePath) ||
     !fs.existsSync(vectorSearchPath) || !fs.existsSync(offlineQueuePath) || !fs.existsSync(taxEnginePath) ||
-    !fs.existsSync(marketIndexPath) || !fs.existsSync(aiConciergePath) || !fs.existsSync(commuteCalcPath) || 
-    !fs.existsSync(resoFeedPath) || !fs.existsSync(timezoneDeskPath) || !fs.existsSync(ogGeneratorPath) || 
-    !fs.existsSync(leadCapturePath) || !fs.existsSync(vitalsPath) || !fs.existsSync(inventoryPath) || 
-    !fs.existsSync(solarVastuPath) || !fs.existsSync(currencyApiPath) || !fs.existsSync(pushSubscribePath) || 
-    !fs.existsSync(taxCalcPath) || !fs.existsSync(healthPath) || !fs.existsSync(marketIndexApiPath) ||
-    !fs.existsSync(googleDispatcherPath) || !fs.existsSync(gscBatchPath) || !fs.existsSync(pingSearchEnginesPath)) {
+    !fs.existsSync(marketIndexPath) || !fs.existsSync(transitEnginePath) || !fs.existsSync(aiConciergePath) || 
+    !fs.existsSync(commuteCalcPath) || !fs.existsSync(resoFeedPath) || !fs.existsSync(timezoneDeskPath) || 
+    !fs.existsSync(ogGeneratorPath) || !fs.existsSync(leadCapturePath) || !fs.existsSync(vitalsPath) || 
+    !fs.existsSync(inventoryPath) || !fs.existsSync(solarVastuPath) || !fs.existsSync(currencyApiPath) || 
+    !fs.existsSync(pushSubscribePath) || !fs.existsSync(taxCalcPath) || !fs.existsSync(healthPath) || 
+    !fs.existsSync(marketIndexApiPath) || !fs.existsSync(transitMatrixApiPath) ||
+    !fs.existsSync(googleDispatcherPath) || !fs.existsSync(gscBatchPath) || !fs.existsSync(pingSearchEnginesPath) ||
+    !fs.existsSync(validateSchemasPath)) {
   console.error(`✗ Missing headless engines, edge API routes or Google dispatcher`);
   process.exit(1);
 }
-console.log(`✓ All 10 headless engines (commute, tour desk, lead telemetry, web vitals, solar-vastu, currency, vector-search, offline-queue, tax-engine, market-index), all 15 Edge APIs (ai-concierge, commute-calculator, reso-feed, timezone-desk, og, lead-capture, vitals, inventory, solar-vastu, currency, push-subscribe, tax-calculator, health, market-index, market SSR), and all search engine dispatchers verified.`);
+console.log(`✓ All 11 headless engines (commute, tour desk, lead telemetry, web vitals, solar-vastu, currency, vector-search, offline-queue, tax-engine, market-index, transit-engine), all 16 Edge APIs (ai-concierge, commute-calculator, reso-feed, timezone-desk, og, lead-capture, vitals, inventory, solar-vastu, currency, push-subscribe, tax-calculator, health, market-index, transit-matrix, market SSR), and all search engine dispatchers verified.`);
 
 console.log('\n--- ALL INFRASTRUCTURE, DISCOVERY, AI & GOOGLE AUDITS PASSED CLEANLY ---\n');
 

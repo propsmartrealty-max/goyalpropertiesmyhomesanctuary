@@ -48,9 +48,12 @@ const URLS = [
   `https://${HOST}/api/push-subscribe`,
   `https://${HOST}/tour.jsonld`,
   `https://${HOST}/loans.jsonld`,
+  `https://${HOST}/schools.jsonld`,
+  `https://${HOST}/.well-known/mta-sts.txt`,
   `https://${HOST}/api/tax-calculator`,
   `https://${HOST}/api/health`,
-  `https://${HOST}/api/market-index`
+  `https://${HOST}/api/market-index`,
+  `https://${HOST}/api/transit-matrix`
 ];
 
 async function submitIndexNow() {
