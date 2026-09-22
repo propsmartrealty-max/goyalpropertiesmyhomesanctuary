@@ -164,6 +164,18 @@ if (!faqsJson['@graph'] || faqsJson['@graph'][0]['@type'] !== 'FAQPage') {
 }
 console.log(`✓ faqs.jsonld Voice Search & Conversational FAQ Graph verified with ${faqsJson['@graph'][0].mainEntity.length} Q&A entities.`);
 
+const engineeringPath = path.join(ROOT_DIR, 'engineering.jsonld');
+if (!fs.existsSync(engineeringPath)) {
+  console.error(`✗ Missing engineering.jsonld`);
+  process.exit(1);
+}
+const engineeringJson = JSON.parse(fs.readFileSync(engineeringPath, 'utf8'));
+if (!engineeringJson['@graph'] || engineeringJson['@graph'][0]['@type'] !== 'TechArticle') {
+  console.error(`✗ Invalid engineering.jsonld TechArticle schema`);
+  process.exit(1);
+}
+console.log(`✓ engineering.jsonld Engineering & Quality Audit Graph verified with ${engineeringJson['@graph'][0].about.length} engineering benchmarks.`);
+
 const embeddingsPath = path.join(ROOT_DIR, 'embeddings.json');
 if (!fs.existsSync(embeddingsPath)) {
   console.error(`✗ Missing embeddings.json`);
@@ -199,6 +211,7 @@ const taxEnginePath = path.join(ROOT_DIR, 'js', 'tax-engine.js');
 const marketIndexPath = path.join(ROOT_DIR, 'js', 'market-index.js');
 const transitEnginePath = path.join(ROOT_DIR, 'js', 'transit-engine.js');
 const carbonEnginePath = path.join(ROOT_DIR, 'js', 'carbon-engine.js');
+const milestoneEnginePath = path.join(ROOT_DIR, 'js', 'milestone-engine.js');
 
 const aiConciergePath = path.join(ROOT_DIR, 'functions', 'api', 'ai-concierge.js');
 const commuteCalcPath = path.join(ROOT_DIR, 'functions', 'api', 'commute-calculator.js');
@@ -217,6 +230,8 @@ const marketIndexApiPath = path.join(ROOT_DIR, 'functions', 'api', 'market-index
 const transitMatrixApiPath = path.join(ROOT_DIR, 'functions', 'api', 'transit-matrix.js');
 const sustainabilityApiPath = path.join(ROOT_DIR, 'functions', 'api', 'sustainability.js');
 const botTelemetryApiPath = path.join(ROOT_DIR, 'functions', 'api', 'bot-telemetry.js');
+const constructionMilestonesApiPath = path.join(ROOT_DIR, 'functions', 'api', 'construction-milestones.js');
+const amenityCapacityApiPath = path.join(ROOT_DIR, 'functions', 'api', 'amenity-capacity.js');
 
 const googleDispatcherPath = path.join(ROOT_DIR, 'scripts', 'google-indexing-dispatcher.js');
 const gscBatchPath = path.join(ROOT_DIR, 'scripts', 'google-search-console-batch.js');
@@ -224,23 +239,27 @@ const pingSearchEnginesPath = path.join(ROOT_DIR, 'scripts', 'ping-search-engine
 const validateSchemasPath = path.join(ROOT_DIR, 'scripts', 'validate-schema-graphs.js');
 const benchmarkRagPath = path.join(ROOT_DIR, 'scripts', 'benchmark-rag-graph.js');
 const generateSriPath = path.join(ROOT_DIR, 'scripts', 'generate-sri-hashes.js');
+const auditBudgetsPath = path.join(ROOT_DIR, 'scripts', 'audit-performance-budgets.js');
 
 if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(tourDeskPath) || !fs.existsSync(leadTelemetryPath) ||
     !fs.existsSync(webVitalsPath) || !fs.existsSync(solarVastuEnginePath) || !fs.existsSync(currencyEnginePath) ||
     !fs.existsSync(vectorSearchPath) || !fs.existsSync(offlineQueuePath) || !fs.existsSync(taxEnginePath) ||
     !fs.existsSync(marketIndexPath) || !fs.existsSync(transitEnginePath) || !fs.existsSync(carbonEnginePath) ||
+    !fs.existsSync(milestoneEnginePath) ||
     !fs.existsSync(aiConciergePath) || !fs.existsSync(commuteCalcPath) || !fs.existsSync(resoFeedPath) ||
     !fs.existsSync(timezoneDeskPath) || !fs.existsSync(ogGeneratorPath) || !fs.existsSync(leadCapturePath) ||
     !fs.existsSync(vitalsPath) || !fs.existsSync(inventoryPath) || !fs.existsSync(solarVastuPath) ||
     !fs.existsSync(currencyApiPath) || !fs.existsSync(pushSubscribePath) || !fs.existsSync(taxCalcPath) ||
     !fs.existsSync(healthPath) || !fs.existsSync(marketIndexApiPath) || !fs.existsSync(transitMatrixApiPath) ||
     !fs.existsSync(sustainabilityApiPath) || !fs.existsSync(botTelemetryApiPath) ||
+    !fs.existsSync(constructionMilestonesApiPath) || !fs.existsSync(amenityCapacityApiPath) ||
     !fs.existsSync(googleDispatcherPath) || !fs.existsSync(gscBatchPath) || !fs.existsSync(pingSearchEnginesPath) ||
-    !fs.existsSync(validateSchemasPath) || !fs.existsSync(benchmarkRagPath) || !fs.existsSync(generateSriPath)) {
+    !fs.existsSync(validateSchemasPath) || !fs.existsSync(benchmarkRagPath) || !fs.existsSync(generateSriPath) ||
+    !fs.existsSync(auditBudgetsPath)) {
   console.error(`✗ Missing headless engines, edge API routes or audit scripts`);
   process.exit(1);
 }
-console.log(`✓ All 12 headless engines, all 18 Edge APIs, and all audit & discovery dispatchers verified.`);
+console.log(`✓ All 13 headless engines, all 20 Edge APIs, and all audit & discovery dispatchers verified.`);
 
 console.log('\n--- ALL INFRASTRUCTURE, DISCOVERY, AI & GOOGLE AUDITS PASSED CLEANLY ---\n');
 

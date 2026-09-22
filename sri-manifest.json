@@ -51,6 +51,10 @@
     "sizeBytes": 1881,
     "sri": "sha384-PI20mfOtevkBE29MmnG4aS9QsXldgDdujpxyuzlfRkdfJp96W8CkV1aUtc3Uk+V+"
   },
+  "js/milestone-engine.js": {
+    "sizeBytes": 1373,
+    "sri": "sha384-SzYYOpG+kXU2Acf9/qm4dqyhIRz3SQqw3MINxBvmKMc4wgOTtCtehBGcCAjRaPfn"
+  },
   "js/offline-queue.js": {
     "sizeBytes": 3959,
     "sri": "sha384-iMx11ijBF2sp09jqxQ6cRnIlDNQAOigDMyL6K0CxNyYByajuT/yJZvO+39bz1Myr"

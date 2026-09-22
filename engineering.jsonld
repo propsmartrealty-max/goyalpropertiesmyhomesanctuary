@@ -1,0 +1,59 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://goyalmyhomesanctuary.com/#engineering-specifications",
+      "headline": "Civil Engineering & Structural Quality Specifications: Goyal My Home Sanctuary",
+      "description": "Comprehensive engineering audit, seismic compliance, Mivan formwork methodology, and material testing benchmarks for Goyal My Home Sanctuary, Mamurdi, PCMC, Pune.",
+      "inLanguage": "en-IN",
+      "author": {
+        "@type": "Organization",
+        "name": "Goyal Properties Engineering & Quality Control Division"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Goyal Properties",
+        "url": "https://goyalmyhomesanctuary.com"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Structural Engineering & RCC Framework",
+          "description": "Earthquake-resistant shear-wall structural frame engineered in strict accordance with IS 1893:2016 for Seismic Zone III with high-ductility detailing under IS 13920:2016."
+        },
+        {
+          "@type": "Thing",
+          "name": "Mivan Monolithic Aluminum Formwork",
+          "description": "Precision aluminum formwork system enabling continuous casting of concrete walls and slabs together, eliminating masonry joints, maximizing carpet efficiency, and ensuring zero water seepage."
+        },
+        {
+          "@type": "Thing",
+          "name": "Substructure & Geotechnical Profile",
+          "description": "Pitched foundation resting on competent amygdaloidal basalt bedrock endemic to the Deccan Trap in Mamurdi PCMC, delivering ultra-high safe bearing capacity (SBC) exceeding 450 kN/m²."
+        },
+        {
+          "@type": "Thing",
+          "name": "Concrete Technology & Quality Assurance",
+          "description": "M40 and M50 grade design-mix concrete with automated temperature monitoring, manufactured sand (M-Sand) aggregate grading, and third-party NABL-accredited 7-day and 28-day cube compressive strength certifications."
+        },
+        {
+          "@type": "Thing",
+          "name": "Waterproofing & Envelope Durability",
+          "description": "10-year warranty crystalline integral capillary waterproofing across all podiums, wet areas, sunken slabs, and terrace gardens backed by elastomeric polyurethane topcoats."
+        },
+        {
+          "@type": "Thing",
+          "name": "Fire Safety & Emergency Evacuation",
+          "description": "Full compliance with Maharashtra Fire Prevention and Life Safety Measures Act and NBC 2016 Part 4, featuring pressurized fire staircases, automated wet-riser sprinkler grids, and refuge terraces."
+        }
+      ],
+      "regulatorySpecification": {
+        "@type": "PropertyValue",
+        "name": "MahaRERA Project Registration",
+        "value": "PR1261012502725 / P52100077438",
+        "description": "Target possession milestone December 2028 under MahaRERA certified construction escrow schedule."
+      }
+    }
+  ]
+}

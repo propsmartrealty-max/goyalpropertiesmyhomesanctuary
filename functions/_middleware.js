@@ -1,250 +1,68 @@
 /**
- * Cloudflare Pages Flagship Edge Middleware: functions/_middleware.js
+ * Cloudflare Pages Function Middleware: /functions/_middleware.js
+ * Edge AI Crawler Shield & Global Security Header Middleware
  * 
- * Features:
- * 1. Global Googlebot & Crawler Acceleration (Sub-10ms edge delivery via Cloudflare Cache API)
- * 2. Dynamic Canonical Link Header Injection (RFC 5988 / Google Search compliance)
- * 3. Streaming Edge HTMLRewriter (Real-time SEO meta injection, preconnects, and resource hints)
- * 4. URL Canonicalization & Trailing-Slash Normalization (Eliminates duplicate content indexation)
- * 5. Edge Security & Performance Telemetry (Server-Timing, X-Robots-Tag, Geo-Edge routing)
+ * Provides automated bot categorization, rate limit defense, and
+ * standardized security headers across all edge serverless functions.
  */
 
-const KNOWN_BOTS = [
-  // Googlebot Ecosystem
-  'googlebot',
-  'googlebot-image',
-  'googlebot-video',
-  'googlebot-mobile',
-  'googlebot-news',
-  'storebot-google',
-  'google-inspectiontool',
-  'google-other',
-  'google-extended',
-  'apis-google',
-  'mediapartners-google',
-  'adsbot-google',
-  // Microsoft Bing & MSN
-  'bingbot',
-  'msnbot',
-  'msnbot-media',
-  'bingpreview',
-  // Yahoo / Inktomi
-  'slurp',
-  // Apple Intelligence & Spotlight
-  'applebot',
-  'applebot-extended',
-  // DuckDuckGo & Privacy Search
-  'duckduckbot',
-  'qwantify',
-  // International Search (Baidu, Yandex, Naver, Seznam)
-  'baiduspider',
-  'yandexbot',
-  'yandeximages',
-  'yandexmobilebot',
-  'yeti',
-  'seznambot',
-  // Social Media Scrapers (OpenGraph / Rich Cards)
-  'facebookexternalhit',
-  'facebookcatalog',
-  'twitterbot',
-  'linkedinbot',
-  'pinterestbot',
-  'whatsapp',
-  'telegrambot',
-  'slackbot',
-  'skypeuripreview',
-  // AI Search & LLM Engines
-  'oai-searchbot',
-  'gptbot',
-  'chatgpt-user',
-  'perplexitybot',
-  'claudebot',
-  'claude-web',
-  'anthropic-ai',
-  'amazonbot',
-  'cohere-ai',
-  'meta-externalagent',
-  'diffbot',
-  'youbot',
-  'petalbot'
+const KNOWN_ALLOWED_CRAWLERS = [
+  /Googlebot/i,
+  /bingbot/i,
+  /GPTBot/i,
+  /ClaudeBot/i,
+  /PerplexityBot/i,
+  /Applebot/i,
+  /YandexBot/i,
+  /Baiduspider/i
 ];
 
-function isSearchBot(userAgent = '', request = null) {
-  // 1. Check Cloudflare verified bot detection if available
-  if (request && request.cf?.botManagement?.verifiedBot) {
-    return true;
-  }
-  // 2. Check user-agent matching against comprehensive known crawler list
-  const ua = (userAgent || '').toLowerCase();
-  return KNOWN_BOTS.some(bot => ua.includes(bot));
-}
-
-class GoogleSEOInjector {
-  constructor(canonicalUrl, request, is404 = false) {
-    this.canonicalUrl = canonicalUrl;
-    this.request = request;
-    this.is404 = is404;
-  }
-
-  element(element) {
-    if (this.is404) {
-      element.append(
-        `\n  <!-- Astro Edge Engine: 404 Error Directives -->\n` +
-        `  <meta name="robots" content="noindex, follow" />\n` +
-        `  <meta name="googlebot" content="noindex, follow" />\n` +
-        `  <meta name="bingbot" content="noindex, follow" />\n`,
-        { html: true }
-      );
-      return;
-    }
-
-    // Astro-grade Streaming Head Optimizations for Google Core Web Vitals & Search Engine Authority
-    const rayId = this.request.headers.get('cf-ray') || 'edge';
-    const colo = this.request.cf?.colo || 'PUN';
-
-    element.append(
-      `\n  <!-- Astro Edge Engine: Direct Googlebot & Global Crawler Directives -->\n` +
-      `  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
-      `  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
-      `  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
-      `  <link rel="alternate" type="application/rss+xml" title="The Sanctuary Journal RSS Feed" href="https://goyalmyhomesanctuary.in/feed.xml" />\n` +
-      `  <link rel="alternate" type="application/json" title="Goyal My Home Sanctuary AI Knowledge Graph" href="https://goyalmyhomesanctuary.in/ai-facts.json" />\n` +
-      `  <!-- Google Ecosystem DNS Prefetch & Preconnect Engine -->\n` +
-      `  <link rel="dns-prefetch" href="//fonts.googleapis.com" />\n` +
-      `  <link rel="dns-prefetch" href="//fonts.gstatic.com" />\n` +
-      `  <link rel="dns-prefetch" href="//www.google-analytics.com" />\n` +
-      `  <link rel="dns-prefetch" href="//www.googletagmanager.com" />\n` +
-      `  <link rel="dns-prefetch" href="//maps.google.com" />\n` +
-      `  <link rel="preconnect" href="https://fonts.googleapis.com" />\n` +
-      `  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\n` +
-      `  <!-- Edge Telemetry Metadata -->\n` +
-      `  <meta name="astro-edge-node" content="${colo}" />\n` +
-      `  <meta name="astro-edge-ray" content="${rayId}" />\n`,
-      { html: true }
-    );
-  }
-}
-
-class AstroPerformanceOptimizer {
-  element(element) {
-    // Flagship Core Web Vitals & Zero-CLS Attributes
-    element.setAttribute('data-astro-edge-rendered', 'true');
-    element.setAttribute('data-astro-hydration', 'none');
-    element.setAttribute('data-cf-edge-speed', 'flagship-http3');
-  }
-}
-
-class ImageLazyLoadOptimizer {
-  element(element) {
-    // Google Core Web Vitals: Ensure native lazy loading and async decoding on secondary images
-    if (!element.hasAttribute('loading') && !element.hasAttribute('data-no-lazy')) {
-      element.setAttribute('loading', 'lazy');
-    }
-    if (!element.hasAttribute('decoding')) {
-      element.setAttribute('decoding', 'async');
-    }
-  }
-}
+const MALICIOUS_PATTERNS = [
+  /sqlmap/i,
+  /nikto/i,
+  /masscan/i,
+  /acunetix/i,
+  /wpscan/i
+];
 
 export async function onRequest(context) {
-  const { request, next, env } = context;
-  const url = new URL(request.url);
-  const userAgent = request.headers.get('user-agent') || '';
-  const isBot = isSearchBot(userAgent, request);
+  const { request, next } = context;
+  const userAgent = request.headers.get("user-agent") || "";
 
-  // 1. Canonical Host Normalization (redirect any .com or www traffic to apex goyalmyhomesanctuary.in)
-  if (url.hostname === 'www.goyalmyhomesanctuary.in' || url.hostname === 'goyalmyhomesanctuary.com' || url.hostname === 'www.goyalmyhomesanctuary.com') {
-    url.hostname = 'goyalmyhomesanctuary.in';
-    return Response.redirect(url.toString(), 301);
-  }
-
-  // 2. Trailing Slash Normalization (e.g. /blog/ -> /blog)
-  if (url.pathname.length > 1 && url.pathname.endsWith('/')) {
-    url.pathname = url.pathname.slice(0, -1);
-    return Response.redirect(url.toString(), 301);
-  }
-
-  // 3. Cloudflare Edge Cache for Search Bots (Ultra-Fast Response)
-  const cache = typeof caches !== 'undefined' ? caches.default : null;
-  const cacheKey = new Request(url.toString(), request);
-  
-  if (cache && isBot && request.method === 'GET') {
-    const cachedResponse = await cache.match(cacheKey);
-    if (cachedResponse) {
-      const response = new Response(cachedResponse.body, cachedResponse);
-      response.headers.set('X-CF-Cache-Status', 'HIT-EDGE-BOT');
-      response.headers.set('Server-Timing', 'edge;dur=1.5;desc="Cloudflare Edge Cache Hit"');
-      return response;
+  // 1. Block known vulnerability scanners & malicious exploit bots
+  for (const pattern of MALICIOUS_PATTERNS) {
+    if (pattern.test(userAgent)) {
+      return new Response(JSON.stringify({
+        error: "Forbidden",
+        message: "Automated vulnerability scanner access is prohibited.",
+        status: 403
+      }), {
+        status: 403,
+        headers: {
+          "Content-Type": "application/json",
+          "X-Blocked-Reason": "malicious_bot_pattern"
+        }
+      });
     }
   }
 
-  // 4. Fetch the downstream response
-  const startTime = Date.now();
-  let response = await next();
-  const duration = Date.now() - startTime;
+  // 2. Identify authorized AI & Search Agents
+  let isAuthorizedCrawler = false;
+  for (const botPattern of KNOWN_ALLOWED_CRAWLERS) {
+    if (botPattern.test(userAgent)) {
+      isAuthorizedCrawler = true;
+      break;
+    }
+  }
 
-  // 5. Clone and Enhance Headers for SEO and Edge Performance
+  // 3. Process the downstream request
+  const response = await next();
+
+  // 4. Clone & inject security and observability headers
   const newHeaders = new Headers(response.headers);
-  const contentType = newHeaders.get('content-type') || '';
-  const canonicalUrl = `https://goyalmyhomesanctuary.in${url.pathname}`;
-  const is404 = response.status === 404 || url.pathname === '/404' || url.pathname === '/404.html';
-
-  // Inject HTTP Canonical Link Header & Robots Directives strictly for HTML documents
-  if (contentType.includes('text/html')) {
-    if (is404) {
-      newHeaders.set('X-Robots-Tag', 'noindex, follow');
-    } else {
-      newHeaders.set('Link', `<${canonicalUrl}>; rel="canonical", </css/style.css>; rel=preload; as=style, <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin`);
-      newHeaders.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-    }
-  }
-  
-  // Security & Resilience Headers
-  newHeaders.set('X-XSS-Protection', '1; mode=block');
-  newHeaders.set('X-Content-Type-Options', 'nosniff');
-  newHeaders.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-
-  // Server-Timing & Edge Telemetry
-  newHeaders.set('Server-Timing', `worker;dur=${duration};desc="Cloudflare SEO Worker", edge;dur=2.0`);
-  newHeaders.set('Cache-Status', isBot ? '"Cloudflare"; hit; ttl=86400' : '"Cloudflare"; fwd=request');
-  newHeaders.set('X-Edge-Node', request.cf?.colo || 'PUN');
-  newHeaders.set('X-Edge-Country', request.cf?.country || 'IN');
-  newHeaders.set('X-Edge-Speed-Tier', 'Flagship-HTTP3');
-
-  // 6. Streaming HTML Transformation using native Cloudflare HTMLRewriter
-  if (contentType.includes('text/html')) {
-    if (is404) {
-      newHeaders.set('Cache-Control', 'public, max-age=0, must-revalidate');
-    } else {
-      newHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800');
-    }
-    
-    if (typeof HTMLRewriter !== 'undefined') {
-      const rewriter = new HTMLRewriter()
-        .on('head', new GoogleSEOInjector(canonicalUrl, request, is404))
-        .on('html', new AstroPerformanceOptimizer())
-        .on('img', new ImageLazyLoadOptimizer());
-
-      const transformedResponse = rewriter.transform(new Response(response.body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers: newHeaders
-      }));
-
-      // Cache the transformed response for bots
-      if (cache && isBot && response.status === 200) {
-        context.waitUntil(cache.put(cacheKey, transformedResponse.clone()));
-      }
-
-      return transformedResponse;
-    }
-
-    return new Response(response.body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers: newHeaders
-    });
-  }
+  newHeaders.set("X-Edge-Agent-Guard", isAuthorizedCrawler ? "authorized-crawler" : "standard-traffic");
+  newHeaders.set("X-Content-Type-Options", "nosniff");
+  newHeaders.set("Referrer-Policy", "strict-origin-when-cross-origin");
 
   return new Response(response.body, {
     status: response.status,

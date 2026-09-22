@@ -310,6 +310,32 @@ if (res18.status !== 200 || !data18.is_ai_agent || data18.bot_details?.provider 
 }
 console.log('  ✓ Edge Bot Attribution & AI Crawler Telemetry passed cleanly.');
 
-console.log('\n✓ ALL 18 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 19: Construction Milestones & RERA Telemetry API
+const { onRequestGet: milestonesGet } = await import('../functions/api/construction-milestones.js');
+const req19 = new Request('https://goyalmyhomesanctuary.in/api/construction-milestones?tower=tower-a');
+const res19 = await milestonesGet({ request: req19 });
+const data19 = await res19.json();
+
+console.log(`[Construction Milestones API]: Status ${res19.status}, Possession: ${data19.target_possession}, Tower: ${data19.tower?.name}, Progress: ${data19.tower?.progress_pct}%`);
+if (res19.status !== 200 || !data19.tower || data19.target_possession !== 'December 2028') {
+  console.error('✗ Construction Milestones API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Construction Milestones & RERA Telemetry Engine passed cleanly.');
+
+// Test 20: Smart Amenity Capacity & Co-Working Scheduler API
+const { onRequestGet: amenityCapacityGet } = await import('../functions/api/amenity-capacity.js');
+const req20 = new Request('https://goyalmyhomesanctuary.in/api/amenity-capacity?amenity=coworking_pods');
+const res20 = await amenityCapacityGet({ request: req20 });
+const data20 = await res20.json();
+
+console.log(`[Amenity Capacity API]: Status ${res20.status}, Amenity: ${data20.amenity?.name}, Available Pods: ${data20.amenity?.current_available_pods}`);
+if (res20.status !== 200 || !data20.amenity || data20.amenity.current_available_pods < 1) {
+  console.error('✗ Amenity Capacity API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Smart Co-Working & Clubhouse Amenity Capacity Engine passed cleanly.');
+
+console.log('\n✓ ALL 20 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 

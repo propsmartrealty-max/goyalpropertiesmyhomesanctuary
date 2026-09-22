@@ -20,7 +20,8 @@ const KNOWLEDGE_SOURCES = [
   { file: 'tour.jsonld', type: 'jsonld' },
   { file: 'loans.jsonld', type: 'jsonld' },
   { file: 'schools.jsonld', type: 'jsonld' },
-  { file: 'faqs.jsonld', type: 'jsonld' }
+  { file: 'faqs.jsonld', type: 'jsonld' },
+  { file: 'engineering.jsonld', type: 'jsonld' }
 ];
 
 export async function runRagBenchmark() {
@@ -94,10 +95,21 @@ export async function runRagBenchmark() {
     {
       query: "What percentage of the site is designated for open green space?",
       expectedKeyword: "72"
+    },
+    {
+      query: "What structural construction system is engineered for the towers?",
+      expectedKeyword: "Mivan"
     }
   ];
 
-  const fullCorpus = [aiFactsRaw, faqsRaw, catalogRaw, JSON.stringify(loadedData['loans.jsonld']), JSON.stringify(loadedData['schools.jsonld'])].join(' ');
+  const fullCorpus = [
+    aiFactsRaw,
+    faqsRaw,
+    catalogRaw,
+    JSON.stringify(loadedData['loans.jsonld']),
+    JSON.stringify(loadedData['schools.jsonld']),
+    JSON.stringify(loadedData['engineering.jsonld'])
+  ].join(' ');
 
   for (const bq of benchmarkQueries) {
     const passed = fullCorpus.includes(bq.expectedKeyword);
@@ -107,7 +119,7 @@ export async function runRagBenchmark() {
     console.log(`  ✓ RAG Retrieval passed: "${bq.query}" -> Key "${bq.expectedKeyword}" resolved.`);
   }
 
-  console.log('\n✓ ALL 6 KNOWLEDGE GRAPHS PASSED RAG BENCHMARK & ENTITY RESOLUTION!\n');
+  console.log('\n✓ ALL 7 KNOWLEDGE GRAPHS PASSED RAG BENCHMARK & ENTITY RESOLUTION!\n');
   return true;
 }
 
