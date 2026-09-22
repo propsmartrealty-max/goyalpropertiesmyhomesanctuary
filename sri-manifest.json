@@ -59,6 +59,10 @@
     "sizeBytes": 3959,
     "sri": "sha384-iMx11ijBF2sp09jqxQ6cRnIlDNQAOigDMyL6K0CxNyYByajuT/yJZvO+39bz1Myr"
   },
+  "js/portfolio-engine.js": {
+    "sizeBytes": 837,
+    "sri": "sha384-q9spkLc11sbtwk7VWP1LvioWNjcfOSJ77+hmNRL4heqls60+dQBxkty9eVJ+yNh0"
+  },
   "js/scheduler.js": {
     "sizeBytes": 12325,
     "sri": "sha384-M1SHlQILxNWb87fx8Eddqp59w7dPqPuRWqlJ3erPMF+jR/9p7YQL8/9leXISrNkK"

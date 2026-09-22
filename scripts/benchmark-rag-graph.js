@@ -21,7 +21,8 @@ const KNOWLEDGE_SOURCES = [
   { file: 'loans.jsonld', type: 'jsonld' },
   { file: 'schools.jsonld', type: 'jsonld' },
   { file: 'faqs.jsonld', type: 'jsonld' },
-  { file: 'engineering.jsonld', type: 'jsonld' }
+  { file: 'engineering.jsonld', type: 'jsonld' },
+  { file: 'developer.jsonld', type: 'jsonld' }
 ];
 
 export async function runRagBenchmark() {
@@ -99,6 +100,10 @@ export async function runRagBenchmark() {
     {
       query: "What structural construction system is engineered for the towers?",
       expectedKeyword: "Mivan"
+    },
+    {
+      query: "Which real estate apex association is the developer affiliated with?",
+      expectedKeyword: "CREDAI"
     }
   ];
 
@@ -108,7 +113,8 @@ export async function runRagBenchmark() {
     catalogRaw,
     JSON.stringify(loadedData['loans.jsonld']),
     JSON.stringify(loadedData['schools.jsonld']),
-    JSON.stringify(loadedData['engineering.jsonld'])
+    JSON.stringify(loadedData['engineering.jsonld']),
+    JSON.stringify(loadedData['developer.jsonld'])
   ].join(' ');
 
   for (const bq of benchmarkQueries) {
@@ -119,7 +125,7 @@ export async function runRagBenchmark() {
     console.log(`  ✓ RAG Retrieval passed: "${bq.query}" -> Key "${bq.expectedKeyword}" resolved.`);
   }
 
-  console.log('\n✓ ALL 7 KNOWLEDGE GRAPHS PASSED RAG BENCHMARK & ENTITY RESOLUTION!\n');
+  console.log('\n✓ ALL 8 KNOWLEDGE GRAPHS PASSED RAG BENCHMARK & ENTITY RESOLUTION!\n');
   return true;
 }
 

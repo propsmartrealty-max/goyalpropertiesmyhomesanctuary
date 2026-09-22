@@ -7,6 +7,7 @@
   <Image width="16" height="16" type="image/x-icon">https://goyalmyhomesanctuary.in/favicon.ico</Image>
   <Image width="64" height="64" type="image/svg+xml">https://goyalmyhomesanctuary.in/favicon.svg</Image>
   <Url type="text/html" template="https://goyalmyhomesanctuary.in/?q={searchTerms}"/>
+  <Url type="application/json" template="https://goyalmyhomesanctuary.in/api/ai-concierge?q={searchTerms}"/>
   <Url type="application/opensearchdescription+xml" rel="self" template="https://goyalmyhomesanctuary.in/opensearch.xml"/>
   <Contact>propsmartrealty@gmail.com</Contact>
   <Developer>Goyal Properties</Developer>

@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Corporation",
+      "@id": "https://goyalmyhomesanctuary.com/#developer-profile",
+      "name": "Goyal Properties",
+      "legalName": "Goyal Properties & Construction Private Limited",
+      "alternateName": "Goyal Ganga Group Legacy",
+      "url": "https://goyalmyhomesanctuary.com",
+      "logo": "https://goyalmyhomesanctuary.com/assets/images/logo/logo.svg",
+      "foundingDate": "1990",
+      "description": "Premier real estate developer in Pune and PCMC with 35+ years of excellence, having delivered over 40 landmark residential communities, 10+ million square feet of built-up space, and housing over 15,000 satisfied families.",
+      "telephone": "+919822033333",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Goyal House, Pune-Bangalore Highway",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411037",
+        "addressCountry": "IN"
+      },
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "CREDAI Pune Metro",
+          "url": "https://credaipune.org"
+        }
+      ],
+      "awards": [
+        "ISO 9001:2015 Quality Management System Certification",
+        "Excellence in Fast-Track Aluminum Formwork Construction 2024",
+        "Green Building Leadership Award Pune West 2025"
+      ],
+      "knowsAbout": [
+        "Mivan Monolithic Aluminum Formwork Technology",
+        "IGBC Green Homes Gold Standards",
+        "PCMC Town Planning & Infrastructure Integration",
+        "Seismic Zone III Compliant High-Rise Engineering"
+      ],
+      "brand": {
+        "@type": "Brand",
+        "name": "My Home Sanctuary",
+        "description": "Biophilic luxury residential development in Mamurdi, PCMC, Pune West, MahaRERA PR1261012502725 / P52100077438."
+      }
+    }
+  ]
+}

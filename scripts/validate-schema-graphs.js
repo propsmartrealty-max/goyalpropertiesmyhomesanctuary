@@ -20,6 +20,7 @@ const SCHEMAS_TO_VALIDATE = [
   { file: 'schools.jsonld', expectedType: 'EducationalOrganization', expectedNodes: 5 },
   { file: 'faqs.jsonld', expectedType: 'FAQPage', expectedNodes: 1 },
   { file: 'engineering.jsonld', expectedType: 'TechArticle', expectedNodes: 1 },
+  { file: 'developer.jsonld', expectedType: 'Corporation', expectedNodes: 1 },
   { file: 'ai-facts.json', isAiFacts: true }
 ];
 

@@ -336,6 +336,36 @@ if (res20.status !== 200 || !data20.amenity || data20.amenity.current_available_
 }
 console.log('  ✓ Smart Co-Working & Clubhouse Amenity Capacity Engine passed cleanly.');
 
-console.log('\n✓ ALL 20 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 21: Multi-Unit Portfolio Optimization API
+const { onRequestGet: portfolioGet } = await import('../functions/api/portfolio-optimizer.js');
+const req21 = new Request('https://goyalmyhomesanctuary.in/api/portfolio-optimizer');
+const res21 = await portfolioGet({ request: req21 });
+const data21 = await res21.json();
+
+console.log(`[Portfolio Optimizer API]: Status ${res21.status}, Strategy A Yield: ${data21.strategy_a_single_luxury.metrics.gross_rental_yield_pct}%, Strategy B Yield: ${data21.strategy_b_dual_portfolio.metrics.gross_rental_yield_pct}%`);
+if (res21.status !== 200 || !data21.comparative_analysis || data21.strategy_b_dual_portfolio.metrics.units_count !== 2) {
+  console.error('✗ Portfolio Optimizer API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Multi-Unit Portfolio Optimization Engine passed cleanly.');
+
+// Test 22: Edge Cryptographic Lead Verification API
+const { onRequestPost: verifyLeadPost } = await import('../functions/api/verify-lead.js');
+const req22 = new Request('https://goyalmyhomesanctuary.in/api/verify-lead', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ leadId: 'LEAD-PROD-TEST-01', phone: '9822033333', name: 'Invest User', source: 'organic_nri' })
+});
+const res22 = await verifyLeadPost({ request: req22, env: {} });
+const data22 = await res22.json();
+
+console.log(`[Lead Verification API]: Status ${res22.status}, Seal: ${data22.tamper_proof_seal}, Token: ${data22.integrity_token?.slice(0, 16)}...`);
+if (res22.status !== 200 || data22.status !== 'verified' || !data22.integrity_token) {
+  console.error('✗ Lead Verification API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Edge Cryptographic Lead Verification passed cleanly.');
+
+console.log('\n✓ ALL 22 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 
