@@ -150,6 +150,96 @@ const PERMUTATION_INDEX = [
     answer: "Book your private guided preview with complimentary air-conditioned cab pickup and drop-off anywhere in Pune.",
     url: "tel:+919175319441",
     badge: "Direct Sales Desk"
+  },
+  {
+    title: "2 BHK & 3 BHK Flats in PCMC Starting ₹69 Lakhs*",
+    category: "PCMC Real Estate",
+    tag: "PCMC Hub",
+    query: "2bhk in pcmc 3bhk in pcmc flats in pcmc properties in pcmc pimpri chinchwad municipal corporation new projects",
+    answer: "Explore sanctioned 2 & 3 BHK MIVAN residences across PCMC starting ₹69 L*. Compare floor plans, carpet areas, and download cost sheets.",
+    url: "/market/pcmc-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "PCMC Market"
+  },
+  {
+    title: "2 BHK & 3 BHK Flats in Chinchwad Starting ₹69 Lakhs*",
+    category: "Chinchwad Hub",
+    tag: "Central PCMC",
+    query: "2bhk in chinchwad 3bhk in chinchwad flats in chinchwad property rates chinchwad station elpro city square",
+    answer: "Compare Chinchwad property rates with Goyal My Home Sanctuary Mamurdi offering 35% more carpet area with 72% forest canopy.",
+    url: "/market/chinchwad-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "Chinchwad Index"
+  },
+  {
+    title: "2 BHK & 3 BHK Flats in Nigdi & Pradhikaran",
+    category: "Nigdi Pradhikaran",
+    tag: "Town-Planned Node",
+    query: "2bhk in nigdi flats in pradhikaran property in nigdi 3bhk nigdi pradhikaran sector 24 25 26 27 28",
+    answer: "Direct 8-minute commute from Nigdi Pradhikaran via BRTS to Goyal My Home Sanctuary: G+28 high-rise MIVAN luxury residences.",
+    url: "/market/nigdi-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "Nigdi Hub"
+  },
+  {
+    title: "Flats & Property in Akurdi near Railway Station",
+    category: "Akurdi Hub",
+    tag: "Education & Rail",
+    query: "2bhk in akurdi flats in akurdi property near akurdi station akurdi 3bhk dy patil akurdi campus",
+    answer: "Premier connectivity to Akurdi educational zone and railway station with fast highway access to Mamurdi biophilic township.",
+    url: "/market/akurdi-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "Akurdi Route"
+  },
+  {
+    title: "Flats in Pimpri & Finolex Chowk Corridor",
+    category: "Pimpri Hub",
+    tag: "Business District",
+    query: "2bhk in pimpri flats in pimpri pimpri real estate apartments in pimpri finolex chowk deluxe",
+    answer: "Upgrade from dense Pimpri commercial sectors to 26-acre unpolluted nature living with 75+ resort amenities starting ₹69 Lakhs*.",
+    url: "/market/pimpri-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "Pimpri Index"
+  },
+  {
+    title: "Flats & New Projects in Moshi PCMC",
+    category: "Moshi Hub",
+    tag: "North PCMC",
+    query: "2bhk in moshi flats in moshi moshi pcmc new projects 3bhk in moshi spine road alandi road",
+    answer: "Direct expressway and Hinjawadi commute comparison between North PCMC Moshi and West Pune Mamurdi biophilic residences.",
+    url: "/market/moshi-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "Moshi Index"
+  },
+  {
+    title: "Flats near Bhosari MIDC for Corporate Executives",
+    category: "Bhosari MIDC",
+    tag: "Industrial Corridor",
+    query: "2bhk in bhosari flats in bhosari midc bhosari property rates 3bhk in bhosari landewadi telco",
+    answer: "Premium executive housing for Bhosari MIDC professionals seeking serene forest living and 100% MIVAN structural safety.",
+    url: "/market/bhosari-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "Bhosari Hub"
+  },
+  {
+    title: "Flats in Pimple Saudagar vs Mamurdi Comparison",
+    category: "Pimple Saudagar",
+    tag: "IT Suburb",
+    query: "2bhk in pimple saudagar 3bhk in pimple saudagar luxury flats in pimple saudagar kunal icon linear garden",
+    answer: "Get 25% lower price point and 3x larger amenity spaces at Goyal My Home Sanctuary compared to Pimple Saudagar resale properties.",
+    url: "/market/pimple-saudagar-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "Pimple Saudagar"
+  },
+  {
+    title: "Luxury Flats in Pimple Nilakh & Baner Border",
+    category: "Pimple Nilakh",
+    tag: "Riverfront Corridor",
+    query: "2bhk in pimple nilakh 3bhk in pimple nilakh pimple nilakh luxury projects dp road baner bridge",
+    answer: "Grade-A monolithic MIVAN construction with 35,000 sq.ft clubhouse and temperature-controlled heated pool at unmatched pricing.",
+    url: "/market/pimple-nilakh-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "Pimple Nilakh"
+  },
+  {
+    title: "2 & 3 BHK Flats in Thergaon near Dange Chowk",
+    category: "Thergaon Hub",
+    tag: "Arterial Junction",
+    query: "2bhk in thergaon flats near dange chowk 3bhk thergaon thergaon real estate kalewadi phata",
+    answer: "Escape congestion around Dange Chowk and Kalewadi: discover 26-acre biophilic sanctuary in Mamurdi with 72% green canopy.",
+    url: "/market/thergaon-2-bhk-classic-price-cost-sheet-it-professionals",
+    badge: "Thergaon Index"
   }
 ];
 

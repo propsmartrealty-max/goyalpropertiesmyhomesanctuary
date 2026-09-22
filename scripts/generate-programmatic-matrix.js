@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { renderDirectoryHub } from '../functions/market/[[slug]].js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,7 +18,17 @@ export const MICRO_MARKETS = [
   { id: 'hinjawadi', name: 'Hinjawadi', subtitle: 'Rajiv Gandhi Infotech Park Technology Epicenter', distanceHinjawadi: '0 Mins', distanceExpressway: '14 Mins' },
   { id: 'marunji', name: 'Marunji', subtitle: 'Phase 2-3 Technology Expansion Corridor', distanceHinjawadi: '5 Mins', distanceExpressway: '12 Mins' },
   { id: 'somatane', name: 'Somatane', subtitle: 'Expressway Toll Corridor & Serene Valley Foothills', distanceHinjawadi: '22 Mins', distanceExpressway: '4 Mins' },
-  { id: 'talegaon', name: 'Talegaon', subtitle: 'Industrial Automotive Belt & Cool Climate Hub', distanceHinjawadi: '28 Mins', distanceExpressway: '6 Mins' }
+  { id: 'talegaon', name: 'Talegaon', subtitle: 'Industrial Automotive Belt & Cool Climate Hub', distanceHinjawadi: '28 Mins', distanceExpressway: '6 Mins' },
+  { id: 'pcmc', name: 'PCMC', subtitle: 'Pimpri Chinchwad Municipal Corporation Smart City Corridor', distanceHinjawadi: '15 Mins', distanceExpressway: '2 Mins' },
+  { id: 'chinchwad', name: 'Chinchwad', subtitle: 'Central PCMC Commercial & Cultural Epicenter', distanceHinjawadi: '18 Mins', distanceExpressway: '5 Mins' },
+  { id: 'pimpri', name: 'Pimpri', subtitle: 'Premier Business, Automobile & Healthcare District', distanceHinjawadi: '20 Mins', distanceExpressway: '7 Mins' },
+  { id: 'nigdi', name: 'Nigdi', subtitle: 'Nigdi Pradhikaran Planned Residential Master Layout', distanceHinjawadi: '18 Mins', distanceExpressway: '3 Mins' },
+  { id: 'akurdi', name: 'Akurdi', subtitle: 'Premier Educational Campus & Suburban Rail Hub', distanceHinjawadi: '17 Mins', distanceExpressway: '4 Mins' },
+  { id: 'moshi', name: 'Moshi', subtitle: 'North PCMC Industrial & International Exhibition Belt', distanceHinjawadi: '25 Mins', distanceExpressway: '8 Mins' },
+  { id: 'bhosari', name: 'Bhosari', subtitle: 'Industrial Powerhouse MIDC & Automotive Hub', distanceHinjawadi: '24 Mins', distanceExpressway: '9 Mins' },
+  { id: 'pimple-saudagar', name: 'Pimple Saudagar', subtitle: 'Premium IT Executive Residential Belt', distanceHinjawadi: '14 Mins', distanceExpressway: '10 Mins' },
+  { id: 'pimple-nilakh', name: 'Pimple Nilakh', subtitle: 'Luxury Mula Riverfront & Baner Border Belt', distanceHinjawadi: '12 Mins', distanceExpressway: '11 Mins' },
+  { id: 'thergaon', name: 'Thergaon', subtitle: 'Central Arterial Node & Dange Chowk Connector', distanceHinjawadi: '13 Mins', distanceExpressway: '7 Mins' }
 ];
 
 export const CONFIGURATIONS = [
@@ -146,21 +157,11 @@ export function buildSitemaps(items) {
     fs.mkdirSync(marketDir, { recursive: true });
   }
   
-  // Minimal static fallback index for /market/index.html
+  // Full static directory hub for /market/index.html matching edge SSR
   const staticHubPath = path.join(marketDir, 'index.html');
-  const staticHubHtml = `<!DOCTYPE html>
-<html lang="en-IN">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=/market">
-  <title>Redirecting to Pune Market Hub</title>
-</head>
-<body>
-  <p>Redirecting to <a href="/market">Pune Market Directory Hub</a>...</p>
-</body>
-</html>`;
+  const staticHubHtml = renderDirectoryHub();
   fs.writeFileSync(staticHubPath, staticHubHtml, 'utf8');
-  console.log(`✓ Wrote static market fallback at ${staticHubPath}`);
+  console.log(`✓ Wrote full static market directory hub at ${staticHubPath}`);
 }
 
 // Run generator

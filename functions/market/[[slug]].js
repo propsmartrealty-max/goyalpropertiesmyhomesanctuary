@@ -13,7 +13,7 @@
  */
 
 const MICRO_MARKETS = {
-  'mamurdi': { name: 'Mamurdi', subtitle: 'Prime Expressway Node & Educational Hub', distanceHinjawadi: '15 Mins', distanceExpressway: '0 Mins', highlight: 'Home to Symbiosis Skills University and upcoming multi-modal transit hub.' },
+  'mamurdi': { name: 'Mamurdi', subtitle: 'Prime Expressway Node & Educational Hub', distanceHinjawadi: '15 Mins', distanceExpressway: '0 Mins', highlight: 'Epicenter of Goyal My Home Sanctuary with 72% forest canopy, zero-km Expressway toll access, and upcoming multi-modal transit hub.' },
   'kiwale': { name: 'Kiwale', subtitle: 'Adjoining Twin Growth Corridor & BRTS Junction', distanceHinjawadi: '18 Mins', distanceExpressway: '2 Mins', highlight: 'Direct connect to Mukai Chowk, Ravet-Kiwale BRTS, and Dehu Road rail.' },
   'ravet': { name: 'Ravet', subtitle: 'PCMC Gateway & Educational Capital', distanceHinjawadi: '16 Mins', distanceExpressway: '3 Mins', highlight: 'Premier social infrastructure with D.Y. Patil knowledge campus and Bhakti Shakti flyover.' },
   'punawale': { name: 'Punawale', subtitle: 'High-Demand IT Residential Corridor', distanceHinjawadi: '12 Mins', distanceExpressway: '6 Mins', highlight: 'High rental demand node catering to Hinjawadi Phase 1 tech professionals.' },
@@ -22,7 +22,17 @@ const MICRO_MARKETS = {
   'hinjawadi': { name: 'Hinjawadi', subtitle: 'Rajiv Gandhi Infotech Park Epicenter', distanceHinjawadi: '0 Mins', distanceExpressway: '14 Mins', highlight: 'India’s top IT hub employing 450,000+ tech professionals across Phases 1, 2, and 3.' },
   'marunji': { name: 'Marunji', subtitle: 'Phase 2-3 Technology Expansion Corridor', distanceHinjawadi: '5 Mins', distanceExpressway: '12 Mins', highlight: 'Rapidly transforming smart node adjacent to Life Republic and Hinjawadi Phase 3.' },
   'somatane': { name: 'Somatane', subtitle: 'Expressway Toll Corridor & Valley Foothills', distanceHinjawadi: '22 Mins', distanceExpressway: '4 Mins', highlight: 'Scenic green foothills with immediate access to Pratishirdi Shirgaon and expressway toll.' },
-  'talegaon': { name: 'Talegaon', subtitle: 'Industrial Automotive Belt & Cool Climate Hub', distanceHinjawadi: '28 Mins', distanceExpressway: '6 Mins', highlight: 'Major industrial powerhouse housing JCB, General Motors, and floriculture corridors.' }
+  'talegaon': { name: 'Talegaon', subtitle: 'Industrial Automotive Belt & Cool Climate Hub', distanceHinjawadi: '28 Mins', distanceExpressway: '6 Mins', highlight: 'Major industrial powerhouse housing JCB, General Motors, and floriculture corridors.' },
+  'pcmc': { name: 'PCMC', subtitle: 'Pimpri Chinchwad Municipal Corporation Smart City Corridor', distanceHinjawadi: '15 Mins', distanceExpressway: '2 Mins', highlight: 'The high-growth municipal governance belt of Pune West; Mamurdi offers 30% more carpet area with MIVAN high-rise technology.' },
+  'chinchwad': { name: 'Chinchwad', subtitle: 'Central PCMC Commercial & Cultural Epicenter', distanceHinjawadi: '18 Mins', distanceExpressway: '5 Mins', highlight: 'PCMC’s most established residential and shopping zone; buyers choose Mamurdi for biophilic forest living and zero congestion.' },
+  'pimpri': { name: 'Pimpri', subtitle: 'Premier Business, Automobile & Healthcare District', distanceHinjawadi: '20 Mins', distanceExpressway: '7 Mins', highlight: 'High-density municipal heart; Goyal My Home Sanctuary provides a serene retreat with 72% green canopy and luxury clubhouse.' },
+  'nigdi': { name: 'Nigdi', subtitle: 'Nigdi Pradhikaran Planned Residential Master Layout', distanceHinjawadi: '18 Mins', distanceExpressway: '3 Mins', highlight: 'PCMC’s prestigious town-planned sector; direct 8-minute commute to Mamurdi via BRTS and Bhakti Shakti flyover.' },
+  'akurdi': { name: 'Akurdi', subtitle: 'Premier Educational Campus & Suburban Rail Hub', distanceHinjawadi: '17 Mins', distanceExpressway: '4 Mins', highlight: 'Home to premier colleges, Akurdi Railway Station, and Khandoba Mal corridor connecting straight to Mamurdi.' },
+  'moshi': { name: 'Moshi', subtitle: 'North PCMC Industrial & International Exhibition Belt', distanceHinjawadi: '25 Mins', distanceExpressway: '8 Mins', highlight: 'Fast-growing investment hub on Pune-Nashik highway; Mamurdi offers immediate Expressway transit and superior Hinjawadi proximity.' },
+  'bhosari': { name: 'Bhosari', subtitle: 'Industrial Powerhouse MIDC & Automotive Hub', distanceHinjawadi: '24 Mins', distanceExpressway: '9 Mins', highlight: 'Massive employment corridor; industrial executives prefer Mamurdi for clean AQI, unpolluted nature living, and executive amenities.' },
+  'pimple-saudagar': { name: 'Pimple Saudagar', subtitle: 'Premium IT Executive Residential Belt', distanceHinjawadi: '14 Mins', distanceExpressway: '10 Mins', highlight: 'High-density tech corridor; Mamurdi delivers 25% lower price point with 35,000 sq.ft clubhouse and semi-Olympic heated pool.' },
+  'pimple-nilakh': { name: 'Pimple Nilakh', subtitle: 'Luxury Mula Riverfront & Baner Border Belt', distanceHinjawadi: '12 Mins', distanceExpressway: '11 Mins', highlight: 'Elite residential enclave; Goyal My Home Sanctuary matches top-tier MIVAN structural finishes with 26-acre integrated master plan.' },
+  'thergaon': { name: 'Thergaon', subtitle: 'Central Arterial Node & Dange Chowk Connector', distanceHinjawadi: '13 Mins', distanceExpressway: '7 Mins', highlight: 'Busy commercial crossroad; buyers seeking spacious residences upgrade to Mamurdi for peaceful biophilic living.' }
 };
 
 const CONFIGURATIONS = {
@@ -174,7 +184,8 @@ function parseSlug(slugParam) {
   let matchedIntent = 'price-cost-sheet';
   let matchedPersona = 'it-professionals';
 
-  for (const mKey of Object.keys(MICRO_MARKETS)) {
+  const sortedMarkets = Object.keys(MICRO_MARKETS).sort((a, b) => b.length - a.length);
+  for (const mKey of sortedMarkets) {
     if (clean.includes(mKey)) {
       matchedMarket = mKey;
       break;
@@ -215,7 +226,7 @@ function parseSlug(slugParam) {
   };
 }
 
-function renderDirectoryHub() {
+export function renderDirectoryHub() {
   return `<!DOCTYPE html>
 <html lang="en-IN" class="scroll-smooth">
 <head>
@@ -329,14 +340,14 @@ function renderDirectoryHub() {
     <section class="mb-12 text-center max-w-3xl mx-auto">
       <span class="inline-block px-3 py-1 text-xs uppercase tracking-widest bg-[#d4af37]/10 text-[#d4af37] rounded-full border border-[#d4af37]/30 mb-4">Pune Real Estate Dominance Hub</span>
       <h1 class="text-3xl sm:text-5xl font-serif font-bold text-white mb-4">Pune Market Intelligence & Permutations Matrix</h1>
-      <p class="text-gray-300 text-base sm:text-lg">Access complete hyper-targeted analyses across 10 Micro-Markets, 8 Luxury Configurations, 8 Search Intents, and 8 Buyer Profiles for Goyal My Home Sanctuary.</p>
+      <p class="text-gray-300 text-base sm:text-lg">Access complete hyper-targeted analyses across 20 PCMC &amp; Pune Micro-Markets, 8 Luxury Configurations, 8 Search Intents, and 8 Buyer Profiles for Goyal My Home Sanctuary.</p>
     </section>
 
     <!-- Micro-Markets Grid -->
     <section class="mb-16">
       <h2 class="text-2xl font-serif font-bold text-white mb-6 flex items-center gap-3">
         <span class="w-2.5 h-6 rounded-full gold-bg"></span>
-        10 Prime West Pune & PCMC Micro-Markets
+        20 Prime PCMC &amp; West Pune Micro-Markets
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         ${Object.entries(MICRO_MARKETS).map(([k, m]) => `
@@ -673,7 +684,7 @@ ${JSON.stringify(schemaJsonLd, null, 2)}
         <li><span>/</span></li>
         <li><a href="/market" class="hover:text-[#d4af37]">Pune Real Estate</a></li>
         <li><span>/</span></li>
-        <li><a href="/${marketKey === 'mamurdi' ? 'mamurdi-real-estate-flats' : 'kiwale-real-estate-properties'}" class="hover:text-[#d4af37]">${market.name}</a></li>
+        <li><a href="/${marketKey === 'mamurdi' ? 'mamurdi-real-estate-flats' : (marketKey === 'kiwale' ? 'kiwale-real-estate-properties' : 'pcmc-real-estate-market-guide')}" class="hover:text-[#d4af37]">${market.name}</a></li>
         <li><span>/</span></li>
         <li><a href="/${configKey.startsWith('2-bhk') ? '2-bhk-flats-mamurdi' : '3-bhk-flats-mamurdi'}" class="hover:text-[#d4af37]">${config.name}</a></li>
         <li><span>/</span></li>

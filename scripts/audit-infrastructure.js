@@ -16,7 +16,12 @@ const sitemaps = [
   'sitemap-market-3.xml',
   'sitemap-market-4.xml',
   'sitemap-market-5.xml',
-  'sitemap-market-6.xml'
+  'sitemap-market-6.xml',
+  'sitemap-market-7.xml',
+  'sitemap-market-8.xml',
+  'sitemap-market-9.xml',
+  'sitemap-market-10.xml',
+  'sitemap-market-11.xml'
 ];
 
 for (const sm of sitemaps) {
@@ -31,7 +36,7 @@ for (const sm of sitemaps) {
     process.exit(1);
   }
 }
-console.log(`✓ All 10 XML sitemaps exist and have valid root XML declarations.`);
+console.log(`✓ All ${sitemaps.length} XML sitemaps exist and have valid root XML declarations.`);
 
 // 2. Check sitemap-images.xml images exist on disk
 const imgSitemap = fs.readFileSync(path.join(ROOT_DIR, 'sitemap-images.xml'), 'utf8');

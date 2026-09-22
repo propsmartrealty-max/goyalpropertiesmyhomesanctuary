@@ -36,6 +36,10 @@ async function run() {
   await testRoute('Directory Hub', 'https://goyalmyhomesanctuary.in/market', { slug: [] });
   await testRoute('Mamurdi 2 BHK Price', 'https://goyalmyhomesanctuary.in/market/mamurdi-2-bhk-classic-price-cost-sheet-it-professionals', { slug: ['mamurdi-2-bhk-classic-price-cost-sheet-it-professionals'] });
   await testRoute('Kiwale 3 BHK Plans', 'https://goyalmyhomesanctuary.in/market/kiwale-3-bhk-signature-floor-plans-brochure-families-top-schools', { slug: ['kiwale-3-bhk-signature-floor-plans-brochure-families-top-schools'] });
+  await testRoute('PCMC 2 BHK Price', 'https://goyalmyhomesanctuary.in/market/pcmc-2-bhk-classic-price-cost-sheet-it-professionals', { slug: ['pcmc-2-bhk-classic-price-cost-sheet-it-professionals'] });
+  await testRoute('Chinchwad 3 BHK Plans', 'https://goyalmyhomesanctuary.in/market/chinchwad-3-bhk-premier-floor-plans-brochure-families-top-schools', { slug: ['chinchwad-3-bhk-premier-floor-plans-brochure-families-top-schools'] });
+  await testRoute('Nigdi 2 BHK Signature', 'https://goyalmyhomesanctuary.in/market/nigdi-2-bhk-signature-expressway-connectivity-expressway-commuters', { slug: ['nigdi-2-bhk-signature-expressway-connectivity-expressway-commuters'] });
+  await testRoute('Akurdi 3 BHK Classic', 'https://goyalmyhomesanctuary.in/market/akurdi-3-bhk-classic-investment-appreciation-luxury-investors', { slug: ['akurdi-3-bhk-classic-investment-appreciation-luxury-investors'] });
   console.log('\n✓ ALL TESTS PASSED SUCCESSFULLY!\n');
 }
 

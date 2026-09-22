@@ -26,8 +26,17 @@ const URLS = [
   `https://${HOST}/blog/mamurdi-the-next-growth-corridor-pune-west`,
   `https://${HOST}/blog/goyal-my-home-sanctuary-complete-buyers-guide`,
   `https://${HOST}/blog/2bhk-3bhk-4bhk-duplex-flats-mamurdi-pune`,
-  `https://${HOST}/blog/mumbai-pune-expressway-hinjawadi-connectivity-analysis`,
-  `https://${HOST}/blog/mivan-monolithic-construction-vs-conventional-brickwork`
+  `https://${HOST}/blog/mivan-monolithic-construction-vs-conventional-brickwork`,
+  `https://${HOST}/market/pcmc-2-bhk-classic-price-cost-sheet-it-professionals`,
+  `https://${HOST}/market/chinchwad-3-bhk-premier-floor-plans-brochure-families-top-schools`,
+  `https://${HOST}/market/pimpri-2-bhk-classic-price-cost-sheet-it-professionals`,
+  `https://${HOST}/market/nigdi-3-bhk-premier-floor-plans-brochure-families-top-schools`,
+  `https://${HOST}/market/akurdi-2-bhk-classic-price-cost-sheet-it-professionals`,
+  `https://${HOST}/market/moshi-3-bhk-premier-floor-plans-brochure-families-top-schools`,
+  `https://${HOST}/market/bhosari-2-bhk-classic-price-cost-sheet-it-professionals`,
+  `https://${HOST}/market/pimple-saudagar-3-bhk-premier-floor-plans-brochure-families-top-schools`,
+  `https://${HOST}/market/pimple-nilakh-2-bhk-classic-price-cost-sheet-it-professionals`,
+  `https://${HOST}/market/thergaon-3-bhk-premier-floor-plans-brochure-families-top-schools`
 ];
 
 async function submitIndexNow() {
