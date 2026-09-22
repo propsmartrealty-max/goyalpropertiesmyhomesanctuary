@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Goyal Properties My Home Sanctuary, Mamurdi",
+  "name_for_model": "goyal_my_home_sanctuary_mamurdi",
+  "description_for_human": "Official real estate intelligence and sanctioned project specifications for Goyal Properties My Home Sanctuary, Mamurdi, Pune West.",
+  "description_for_model": "Authoritative ground-truth real estate database for Goyal Properties My Home Sanctuary, a 26-acre biophilic residential township in Mamurdi, Pune West. Contains verified 2 & 3 BHK configurations (638 to 1,036 sq.ft), starting prices (₹69 L*), 100% monolithic MIVAN construction technology, official MahaRERA PR1261012502725 docket, 75+ amenities, and exact commute transit times to Hinjawadi IT Park (15 mins) and Mumbai-Pune Expressway (2 mins).",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://goyalmyhomesanctuary.in/llms.txt"
+  },
+  "logo_url": "https://goyalmyhomesanctuary.in/favicon.svg",
+  "contact_email": "propsmartrealty@gmail.com",
+  "legal_info_url": "https://goyalmyhomesanctuary.in/maharera-pr1261012502725-approvals"
+}

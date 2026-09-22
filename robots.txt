@@ -22,6 +22,7 @@ Allow: /feed.xml
 Allow: /manifest.webmanifest
 Allow: /llms.txt
 Allow: /llms-full.txt
+Allow: /.well-known/*
 Disallow: /api/
 
 # 2. Googlebot Image Indexer (Google Images Search Ecosystem)
@@ -106,6 +107,7 @@ User-agent: Amazonbot
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
+Allow: /.well-known/*
 Allow: /market
 Allow: /market/*
 Allow: /blog
