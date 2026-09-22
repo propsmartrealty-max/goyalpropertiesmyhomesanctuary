@@ -108,6 +108,7 @@ class GoogleSEOInjector {
       `  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
       `  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n` +
       `  <link rel="alternate" type="application/rss+xml" title="The Sanctuary Journal RSS Feed" href="https://goyalmyhomesanctuary.in/feed.xml" />\n` +
+      `  <link rel="alternate" type="application/json" title="Goyal My Home Sanctuary AI Knowledge Graph" href="https://goyalmyhomesanctuary.in/ai-facts.json" />\n` +
       `  <!-- Google Ecosystem DNS Prefetch & Preconnect Engine -->\n` +
       `  <link rel="dns-prefetch" href="//fonts.googleapis.com" />\n` +
       `  <link rel="dns-prefetch" href="//fonts.gstatic.com" />\n` +
@@ -193,7 +194,7 @@ export async function onRequest(context) {
     if (is404) {
       newHeaders.set('X-Robots-Tag', 'noindex, follow');
     } else {
-      newHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
+      newHeaders.set('Link', `<${canonicalUrl}>; rel="canonical", </css/style.css>; rel=preload; as=style, <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin`);
       newHeaders.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
     }
   }

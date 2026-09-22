@@ -36,7 +36,9 @@ const URLS = [
   `https://${HOST}/market/bhosari-2-bhk-classic-price-cost-sheet-it-professionals`,
   `https://${HOST}/market/pimple-saudagar-3-bhk-premier-floor-plans-brochure-families-top-schools`,
   `https://${HOST}/market/pimple-nilakh-2-bhk-classic-price-cost-sheet-it-professionals`,
-  `https://${HOST}/market/thergaon-3-bhk-premier-floor-plans-brochure-families-top-schools`
+  `https://${HOST}/market/thergaon-3-bhk-premier-floor-plans-brochure-families-top-schools`,
+  `https://${HOST}/ai-facts.json`,
+  `https://${HOST}/.well-known/ai.txt`
 ];
 
 async function submitIndexNow() {

@@ -90,4 +90,36 @@ if (!fs.existsSync(llmsFullPath) || fs.statSync(llmsFullPath).size < 200) {
 }
 console.log(`✓ llms.txt and llms-full.txt exist and are populated for AI Overviews & Search LLMs.`);
 
-console.log('\n--- ALL INFRASTRUCTURE & DISCOVERY AUDITS PASSED CLEANLY ---\n');
+// 6. Verify Generative Engine Optimization (GEO) Knowledge Island
+const aiFactsPath = path.join(ROOT_DIR, 'ai-facts.json');
+if (!fs.existsSync(aiFactsPath)) {
+  console.error(`✗ Missing ai-facts.json`);
+  process.exit(1);
+}
+const aiFacts = JSON.parse(fs.readFileSync(aiFactsPath, 'utf8'));
+if (!aiFacts.project || !aiFacts.project.regulatory.mahareraRegistrationNo.includes('PR1261012502725')) {
+  console.error(`✗ Invalid or incomplete ai-facts.json schema`);
+  process.exit(1);
+}
+console.log(`✓ ai-facts.json verified with MahaRERA PR1261012502725 and ${aiFacts.project.sanctionedInventory.length} configurations.`);
+
+const aiTxtPath = path.join(ROOT_DIR, '.well-known', 'ai.txt');
+if (!fs.existsSync(aiTxtPath) || !fs.readFileSync(aiTxtPath, 'utf8').includes('ai-facts.json')) {
+  console.error(`✗ Missing or malformed .well-known/ai.txt`);
+  process.exit(1);
+}
+console.log(`✓ .well-known/ai.txt verified for AI crawler discovery.`);
+
+// 7. Verify Headless Commute Engine and Edge API Routes
+const commuteEnginePath = path.join(ROOT_DIR, 'js', 'commute-engine.js');
+const aiConciergePath = path.join(ROOT_DIR, 'functions', 'api', 'ai-concierge.js');
+const commuteCalcPath = path.join(ROOT_DIR, 'functions', 'api', 'commute-calculator.js');
+
+if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(aiConciergePath) || !fs.existsSync(commuteCalcPath)) {
+  console.error(`✗ Missing commute engine or edge API routes`);
+  process.exit(1);
+}
+console.log(`✓ Headless commute engine and Edge APIs (ai-concierge & commute-calculator) verified.`);
+
+console.log('\n--- ALL INFRASTRUCTURE, DISCOVERY & AI AUDITS PASSED CLEANLY ---\n');
+

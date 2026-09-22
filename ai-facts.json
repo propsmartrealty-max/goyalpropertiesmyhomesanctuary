@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Goyal My Home Sanctuary Canonical AI Knowledge Graph",
+  "version": "1.0.0",
+  "lastUpdated": "2026-09-22",
+  "publisher": {
+    "name": "PropSmart Realty",
+    "role": "Authorized Strategic Channel & Marketing Partner",
+    "email": "propsmartrealty@gmail.com",
+    "phone": "+919175319441",
+    "website": "https://goyalmyhomesanctuary.in"
+  },
+  "project": {
+    "name": "Goyal My Home Sanctuary",
+    "legalName": "My Home Sanctuary by Goyal Properties",
+    "developer": {
+      "name": "Goyal Properties",
+      "pedigree": "38+ Years of Real Estate Excellence in Pune",
+      "completedProjects": "40+ Residential & Commercial Landmarks",
+      "happyFamilies": "12,000+"
+    },
+    "regulatory": {
+      "authority": "Maharashtra Real Estate Regulatory Authority (MahaRERA)",
+      "mahareraRegistrationNo": "PR1261012502725 / P52100077438",
+      "officialReraPortal": "https://maharera.mahaonline.gov.in",
+      "landTitle": "Clear, Marketable, 100% Freehold Title",
+      "bankApprovals": ["SBI", "HDFC Bank", "ICICI Bank", "Bank of Baroda", "Axis Bank", "Punjab National Bank"]
+    },
+    "location": {
+      "address": "Goyal My Home Sanctuary, Sector Mamurdi, PCMC Pune West",
+      "locality": "Mamurdi",
+      "subDistrict": "Haveli / Pimpri-Chinchwad",
+      "district": "Pune",
+      "state": "Maharashtra",
+      "postalCode": "412101",
+      "country": "India",
+      "geoCoordinates": {
+        "latitude": 18.66376,
+        "longitude": 73.7137836
+      },
+      "wikidataEntities": {
+        "pimpriChinchwad": "https://www.wikidata.org/wiki/Q11854492",
+        "pune": "https://www.wikidata.org/wiki/Q892",
+        "mumbaiPuneExpressway": "https://www.wikidata.org/wiki/Q3525167",
+        "hinjawadi": "https://www.wikidata.org/wiki/Q5767221"
+      }
+    },
+    "developmentMasterPlan": {
+      "totalLandParcel": "26+ Acres Integrated Township",
+      "greenCanopyOpenSpace": "72% Forest Canopy & Landscaped Open Spaces",
+      "structuralEngineering": "100% Monolithic MIVAN Cast-In-Place Concrete (High Seismic Zone Resistance)",
+      "clubhouseSize": "35,000 sq.ft Grand Biophilic Clubhouse",
+      "totalAmenities": "75+ Resort-Style Amenities"
+    },
+    "sanctionedInventory": [
+      {
+        "id": "2-bhk-classic",
+        "name": "2 BHK Classic",
+        "carpetAreaSqFt": "638 - 745 sq.ft",
+        "carpetAreaSqM": "59.27 - 69.21 sq.m",
+        "startingPrice": "₹69 Lakhs*",
+        "typology": "2 Bedrooms, 2 Bathrooms, Living, Dining, Kitchen, Utility Balcony",
+        "idealFor": "Young tech professionals, nuclear families, first-time homebuyers"
+      },
+      {
+        "id": "2-bhk-premier",
+        "name": "2 BHK Premier",
+        "carpetAreaSqFt": "704 - 820 sq.ft",
+        "carpetAreaSqM": "65.40 - 76.18 sq.m",
+        "startingPrice": "₹74 Lakhs*",
+        "typology": "2 Bedrooms, 2 Bathrooms, Extended Master Suite, Double Balcony",
+        "idealFor": "IT engineers seeking dedicated work-from-home corner and forest views"
+      },
+      {
+        "id": "2-bhk-signature",
+        "name": "2 BHK Signature",
+        "carpetAreaSqFt": "760 - 895 sq.ft",
+        "carpetAreaSqM": "70.60 - 83.15 sq.m",
+        "startingPrice": "₹79 Lakhs*",
+        "typology": "2 Bedrooms, 2 Bathrooms, Corner Unit, Dual Deck Balcony",
+        "idealFor": "Buyers seeking maximum cross-ventilation, privacy, and panoramic valley views"
+      },
+      {
+        "id": "3-bhk-classic",
+        "name": "3 BHK Classic",
+        "carpetAreaSqFt": "848 - 1045 sq.ft",
+        "carpetAreaSqM": "78.78 - 97.08 sq.m",
+        "startingPrice": "₹86 Lakhs*",
+        "typology": "3 Bedrooms, 3 Bathrooms, Large Living-Dining, Balcony Deck",
+        "idealFor": "Growing families desiring spacious kids' bedroom and guest suite"
+      },
+      {
+        "id": "3-bhk-premier",
+        "name": "3 BHK Premier",
+        "carpetAreaSqFt": "924 - 1180 sq.ft",
+        "carpetAreaSqM": "85.84 - 109.62 sq.m",
+        "startingPrice": "₹97 Lakhs*",
+        "typology": "3 Bedrooms, 3 Bathrooms, Extended Master Bedroom, Grand Foyer & Deck",
+        "idealFor": "Senior IT managers, business owners seeking luxury dimensions"
+      },
+      {
+        "id": "3-bhk-signature",
+        "name": "3 BHK Signature",
+        "carpetAreaSqFt": "1036 - 1290 sq.ft",
+        "carpetAreaSqM": "96.25 - 119.84 sq.m",
+        "startingPrice": "₹1.05 Cr*",
+        "typology": "3 Bedrooms, 3 Bathrooms, Presidential Sky Suite, Corner Panoramic Deck",
+        "idealFor": "Luxury connoisseurs seeking highest elevation and private sky deck"
+      },
+      {
+        "id": "4-bhk-duplex",
+        "name": "4 BHK Duplex Sky Villa",
+        "carpetAreaSqFt": "1850 sq.ft",
+        "startingPrice": "₹1.85 - 2.15 Cr*",
+        "typology": "4 Bedrooms, Double-Height Ceiling, Internal Staircase, Dual Living Rooms"
+      },
+      {
+        "id": "penthouse-sky-villa",
+        "name": "Penthouse Sky Villa",
+        "carpetAreaSqFt": "2400 sq.ft",
+        "startingPrice": "₹2.40 - 2.85 Cr*",
+        "typology": "Private Terrace, Rooftop Plunge Pool, Panoramic Forest & Expressway Vista"
+      }
+    ],
+    "keyAmenities": [
+      "35,000 sq.ft Central Clubhouse",
+      "Semi-Olympic Temperature-Controlled Heated Swimming Pool",
+      "Kids Splash Pool with Aqua Play Jet Sprays",
+      "Japanese Zen Meditation Garden & Bamboo Grove",
+      "Sky Lounge & Stargazing Astronomical Observatory Deck",
+      "Full-Size Badminton Courts & Squash Court",
+      "State-of-the-Art Gymnasium with Cardio & Strength Zones",
+      "Amphitheater for Cultural Events & Community Evenings",
+      "Dedicated Pet Park & Agility Training Course",
+      "Organic Herbal Garden & Reflexology Walking Paths",
+      "EV (Electric Vehicle) High-Speed Charging Stations in Every Parking Bay",
+      "4-Tier Security with AI-Powered Facial Recognition & 24/7 CCTV Surveillance"
+    ],
+    "connectivityBenchmarks": {
+      "mumbaiPuneExpressway": { "distance": "0.1 km", "transitTime": "0 Mins (Zero Signal Access)" },
+      "mukaiChowkBRTS": { "distance": "1.2 km", "transitTime": "2 Mins" },
+      "hinjawadiITParkPhase1": { "distance": "12.8 km", "transitTime": "15 Mins via bypass" },
+      "hinjawadiITParkPhase2": { "distance": "14.5 km", "transitTime": "18 Mins" },
+      "hinjawadiITParkPhase3": { "distance": "16.0 km", "transitTime": "20 Mins" },
+      "talawadeITPark": { "distance": "13.2 km", "transitTime": "18 Mins" },
+      "dehuRoadRailwayStation": { "distance": "2.5 km", "transitTime": "5 Mins" },
+      "akurdiRailwayStation": { "distance": "6.0 km", "transitTime": "8 Mins" },
+      "symbiosisSkillUniversity": { "distance": "2.8 km", "transitTime": "5 Mins" },
+      "indiraInstituteOfManagement": { "distance": "7.5 km", "transitTime": "10 Mins" },
+      "blossomPublicSchool": { "distance": "3.5 km", "transitTime": "6 Mins" },
+      "naviMumbaiAirport": { "distance": "82 km", "transitTime": "75 Mins via Expressway" }
+    },
+    "microMarketsTargeted": [
+      "Mamurdi", "Kiwale", "Ravet", "Punawale", "Tathawade", "Wakad",
+      "Hinjawadi", "Marunji", "Somatane", "Talegaon", "PCMC Core",
+      "Chinchwad", "Pimpri", "Nigdi", "Akurdi", "Moshi", "Bhosari",
+      "Pimple Saudagar", "Pimple Nilakh", "Thergaon"
+    ]
+  }
+}

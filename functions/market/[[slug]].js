@@ -259,6 +259,7 @@ export function renderDirectoryHub() {
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="alternate" type="application/json" href="/ai-facts.json" title="Goyal My Home Sanctuary AI Knowledge Graph">
   <meta name="theme-color" content="#0c1410">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -414,6 +415,7 @@ export function renderDirectoryHub() {
       <p>Inquiries: <a href="mailto:propsmartrealty@gmail.com" class="text-[#d4af37] underline">propsmartrealty@gmail.com</a> | Helpline: <a href="tel:+919175319441" class="text-[#d4af37] underline">+91 91753 19441</a></p>
     </div>
   </footer>
+  <script src="/js/commute-engine.js" defer></script>
 </body>
 </html>`;
 }
@@ -635,6 +637,7 @@ function renderProgrammaticLandingPage(data) {
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="alternate" type="application/json" href="/ai-facts.json" title="Goyal My Home Sanctuary AI Knowledge Graph">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1055,6 +1058,7 @@ ${JSON.stringify(schemaJsonLd, null, 2)}
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
     </a>
   </aside>
+  <script src="/js/commute-engine.js" defer></script>
 </body>
 </html>`;
 }
