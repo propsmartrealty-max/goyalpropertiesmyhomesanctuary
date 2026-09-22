@@ -64,6 +64,17 @@ for (const file of htmlFiles) {
     }
   }
 
+  // 4. Inject headless lead-telemetry.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/lead-telemetry.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/lead-telemetry.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
   if (changed) {
     fs.writeFileSync(file, content, 'utf8');
     updatedCount++;

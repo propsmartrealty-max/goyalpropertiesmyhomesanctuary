@@ -417,6 +417,7 @@ export function renderDirectoryHub() {
   </footer>
   <script src="/js/commute-engine.js" defer></script>
   <script src="/js/international-tour-desk.js" defer></script>
+  <script src="/js/lead-telemetry.js" defer></script>
 </body>
 </html>`;
 }
@@ -449,8 +450,13 @@ function renderProgrammaticLandingPage(data) {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 18.6756,
-          "longitude": 73.6934
+          "latitude": 18.66376,
+          "longitude": 73.7137836
+        },
+        "hasMap": "https://www.google.com/maps/place/My+Home+Sanctuary/@18.66376,73.7112087,879m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bc2b1002632e9cb:0x85357e0bc6be7a2!8m2!3d18.66376!4d73.7137836!16s%2Fg%2F11yfq11z0t",
+        "area": {
+          "@type": "GeoShape",
+          "polygon": "18.6625,73.7125 18.6650,73.7125 18.6650,73.7150 18.6625,73.7150 18.6625,73.7125"
         },
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -621,9 +627,9 @@ function renderProgrammaticLandingPage(data) {
   <meta property="og:description" content="${pageDescription}">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
+  <meta property="og:image" content="https://goyalmyhomesanctuary.in/api/og?market=${encodeURIComponent(market.name)}&amp;config=${encodeURIComponent(config.name)}&amp;price=${encodeURIComponent(config.price)}">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="675">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="${pageTitle}">
   
   <!-- Twitter Card -->
@@ -632,7 +638,7 @@ function renderProgrammaticLandingPage(data) {
   <meta name="twitter:creator" content="@GoyalSanctuary">
   <meta name="twitter:title" content="${pageTitle}">
   <meta name="twitter:description" content="${pageDescription}">
-  <meta name="twitter:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
+  <meta name="twitter:image" content="https://goyalmyhomesanctuary.in/api/og?market=${encodeURIComponent(market.name)}&amp;config=${encodeURIComponent(config.name)}&amp;price=${encodeURIComponent(config.price)}">
   
   <meta name="theme-color" content="#0c1410">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -1061,6 +1067,7 @@ ${JSON.stringify(schemaJsonLd, null, 2)}
   </aside>
   <script src="/js/commute-engine.js" defer></script>
   <script src="/js/international-tour-desk.js" defer></script>
+  <script src="/js/lead-telemetry.js" defer></script>
 </body>
 </html>`;
 }

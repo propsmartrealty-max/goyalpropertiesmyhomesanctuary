@@ -20,6 +20,7 @@ const PRECACHE_ASSETS = [
   '/.well-known/ai.txt',
   '/js/commute-engine.js',
   '/js/international-tour-desk.js',
+  '/js/lead-telemetry.js',
   '/2-bhk-flats-mamurdi',
   '/3-bhk-flats-mamurdi',
   '/price-cost-sheet',

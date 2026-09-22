@@ -86,4 +86,39 @@ if (res5.status !== 200 || !data5.globalHubs[0].name.includes('Dubai')) {
 }
 console.log('  ✓ International Time Zone Desk passed cleanly.');
 
-console.log('\n✓ ALL 5 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 6: Dynamic Edge OpenGraph Generator
+const { onRequest: ogGenerator } = await import('../functions/api/og.js');
+const req6 = new Request('https://goyalmyhomesanctuary.in/api/og?market=Chinchwad&config=3+BHK+Premier&price=%E2%82%B997+Lakhs*', { method: 'GET' });
+const res6 = await ogGenerator({ request: req6, env: {} });
+const svgData = await res6.text();
+
+console.log(`[Dynamic OG Generator]: Status ${res6.status}, Type: ${res6.headers.get('Content-Type')}, Size: ${svgData.length} bytes`);
+if (res6.status !== 200 || !svgData.toLowerCase().includes('chinchwad') || !svgData.includes('PR1261012502725')) {
+  console.error('✗ Dynamic OG Generator test failed');
+  process.exit(1);
+}
+console.log('  ✓ Dynamic Edge OpenGraph Generator passed cleanly.');
+
+// Test 7: Headless Lead Telemetry & Capture Webhook
+const { onRequest: leadCapture } = await import('../functions/api/lead-capture.js');
+const req7 = new Request('https://goyalmyhomesanctuary.in/api/lead-capture', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    intent: 'whatsapp-click',
+    unitInterest: '3 BHK Signature',
+    timezone: 'Asia/Dubai'
+  })
+});
+const res7 = await leadCapture({ request: req7, env: {}, waitUntil: () => {} });
+const data7 = await res7.json();
+
+console.log(`[Lead Capture Webhook]: Status ${res7.status}, LeadId: ${data7.leadId}`);
+if (res7.status !== 200 || !data7.leadId.startsWith('LEAD-')) {
+  console.error('✗ Lead Capture Webhook test failed');
+  process.exit(1);
+}
+console.log('  ✓ Headless Lead Webhook Dispatcher passed cleanly.');
+
+console.log('\n✓ ALL 7 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+
