@@ -165,6 +165,29 @@ for (const file of htmlFiles) {
     }
   }
 
+  // 13. Inject loans.jsonld link in <head> if missing
+  if (!content.includes('href="/loans.jsonld"')) {
+    const tourTag = '<link rel="alternate" type="application/ld+json" href="/tour.jsonld" title="Goyal My Home Sanctuary 4K Virtual Tour & 3D Master Layout" />';
+    if (content.includes(tourTag)) {
+      content = content.replace(
+        tourTag,
+        `${tourTag}\n  <link rel="alternate" type="application/ld+json" href="/loans.jsonld" title="Goyal My Home Sanctuary Pre-Approved Bank Loan & APF Catalog" />`
+      );
+      changed = true;
+    }
+  }
+
+  // 14. Inject headless market-index.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/market-index.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/market-index.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
   if (changed) {
     fs.writeFileSync(file, content, 'utf8');
     updatedCount++;

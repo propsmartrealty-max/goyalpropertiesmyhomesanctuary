@@ -5,6 +5,7 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "orientation": "portrait-primary",
   "background_color": "#faf8f5",
   "theme_color": "#14110e",
@@ -35,21 +36,35 @@
       "purpose": "any maskable"
     }
   ],
+  "share_target": {
+    "action": "/market",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
   "shortcuts": [
     {
-      "name": "View Residences",
-      "url": "/#residences",
-      "description": "Inspect 2 & 3 BHK CAD floor plans"
+      "name": "Price & Cost Sheet",
+      "url": "/price-cost-sheet",
+      "description": "Official RERA pricing, cost breakup & payment schedules"
     },
     {
-      "name": "Schedule VIP Visit",
-      "url": "/#visit-modal",
-      "description": "Book a site tour with complimentary cab"
+      "name": "Floor Plan Studio",
+      "url": "/floor-plans-brochure",
+      "description": "Inspect 2 & 3 BHK CAD blueprints and room dimensions"
     },
     {
-      "name": "EMI Calculator",
-      "url": "/#calculator",
-      "description": "Calculate monthly home loan amortizations"
+      "name": "PCMC Market Hub",
+      "url": "/market",
+      "description": "Explore 20 micro-markets and commute benchmarks"
+    },
+    {
+      "name": "Direct WhatsApp",
+      "url": "https://api.whatsapp.com/send?phone=919175319441&text=Hi%20PropSmart%20Realty%2C%20I%20would%20like%20to%20inquire%20about%20Goyal%20My%20Home%20Sanctuary%20Mamurdi.",
+      "description": "Connect with authorized sales director"
     }
   ],
   "screenshots": [

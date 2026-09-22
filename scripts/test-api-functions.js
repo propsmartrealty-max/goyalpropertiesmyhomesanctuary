@@ -258,6 +258,19 @@ if (res14.status !== 200 || data14.status !== 'healthy' || data14.services.progr
 }
 console.log('  ✓ Edge Synthetic Health Probe Endpoint passed cleanly.');
 
-console.log('\n✓ ALL 14 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 15: PCMC Market Appreciation & Rental Yield Index API
+const { onRequestGet: marketIndexGet } = await import('../functions/api/market-index.js');
+const req15 = new Request('https://goyalmyhomesanctuary.in/api/market-index?type=2bhk&price=6900000');
+const res15 = await marketIndexGet({ request: req15 });
+const data15 = await res15.json();
+
+console.log(`[Market Index API]: Status ${res15.status}, Gross Yield: ${data15.rental_yield_analysis.gross_rental_yield}, 10-Yr Multiple: ${data15.ten_year_wealth_projection.total_investment_multiple}`);
+if (res15.status !== 200 || !data15.rental_yield_analysis.gross_rental_yield || !data15.cagr_track_record.historical_milestones) {
+  console.error('✗ Market Index API test failed');
+  process.exit(1);
+}
+console.log('  ✓ PCMC Market Capital Growth & Rental Yield Engine passed cleanly.');
+
+console.log('\n✓ ALL 15 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 

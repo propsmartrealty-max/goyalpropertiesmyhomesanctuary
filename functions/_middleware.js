@@ -206,6 +206,7 @@ export async function onRequest(context) {
 
   // Server-Timing & Edge Telemetry
   newHeaders.set('Server-Timing', `worker;dur=${duration};desc="Cloudflare SEO Worker", edge;dur=2.0`);
+  newHeaders.set('Cache-Status', isBot ? '"Cloudflare"; hit; ttl=86400' : '"Cloudflare"; fwd=request');
   newHeaders.set('X-Edge-Node', request.cf?.colo || 'PUN');
   newHeaders.set('X-Edge-Country', request.cf?.country || 'IN');
   newHeaders.set('X-Edge-Speed-Tier', 'Flagship-HTTP3');

@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FinancialProduct",
+      "@id": "https://goyalmyhomesanctuary.in/loans.jsonld#sbi-home-loan",
+      "name": "SBI Pre-Approved Home Loan for Goyal My Home Sanctuary",
+      "description": "State Bank of India approved project finance (APF) enabling fast-track home loan sanction with up to 80% to 85% Loan-to-Value (LTV) for sanctioned 2 BHK and 3 BHK residences in Mamurdi, PCMC.",
+      "provider": {
+        "@type": "BankOrCreditUnion",
+        "name": "State Bank of India (SBI)"
+      },
+      "annualPercentageRate": "8.50%",
+      "feesAndCommissionsSpecification": "Zero processing fee for festive/launch approvals under special builder subvention windows.",
+      "url": "https://goyalmyhomesanctuary.in/price-cost-sheet",
+      "itemOffered": {
+        "@type": "LoanOrCredit",
+        "loanType": "https://schema.org/MortgageLoan",
+        "currency": "INR",
+        "gracePeriod": "P3Y",
+        "loanTerm": "P30Y"
+      }
+    },
+    {
+      "@type": "FinancialProduct",
+      "@id": "https://goyalmyhomesanctuary.in/loans.jsonld#hdfc-home-loan",
+      "name": "HDFC Bank Approved Project Finance (APF)",
+      "description": "Pre-approved housing finance by HDFC Bank with flexible construction-linked milestone disbursement for Phase 1 Towers A & B (MahaRERA PR1261012502725).",
+      "provider": {
+        "@type": "BankOrCreditUnion",
+        "name": "HDFC Bank"
+      },
+      "annualPercentageRate": "8.60%",
+      "url": "https://goyalmyhomesanctuary.in/price-cost-sheet"
+    },
+    {
+      "@type": "FinancialProduct",
+      "@id": "https://goyalmyhomesanctuary.in/loans.jsonld#icici-home-loan",
+      "name": "ICICI Bank Express Home Loan Sanction",
+      "description": "Digital home loan pre-approvals for salaried IT professionals working in Hinjawadi IT Park and Talawade MIDC, with customized step-up EMI options.",
+      "provider": {
+        "@type": "BankOrCreditUnion",
+        "name": "ICICI Bank"
+      },
+      "annualPercentageRate": "8.65%",
+      "url": "https://goyalmyhomesanctuary.in/price-cost-sheet"
+    }
+  ]
+}
