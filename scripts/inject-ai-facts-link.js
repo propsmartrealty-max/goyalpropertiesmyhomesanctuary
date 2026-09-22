@@ -53,6 +53,17 @@ for (const file of htmlFiles) {
     }
   }
 
+  // 3. Inject headless international-tour-desk.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/international-tour-desk.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/international-tour-desk.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
   if (changed) {
     fs.writeFileSync(file, content, 'utf8');
     updatedCount++;

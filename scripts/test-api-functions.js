@@ -1,5 +1,7 @@
 import { onRequest as aiConcierge } from '../functions/api/ai-concierge.js';
 import { onRequest as commuteCalc } from '../functions/api/commute-calculator.js';
+import { onRequest as resoFeed } from '../functions/api/reso-feed.js';
+import { onRequest as timezoneDesk } from '../functions/api/timezone-desk.js';
 
 console.log('\n--- Testing Edge API Functions ---');
 
@@ -56,4 +58,32 @@ if (res3.status !== 200 || data3.totalDestinationsCalculated < 8) {
 }
 console.log('  ✓ Commute Calculator passed cleanly.');
 
-console.log('\n✓ ALL EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 4: RESO Data Dictionary v1.7 Property Feed
+const req4 = new Request('https://goyalmyhomesanctuary.in/api/reso-feed', { method: 'GET' });
+const res4 = await resoFeed({ request: req4, env: {} });
+const data4 = await res4.json();
+
+console.log(`[RESO Property Feed]: Status ${res4.status}, Listings: ${data4['@odata.count']}`);
+console.log(`  Listing 1: ${data4.value[0].ListingKey} (${data4.value[0].LivingAreaRange}) - ₹${data4.value[0].ListPrice}`);
+
+if (res4.status !== 200 || data4['@odata.count'] < 6 || !res4.headers.get('X-RESO-Data-Dictionary')) {
+  console.error('✗ RESO Property Feed test failed');
+  process.exit(1);
+}
+console.log('  ✓ RESO v1.7 Syndication Feed passed cleanly.');
+
+// Test 5: International Time Zone Desk
+const req5 = new Request('https://goyalmyhomesanctuary.in/api/timezone-desk?hub=dubai', { method: 'GET' });
+const res5 = await timezoneDesk({ request: req5, env: {} });
+const data5 = await res5.json();
+
+console.log(`[Time Zone Desk]: Status ${res5.status}, Current IST: ${data5.currentTimeIST}`);
+console.log(`  Dubai Window: ${data5.globalHubs[0].convenientWindowIST}`);
+
+if (res5.status !== 200 || !data5.globalHubs[0].name.includes('Dubai')) {
+  console.error('✗ Time Zone Desk test failed');
+  process.exit(1);
+}
+console.log('  ✓ International Time Zone Desk passed cleanly.');
+
+console.log('\n✓ ALL 5 EDGE API TESTS PASSED SUCCESSFULLY!\n');

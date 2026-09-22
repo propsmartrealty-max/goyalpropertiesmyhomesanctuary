@@ -416,6 +416,7 @@ export function renderDirectoryHub() {
     </div>
   </footer>
   <script src="/js/commute-engine.js" defer></script>
+  <script src="/js/international-tour-desk.js" defer></script>
 </body>
 </html>`;
 }
@@ -1059,6 +1060,7 @@ ${JSON.stringify(schemaJsonLd, null, 2)}
     </a>
   </aside>
   <script src="/js/commute-engine.js" defer></script>
+  <script src="/js/international-tour-desk.js" defer></script>
 </body>
 </html>`;
 }

@@ -110,16 +110,23 @@ if (!fs.existsSync(aiTxtPath) || !fs.readFileSync(aiTxtPath, 'utf8').includes('a
 }
 console.log(`✓ .well-known/ai.txt verified for AI crawler discovery.`);
 
-// 7. Verify Headless Commute Engine and Edge API Routes
+// 7. Verify Headless Engines and Edge API Routes
 const commuteEnginePath = path.join(ROOT_DIR, 'js', 'commute-engine.js');
+const tourDeskPath = path.join(ROOT_DIR, 'js', 'international-tour-desk.js');
 const aiConciergePath = path.join(ROOT_DIR, 'functions', 'api', 'ai-concierge.js');
 const commuteCalcPath = path.join(ROOT_DIR, 'functions', 'api', 'commute-calculator.js');
+const resoFeedPath = path.join(ROOT_DIR, 'functions', 'api', 'reso-feed.js');
+const timezoneDeskPath = path.join(ROOT_DIR, 'functions', 'api', 'timezone-desk.js');
+const googleDispatcherPath = path.join(ROOT_DIR, 'scripts', 'google-indexing-dispatcher.js');
 
-if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(aiConciergePath) || !fs.existsSync(commuteCalcPath)) {
-  console.error(`✗ Missing commute engine or edge API routes`);
+if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(tourDeskPath) || !fs.existsSync(aiConciergePath) || 
+    !fs.existsSync(commuteCalcPath) || !fs.existsSync(resoFeedPath) || !fs.existsSync(timezoneDeskPath) ||
+    !fs.existsSync(googleDispatcherPath)) {
+  console.error(`✗ Missing headless engines, edge API routes or Google dispatcher`);
   process.exit(1);
 }
-console.log(`✓ Headless commute engine and Edge APIs (ai-concierge & commute-calculator) verified.`);
+console.log(`✓ Headless commute & international tour engines, Edge APIs (ai-concierge, commute-calculator, reso-feed, timezone-desk), and Google Indexing dispatcher verified.`);
 
-console.log('\n--- ALL INFRASTRUCTURE, DISCOVERY & AI AUDITS PASSED CLEANLY ---\n');
+console.log('\n--- ALL INFRASTRUCTURE, DISCOVERY, AI & GOOGLE AUDITS PASSED CLEANLY ---\n');
+
 
