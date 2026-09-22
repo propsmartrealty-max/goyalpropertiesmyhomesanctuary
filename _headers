@@ -201,6 +201,15 @@
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400
 
+/*.xml.gz
+  Content-Type: application/gzip
+  Cache-Control: public, max-age=86400
+
+/*.jsonld
+  Content-Type: application/ld+json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
 /market
   Cache-Control: public, max-age=0, s-maxage=604800, stale-while-revalidate=86400
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1

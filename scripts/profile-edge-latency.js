@@ -25,7 +25,11 @@ const ENDPOINTS_TO_PROFILE = [
   { name: "/api/construction-milestones", path: "../functions/api/construction-milestones.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/construction-milestones") },
   { name: "/api/amenity-capacity", path: "../functions/api/amenity-capacity.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/amenity-capacity") },
   { name: "/api/portfolio-optimizer", path: "../functions/api/portfolio-optimizer.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/portfolio-optimizer") },
-  { name: "/api/verify-lead", path: "../functions/api/verify-lead.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/verify-lead?leadId=L1&phone=9822033333") }
+  { name: "/api/verify-lead", path: "../functions/api/verify-lead.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/verify-lead?leadId=L1&phone=9822033333") },
+  { name: "/api/legal-audit", path: "../functions/api/legal-audit.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/legal-audit") },
+  { name: "/api/queue-token", path: "../functions/api/queue-token.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/queue-token") },
+  { name: "/api/microclimate", path: "../functions/api/microclimate.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/microclimate") },
+  { name: "/api/whatsapp-router", path: "../functions/api/whatsapp-router.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/whatsapp-router?intent=pricing&unit=2bhk-classic") }
 ];
 
 export async function profileEdgeLatency() {

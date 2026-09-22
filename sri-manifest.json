@@ -55,6 +55,10 @@
     "sizeBytes": 1881,
     "sri": "sha384-PI20mfOtevkBE29MmnG4aS9QsXldgDdujpxyuzlfRkdfJp96W8CkV1aUtc3Uk+V+"
   },
+  "js/microclimate-engine.js": {
+    "sizeBytes": 1053,
+    "sri": "sha384-hF2waRWiQ7IB0GZkEeCyo4qzVFsjK/QRky4WXzLBxGBPEanelRvnkbLYg/Yh3iXD"
+  },
   "js/milestone-engine.js": {
     "sizeBytes": 1373,
     "sri": "sha384-SzYYOpG+kXU2Acf9/qm4dqyhIRz3SQqw3MINxBvmKMc4wgOTtCtehBGcCAjRaPfn"

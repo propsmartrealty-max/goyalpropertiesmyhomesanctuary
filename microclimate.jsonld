@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Place",
+      "@id": "https://goyalmyhomesanctuary.com/#microclimate-environment",
+      "name": "Microclimate & Environmental Sanctuary Zone: Mamurdi PCMC",
+      "description": "Biophilic environmental microclimate profile for Goyal My Home Sanctuary, featuring a 72% green canopy, Sahyadri wind corridor cooling, low PM2.5 air index, and natural acoustic insulation.",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.66376,
+        "longitude": 73.7137836,
+        "elevation": "570 meters AMSL"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Average Air Quality Index (AQI)",
+          "value": "48 - 62 PM2.5",
+          "description": "Satisfactory / Clean Green Zone (35% to 55% cleaner air than central Pune and Hinjawadi junction nodes)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Microclimate Temperature Differential",
+          "value": "-2.8°C lower ambient temperature",
+          "description": "Urban heat island mitigation achieved through dense Miyawaki forest cover and natural valley breezes"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Ambient Acoustic Sound Levels",
+          "value": "< 48 dB (Decibels)",
+          "description": "Serene residential acoustic profile buffered by layered forest canopy versus 72+ dB at highway choke points"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Open Green Canopy Ratio",
+          "value": "72%",
+          "description": "Dedicated open-to-sky landscaping with 1,250 native drought-tolerant trees generating high oxygen output"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Prevailing Wind Flow Corridor",
+          "value": "Sahyadri Foothills South-West to North-East Breeze",
+          "description": "Continuous natural fresh air circulation from the Western Ghats foothill ridge"
+        }
+      ]
+    }
+  ]
+}

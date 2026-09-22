@@ -396,6 +396,32 @@ if (res24.status !== 200 || !data24.token_code || !data24.token_code.startsWith(
 }
 console.log('  ✓ Smart Priority Token & Queue Engine passed cleanly.');
 
-console.log('\n✓ ALL 24 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 25: Microclimate & AQI Telemetry API
+const { onRequestGet: microclimateGet } = await import('../functions/api/microclimate.js');
+const req25 = new Request('https://goyalmyhomesanctuary.in/api/microclimate?location=Wakad');
+const res25 = await microclimateGet({ request: req25 });
+const data25 = await res25.json();
+
+console.log(`[Microclimate API]: Status ${res25.status}, Sanctuary AQI: ${data25.sanctuary_air_metrics?.aqi_pm25}, Cooling: ${data25.health_advantage?.summer_cooling_differential}`);
+if (res25.status !== 200 || !data25.sanctuary_air_metrics || data25.sanctuary_air_metrics.aqi_pm25 !== 52) {
+  console.error('✗ Microclimate API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Microclimate & Clean Air Telemetry Engine passed cleanly.');
+
+// Test 26: Context-Aware WhatsApp Router API
+const { onRequestGet: whatsappRouterGet } = await import('../functions/api/whatsapp-router.js');
+const req26 = new Request('https://goyalmyhomesanctuary.in/api/whatsapp-router?intent=cost_sheet&unit=2bhk-classic');
+const res26 = await whatsappRouterGet({ request: req26 });
+const data26 = await res26.json();
+
+console.log(`[WhatsApp Router API]: Status ${res26.status}, Phone: ${data26.target_phone}, Link: ${data26.whatsapp_url?.slice(0, 60)}...`);
+if (res26.status !== 200 || !data26.whatsapp_url || !data26.whatsapp_url.includes('api.whatsapp.com')) {
+  console.error('✗ WhatsApp Router API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Context-Aware WhatsApp Concierge Router passed cleanly.');
+
+console.log('\n✓ ALL 26 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 

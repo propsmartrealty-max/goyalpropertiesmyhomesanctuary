@@ -23,6 +23,7 @@ const SCHEMAS_TO_VALIDATE = [
   { file: 'developer.jsonld', expectedType: 'Corporation', expectedNodes: 1 },
   { file: 'legal.jsonld', expectedType: 'GovernmentPermit', expectedNodes: 2 },
   { file: 'breadcrumbs.jsonld', expectedType: 'BreadcrumbList', expectedNodes: 1 },
+  { file: 'microclimate.jsonld', expectedType: 'Place', expectedNodes: 1 },
   { file: 'ai-facts.json', isAiFacts: true }
 ];
 
