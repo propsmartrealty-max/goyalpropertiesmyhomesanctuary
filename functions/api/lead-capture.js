@@ -2,7 +2,11 @@
  * Cloudflare Pages Function: functions/api/lead-capture.js
  * 
  * Headless Multi-Channel Lead Webhook & Telemetry Dispatcher
- * Zero UI/UX Impact - Captures intent asynchronously via navigator.sendBeacon
+ * Features:
+ * - Edge Bot & Honeypot Spam Defense
+ * - Multi-Endpoint Dispatcher (CRM Webhook, Slack Webhook, Telegram Bot API)
+ * - Cloudflare KV Edge Persistence (env.SANCTUARY_KV)
+ * - Zero UI/UX Impact: Non-blocking execution via context.waitUntil & navigator.sendBeacon
  */
 
 export async function onRequest(context) {
@@ -73,8 +77,11 @@ export async function onRequest(context) {
     timestamp: timestamp,
     intent: leadData.intent || 'general-inquiry',
     unitInterest: leadData.unitInterest || 'Not Specified',
+    vastuPreference: leadData.vastuPreference || 'Standard Authentic Vastu',
+    commuteDestination: leadData.commuteDestination || 'Not Specified',
     sourceUrl: leadData.sourceUrl || request.headers.get('referer') || 'https://goyalmyhomesanctuary.in/',
     userAgent: request.headers.get('user-agent') || '',
+    currency: leadData.currency || 'INR',
     geo: {
       country: cf.country || leadData.country || 'IN',
       city: cf.city || 'Unknown',
@@ -89,19 +96,66 @@ export async function onRequest(context) {
     }
   };
 
-  // Asynchronous downstream dispatch to CRM / Google Sheet webhook if configured
+  const dispatchPromises = [];
+
+  // 1. Cloudflare KV Edge State Persistence
+  if (env && env.SANCTUARY_KV) {
+    dispatchPromises.push(
+      env.SANCTUARY_KV.put(`lead:${leadId}`, JSON.stringify(enrichedLead), {
+        expirationTtl: 86400 * 30 // 30-day edge retention
+      }).catch(() => {})
+    );
+  }
+
+  // 2. CRM Webhook (HubSpot, Salesforce, Make, Zapier, Google Sheets)
   if (env && env.CRM_WEBHOOK_URL) {
-    try {
-      context.waitUntil(
-        fetch(env.CRM_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(enrichedLead)
+    dispatchPromises.push(
+      fetch(env.CRM_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(enrichedLead)
+      }).catch(() => {})
+    );
+  }
+
+  // 3. Slack Channel Dispatcher
+  if (env && env.SLACK_WEBHOOK_URL) {
+    const slackPayload = {
+      text: `🏡 *New Lead Alert - Goyal My Home Sanctuary*\n*ID*: \`${leadId}\`\n*Unit*: ${enrichedLead.unitInterest}\n*Intent*: ${enrichedLead.intent}\n*Location*: ${enrichedLead.geo.city}, ${enrichedLead.geo.country} (${enrichedLead.geo.timezone})`
+    };
+    dispatchPromises.push(
+      fetch(env.SLACK_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(slackPayload)
+      }).catch(() => {})
+    );
+  }
+
+  // 4. Telegram Sales Alert Bot
+  if (env && env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID) {
+    const telegramText = `🏡 *New Lead - Sanctuary Mamurdi*\n` +
+      `*ID*: \`${leadId}\`\n` +
+      `*Unit*: ${enrichedLead.unitInterest}\n` +
+      `*City*: ${enrichedLead.geo.city}, ${enrichedLead.geo.country}\n` +
+      `*Timezone*: ${enrichedLead.geo.timezone}`;
+
+    const tgUrl = `https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`;
+    dispatchPromises.push(
+      fetch(tgUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: env.TELEGRAM_CHAT_ID,
+          text: telegramText,
+          parse_mode: 'Markdown'
         })
-      );
-    } catch {
-      // Non-blocking catch
-    }
+      }).catch(() => {})
+    );
+  }
+
+  if (dispatchPromises.length > 0 && context.waitUntil) {
+    context.waitUntil(Promise.all(dispatchPromises));
   }
 
   return new Response(JSON.stringify({

@@ -141,6 +141,50 @@ if (res8.status !== 200 || data8.rating !== 'good') {
 }
 console.log('  ✓ Real User Metrics Core Web Vitals Endpoint passed cleanly.');
 
-console.log('\n✓ ALL 8 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 9: Live Inventory & Cloudflare KV API
+const { onRequestGet: inventoryGet, onRequestPost: inventoryPost } = await import('../functions/api/inventory.js');
+const req9Get = new Request('https://goyalmyhomesanctuary.in/api/inventory?type=3bhk');
+const res9Get = await inventoryGet({ request: req9Get, env: {} });
+const data9Get = await res9Get.json();
+
+console.log(`[Live Inventory GET]: Status ${res9Get.status}, 3 BHK Units: ${data9Get.total_matching_units}, Available: ${data9Get.total_available_units}`);
+if (res9Get.status !== 200 || data9Get.total_matching_units !== 3) {
+  console.error('✗ Inventory GET test failed');
+  process.exit(1);
+}
+
+const req9Post = new Request('https://goyalmyhomesanctuary.in/api/inventory', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    unit_code: '3BHK-SIG',
+    customer_name: 'NRI Investor Dubai',
+    customer_phone: '+971501234567'
+  })
+});
+const res9Post = await inventoryPost({ request: req9Post, env: {} });
+const data9Post = await res9Post.json();
+
+console.log(`[Live Inventory POST]: Status ${res9Post.status}, Hold ID: ${data9Post.hold_id}`);
+if (res9Post.status !== 200 || !data9Post.hold_id.startsWith('HOLD-')) {
+  console.error('✗ Inventory POST test failed');
+  process.exit(1);
+}
+console.log('  ✓ Live Inventory & KV State Endpoint passed cleanly.');
+
+// Test 10: Solar Sunlight Trajectory & Vastu Compliance API
+const { onRequestGet: solarVastuGet } = await import('../functions/api/solar-vastu.js');
+const req10 = new Request('https://goyalmyhomesanctuary.in/api/solar-vastu?facing=east');
+const res10 = await solarVastuGet({ request: req10, env: {} });
+const data10 = await res10.json();
+
+console.log(`[Solar & Vastu API]: Status ${res10.status}, Daylight: ${data10.solar_metrics.daylight_hours}h, Sunrise: ${data10.solar_metrics.sunrise}, Score: ${data10.vastu_analysis.composite_score}`);
+if (res10.status !== 200 || !data10.vastu_analysis.composite_score.includes('98.7%')) {
+  console.error('✗ Solar & Vastu test failed');
+  process.exit(1);
+}
+console.log('  ✓ Solar Trajectory & Vedic Vastu Engine passed cleanly.');
+
+console.log('\n✓ ALL 10 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 

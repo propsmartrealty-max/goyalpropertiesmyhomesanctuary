@@ -39,7 +39,9 @@ const URLS = [
   `https://${HOST}/market/thergaon-3-bhk-premier-floor-plans-brochure-families-top-schools`,
   `https://${HOST}/ai-facts.json`,
   `https://${HOST}/.well-known/ai.txt`,
-  `https://${HOST}/sitemap-market-images.xml`
+  `https://${HOST}/sitemap-market-images.xml`,
+  `https://${HOST}/api/inventory`,
+  `https://${HOST}/api/solar-vastu`
 ];
 
 async function submitIndexNow() {

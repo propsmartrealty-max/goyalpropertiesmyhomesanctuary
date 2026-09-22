@@ -86,6 +86,17 @@ for (const file of htmlFiles) {
     }
   }
 
+  // 6. Inject headless solar-vastu-engine.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/solar-vastu-engine.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/solar-vastu-engine.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
   if (changed) {
     fs.writeFileSync(file, content, 'utf8');
     updatedCount++;
