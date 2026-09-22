@@ -97,6 +97,40 @@ for (const file of htmlFiles) {
     }
   }
 
+  // 7. Inject catalog.jsonld link in <head> if missing
+  if (!content.includes('href="/catalog.jsonld"')) {
+    const aiFactsTag = '<link rel="alternate" type="application/json" href="/ai-facts.json" title="Goyal My Home Sanctuary AI Knowledge Graph" />';
+    if (content.includes(aiFactsTag)) {
+      content = content.replace(
+        aiFactsTag,
+        `${aiFactsTag}\n  <link rel="alternate" type="application/ld+json" href="/catalog.jsonld" title="Goyal My Home Sanctuary Sanctioned Offer Catalog" />`
+      );
+      changed = true;
+    }
+  }
+
+  // 8. Inject headless currency-engine.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/currency-engine.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/currency-engine.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
+  // 9. Inject headless vector-search.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/vector-search.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/vector-search.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
   if (changed) {
     fs.writeFileSync(file, content, 'utf8');
     updatedCount++;

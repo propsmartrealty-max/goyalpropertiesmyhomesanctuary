@@ -1,0 +1,475 @@
+{
+  "version": "1.0",
+  "dimensions": [
+    "budget_friendly",
+    "luxury_premium",
+    "it_commute",
+    "expressway_transit",
+    "greenery_nature",
+    "vastu_compliance",
+    "family_schools",
+    "investment_growth",
+    "spacious_carpet",
+    "high_rise_view",
+    "clubhouse_sports",
+    "mivan_durability",
+    "retail_convenience",
+    "peaceful_tranquility",
+    "nri_appeal",
+    "rental_yield"
+  ],
+  "total_concepts": 16,
+  "concepts": {
+    "2bhk-classic": {
+      "name": "2 BHK Classic (638 sq.ft / ₹69 L*)",
+      "type": "unit",
+      "tags": [
+        "2bhk",
+        "entry",
+        "budget",
+        "it-pros",
+        "first-home"
+      ],
+      "vector": [
+        0.3163,
+        0.0666,
+        0.2997,
+        0.283,
+        0.2331,
+        0.2664,
+        0.2497,
+        0.2997,
+        0.1332,
+        0.1665,
+        0.2497,
+        0.2997,
+        0.2331,
+        0.2497,
+        0.1998,
+        0.3063
+      ]
+    },
+    "2bhk-premier": {
+      "name": "2 BHK Premier (704 sq.ft / ₹76 L*)",
+      "type": "unit",
+      "tags": [
+        "2bhk",
+        "balanced",
+        "families",
+        "balcony"
+      ],
+      "vector": [
+        0.256,
+        0.144,
+        0.2816,
+        0.272,
+        0.24,
+        0.272,
+        0.272,
+        0.272,
+        0.192,
+        0.208,
+        0.256,
+        0.288,
+        0.24,
+        0.256,
+        0.224,
+        0.2816
+      ]
+    },
+    "2bhk-signature": {
+      "name": "2 BHK Signature (760 sq.ft / ₹82 L*)",
+      "type": "unit",
+      "tags": [
+        "2bhk",
+        "corner",
+        "luxury-2bhk",
+        "dual-balcony"
+      ],
+      "vector": [
+        0.1993,
+        0.2146,
+        0.2606,
+        0.2698,
+        0.2606,
+        0.2759,
+        0.2606,
+        0.2606,
+        0.2299,
+        0.2452,
+        0.2606,
+        0.2759,
+        0.2299,
+        0.2606,
+        0.2299,
+        0.2514
+      ]
+    },
+    "3bhk-classic": {
+      "name": "3 BHK Classic (848 sq.ft / ₹86 L*)",
+      "type": "unit",
+      "tags": [
+        "3bhk",
+        "value-3bhk",
+        "growing-family",
+        "spacious"
+      ],
+      "vector": [
+        0.182,
+        0.2275,
+        0.2578,
+        0.2578,
+        0.2427,
+        0.2669,
+        0.2882,
+        0.2669,
+        0.2578,
+        0.2275,
+        0.2578,
+        0.273,
+        0.2427,
+        0.2487,
+        0.2427,
+        0.2427
+      ]
+    },
+    "3bhk-premier": {
+      "name": "3 BHK Premier (924 sq.ft / ₹94 L*)",
+      "type": "unit",
+      "tags": [
+        "3bhk",
+        "executive",
+        "corner",
+        "canopy-view"
+      ],
+      "vector": [
+        0.1313,
+        0.2568,
+        0.2393,
+        0.2481,
+        0.2568,
+        0.2685,
+        0.2773,
+        0.2568,
+        0.2685,
+        0.2568,
+        0.2627,
+        0.2627,
+        0.2393,
+        0.2568,
+        0.2568,
+        0.2276
+      ]
+    },
+    "3bhk-signature": {
+      "name": "3 BHK Signature (1036 sq.ft / ₹1.05 Cr*)",
+      "type": "unit",
+      "tags": [
+        "3bhk",
+        "flagship",
+        "luxury",
+        "panoramic-view",
+        "nri"
+      ],
+      "vector": [
+        0.07,
+        0.2742,
+        0.2238,
+        0.2462,
+        0.2658,
+        0.2742,
+        0.2658,
+        0.2518,
+        0.2742,
+        0.2742,
+        0.2658,
+        0.2658,
+        0.2378,
+        0.2574,
+        0.2658,
+        0.2099
+      ]
+    },
+    "mamurdi": {
+      "name": "Mamurdi (Project Epicenter)",
+      "type": "location",
+      "tags": [
+        "mamurdi",
+        "expressway",
+        "forest",
+        "peaceful",
+        "hub"
+      ],
+      "vector": [
+        0.236,
+        0.2083,
+        0.2555,
+        0.2721,
+        0.2721,
+        0.2638,
+        0.2499,
+        0.2721,
+        0.2221,
+        0.236,
+        0.2499,
+        0.2638,
+        0.2221,
+        0.2721,
+        0.236,
+        0.2555
+      ]
+    },
+    "kiwale": {
+      "name": "Kiwale (Adjacent Arterial Corridor)",
+      "type": "location",
+      "tags": [
+        "kiwale",
+        "bypass",
+        "connectivity",
+        "ravet-annex"
+      ],
+      "vector": [
+        0.2459,
+        0.195,
+        0.2699,
+        0.2849,
+        0.2549,
+        0.2639,
+        0.2549,
+        0.2759,
+        0.225,
+        0.225,
+        0.2399,
+        0.2699,
+        0.2339,
+        0.2549,
+        0.225,
+        0.2639
+      ]
+    },
+    "ravet": {
+      "name": "Ravet (BRTS & Educational Hub)",
+      "type": "location",
+      "tags": [
+        "ravet",
+        "brts",
+        "schools",
+        "colleges"
+      ],
+      "vector": [
+        0.2142,
+        0.2204,
+        0.2693,
+        0.2754,
+        0.2295,
+        0.2601,
+        0.2816,
+        0.2693,
+        0.2295,
+        0.2295,
+        0.251,
+        0.2754,
+        0.2601,
+        0.2295,
+        0.2295,
+        0.2601
+      ]
+    },
+    "punawale": {
+      "name": "Punawale (IT Commuter Pocket)",
+      "type": "location",
+      "tags": [
+        "punawale",
+        "hinjawadi-proximity",
+        "rental"
+      ],
+      "vector": [
+        0.2403,
+        0.2083,
+        0.2948,
+        0.2627,
+        0.2179,
+        0.2563,
+        0.2627,
+        0.2723,
+        0.2243,
+        0.2243,
+        0.2499,
+        0.2723,
+        0.2563,
+        0.2243,
+        0.2243,
+        0.2883
+      ]
+    },
+    "wakad": {
+      "name": "Wakad (Central High-Density Commercial/IT Hub)",
+      "type": "location",
+      "tags": [
+        "wakad",
+        "metro",
+        "commercial",
+        "high-density"
+      ],
+      "vector": [
+        0.1588,
+        0.27,
+        0.3017,
+        0.2382,
+        0.1588,
+        0.2541,
+        0.2795,
+        0.2604,
+        0.2223,
+        0.2382,
+        0.2604,
+        0.2795,
+        0.3017,
+        0.1588,
+        0.2541,
+        0.2922
+      ]
+    },
+    "hinjawadi": {
+      "name": "Hinjawadi IT Park (Phases 1, 2, 3)",
+      "type": "location",
+      "tags": [
+        "hinjawadi",
+        "tech-park",
+        "tcs",
+        "infosys",
+        "wipro"
+      ],
+      "vector": [
+        0.179,
+        0.2604,
+        0.3255,
+        0.2278,
+        0.179,
+        0.2441,
+        0.2604,
+        0.2767,
+        0.2116,
+        0.2116,
+        0.2604,
+        0.2767,
+        0.2929,
+        0.1627,
+        0.2539,
+        0.3092
+      ]
+    },
+    "baner": {
+      "name": "Baner (High-Street Dining & Commercial Corridor)",
+      "type": "location",
+      "tags": [
+        "baner",
+        "luxury",
+        "high-street",
+        "lifestyle"
+      ],
+      "vector": [
+        0.0917,
+        0.2904,
+        0.269,
+        0.2384,
+        0.1834,
+        0.2507,
+        0.269,
+        0.2598,
+        0.2507,
+        0.2598,
+        0.269,
+        0.2751,
+        0.2996,
+        0.1834,
+        0.269,
+        0.2598
+      ]
+    },
+    "pcmc-core": {
+      "name": "PCMC Core Smart City Corridor",
+      "type": "location",
+      "tags": [
+        "pcmc",
+        "smart-city",
+        "civic",
+        "metro"
+      ],
+      "vector": [
+        0.2194,
+        0.2133,
+        0.259,
+        0.2682,
+        0.2285,
+        0.259,
+        0.2682,
+        0.2743,
+        0.2285,
+        0.2285,
+        0.2499,
+        0.2743,
+        0.2743,
+        0.2438,
+        0.2285,
+        0.2682
+      ]
+    },
+    "chinchwad": {
+      "name": "Chinchwad Commercial Epicenter",
+      "type": "location",
+      "tags": [
+        "chinchwad",
+        "railway",
+        "industrial",
+        "heritage"
+      ],
+      "vector": [
+        0.2101,
+        0.2225,
+        0.2534,
+        0.2626,
+        0.2163,
+        0.2626,
+        0.2781,
+        0.2719,
+        0.241,
+        0.2317,
+        0.2534,
+        0.2781,
+        0.2842,
+        0.2317,
+        0.2225,
+        0.2626
+      ]
+    },
+    "nigdi": {
+      "name": "Nigdi Pradhikaran Planned Layout",
+      "type": "location",
+      "tags": [
+        "nigdi",
+        "pradhikaran",
+        "wide-roads",
+        "greenery"
+      ],
+      "vector": [
+        0.1964,
+        0.2267,
+        0.2478,
+        0.272,
+        0.2569,
+        0.2659,
+        0.278,
+        0.2569,
+        0.2418,
+        0.2267,
+        0.2478,
+        0.272,
+        0.2659,
+        0.2569,
+        0.2267,
+        0.2478
+      ]
+    }
+  }
+}

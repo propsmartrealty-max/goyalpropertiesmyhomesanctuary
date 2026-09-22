@@ -185,6 +185,53 @@ if (res10.status !== 200 || !data10.vastu_analysis.composite_score.includes('98.
 }
 console.log('  ✓ Solar Trajectory & Vedic Vastu Engine passed cleanly.');
 
-console.log('\n✓ ALL 10 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 11: Multi-Currency & NRI Purchasing Power API
+const { onRequestGet: currencyGet } = await import('../functions/api/currency.js');
+const req11 = new Request('https://goyalmyhomesanctuary.in/api/currency?amount=6900000&to=AED');
+const res11 = await currencyGet({ request: req11 });
+const data11 = await res11.json();
+
+console.log(`[Currency API]: Status ${res11.status}, Converted: ${data11.formatted_display}, EMI: ${data11.nri_financing_estimate.formatted_emi}`);
+if (res11.status !== 200 || data11.target_currency !== 'AED' || !data11.converted_amount) {
+  console.error('✗ Currency API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Multi-Currency & NRI Financing Endpoint passed cleanly.');
+
+// Test 12: VAPID Web Push Subscription API
+const { onRequestGet: pushGet, onRequestPost: pushPost } = await import('../functions/api/push-subscribe.js');
+const req12Get = new Request('https://goyalmyhomesanctuary.in/api/push-subscribe');
+const res12Get = await pushGet();
+const data12Get = await res12Get.json();
+
+console.log(`[Web Push GET]: Status ${res12Get.status}, Key: ${data12Get.vapid_public_key.substring(0, 15)}...`);
+if (res12Get.status !== 200 || !data12Get.vapid_public_key) {
+  console.error('✗ Web Push GET test failed');
+  process.exit(1);
+}
+
+const req12Post = new Request('https://goyalmyhomesanctuary.in/api/push-subscribe', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    endpoint: 'https://updates.push.services.mozilla.com/wpush/v2/gAAAAAB...',
+    keys: {
+      p256dh: 'BIPUL1rIIslS8vTM54A3G84...',
+      auth: 'n8z4wExtK2...'
+    },
+    topics: ['rera_milestones', 'construction_updates']
+  })
+});
+const res12Post = await pushPost({ request: req12Post, env: {} });
+const data12Post = await res12Post.json();
+
+console.log(`[Web Push POST]: Status ${res12Post.status}, SubId: ${data12Post.subId}`);
+if (res12Post.status !== 200 || !data12Post.subId.startsWith('SUB-')) {
+  console.error('✗ Web Push POST test failed');
+  process.exit(1);
+}
+console.log('  ✓ Native VAPID Web Push Subscription Endpoint passed cleanly.');
+
+console.log('\n✓ ALL 12 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 

@@ -40,8 +40,12 @@ const URLS = [
   `https://${HOST}/ai-facts.json`,
   `https://${HOST}/.well-known/ai.txt`,
   `https://${HOST}/sitemap-market-images.xml`,
+  `https://${HOST}/catalog.jsonld`,
+  `https://${HOST}/embeddings.json`,
   `https://${HOST}/api/inventory`,
-  `https://${HOST}/api/solar-vastu`
+  `https://${HOST}/api/solar-vastu`,
+  `https://${HOST}/api/currency`,
+  `https://${HOST}/api/push-subscribe`
 ];
 
 async function submitIndexNow() {

@@ -91,7 +91,7 @@ if (!fs.existsSync(llmsFullPath) || fs.statSync(llmsFullPath).size < 200) {
 }
 console.log(`✓ llms.txt and llms-full.txt exist and are populated for AI Overviews & Search LLMs.`);
 
-// 6. Verify Generative Engine Optimization (GEO) Knowledge Island
+// 6. Verify Generative Engine Optimization (GEO) Knowledge Island & Offer Catalog
 const aiFactsPath = path.join(ROOT_DIR, 'ai-facts.json');
 if (!fs.existsSync(aiFactsPath)) {
   console.error(`✗ Missing ai-facts.json`);
@@ -103,6 +103,26 @@ if (!aiFacts.project || !aiFacts.project.regulatory.mahareraRegistrationNo.inclu
   process.exit(1);
 }
 console.log(`✓ ai-facts.json verified with MahaRERA PR1261012502725 and ${aiFacts.project.sanctionedInventory.length} configurations.`);
+
+const catalogPath = path.join(ROOT_DIR, 'catalog.jsonld');
+if (!fs.existsSync(catalogPath)) {
+  console.error(`✗ Missing catalog.jsonld`);
+  process.exit(1);
+}
+const catalogJson = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+if (!catalogJson['@graph'] || catalogJson['@graph'][0]['@type'] !== 'OfferCatalog') {
+  console.error(`✗ Invalid catalog.jsonld OfferCatalog schema`);
+  process.exit(1);
+}
+console.log(`✓ catalog.jsonld OfferCatalog verified with ${catalogJson['@graph'][0].itemListElement.length} sanctioned offers.`);
+
+const embeddingsPath = path.join(ROOT_DIR, 'embeddings.json');
+if (!fs.existsSync(embeddingsPath)) {
+  console.error(`✗ Missing embeddings.json`);
+  process.exit(1);
+}
+const embeddingsJson = JSON.parse(fs.readFileSync(embeddingsPath, 'utf8'));
+console.log(`✓ embeddings.json verified with ${embeddingsJson.total_concepts} normalized concept vectors.`);
 
 const aiTxtPath = path.join(ROOT_DIR, '.well-known', 'ai.txt');
 if (!fs.existsSync(aiTxtPath) || !fs.readFileSync(aiTxtPath, 'utf8').includes('ai-facts.json')) {
@@ -117,6 +137,8 @@ const tourDeskPath = path.join(ROOT_DIR, 'js', 'international-tour-desk.js');
 const leadTelemetryPath = path.join(ROOT_DIR, 'js', 'lead-telemetry.js');
 const webVitalsPath = path.join(ROOT_DIR, 'js', 'web-vitals-rum.js');
 const solarVastuEnginePath = path.join(ROOT_DIR, 'js', 'solar-vastu-engine.js');
+const currencyEnginePath = path.join(ROOT_DIR, 'js', 'currency-engine.js');
+const vectorSearchPath = path.join(ROOT_DIR, 'js', 'vector-search.js');
 
 const aiConciergePath = path.join(ROOT_DIR, 'functions', 'api', 'ai-concierge.js');
 const commuteCalcPath = path.join(ROOT_DIR, 'functions', 'api', 'commute-calculator.js');
@@ -127,20 +149,23 @@ const leadCapturePath = path.join(ROOT_DIR, 'functions', 'api', 'lead-capture.js
 const vitalsPath = path.join(ROOT_DIR, 'functions', 'api', 'vitals.js');
 const inventoryPath = path.join(ROOT_DIR, 'functions', 'api', 'inventory.js');
 const solarVastuPath = path.join(ROOT_DIR, 'functions', 'api', 'solar-vastu.js');
+const currencyApiPath = path.join(ROOT_DIR, 'functions', 'api', 'currency.js');
+const pushSubscribePath = path.join(ROOT_DIR, 'functions', 'api', 'push-subscribe.js');
 
 const googleDispatcherPath = path.join(ROOT_DIR, 'scripts', 'google-indexing-dispatcher.js');
 const gscBatchPath = path.join(ROOT_DIR, 'scripts', 'google-search-console-batch.js');
 
 if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(tourDeskPath) || !fs.existsSync(leadTelemetryPath) ||
-    !fs.existsSync(webVitalsPath) || !fs.existsSync(solarVastuEnginePath) || !fs.existsSync(aiConciergePath) || 
+    !fs.existsSync(webVitalsPath) || !fs.existsSync(solarVastuEnginePath) || !fs.existsSync(currencyEnginePath) ||
+    !fs.existsSync(vectorSearchPath) || !fs.existsSync(aiConciergePath) || 
     !fs.existsSync(commuteCalcPath) || !fs.existsSync(resoFeedPath) || !fs.existsSync(timezoneDeskPath) || 
     !fs.existsSync(ogGeneratorPath) || !fs.existsSync(leadCapturePath) || !fs.existsSync(vitalsPath) || 
-    !fs.existsSync(inventoryPath) || !fs.existsSync(solarVastuPath) || !fs.existsSync(googleDispatcherPath) ||
-    !fs.existsSync(gscBatchPath)) {
+    !fs.existsSync(inventoryPath) || !fs.existsSync(solarVastuPath) || !fs.existsSync(currencyApiPath) ||
+    !fs.existsSync(pushSubscribePath) || !fs.existsSync(googleDispatcherPath) || !fs.existsSync(gscBatchPath)) {
   console.error(`✗ Missing headless engines, edge API routes or Google dispatcher`);
   process.exit(1);
 }
-console.log(`✓ All 5 headless engines (commute, tour desk, lead telemetry, web vitals, solar-vastu), all 10 Edge APIs (ai-concierge, commute-calculator, reso-feed, timezone-desk, og, lead-capture, vitals, inventory, solar-vastu, market SSR), and Google/GSC dispatchers verified.`);
+console.log(`✓ All 7 headless engines (commute, tour desk, lead telemetry, web vitals, solar-vastu, currency, vector-search), all 12 Edge APIs (ai-concierge, commute-calculator, reso-feed, timezone-desk, og, lead-capture, vitals, inventory, solar-vastu, currency, push-subscribe, market SSR), and Google/GSC dispatchers verified.`);
 
 console.log('\n--- ALL INFRASTRUCTURE, DISCOVERY, AI & GOOGLE AUDITS PASSED CLEANLY ---\n');
 

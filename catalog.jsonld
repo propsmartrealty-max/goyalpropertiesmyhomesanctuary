@@ -1,0 +1,175 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://goyalmyhomesanctuary.in/catalog.jsonld#catalog",
+      "name": "Goyal My Home Sanctuary Sanctioned Offer Catalog",
+      "description": "Official MahaRERA sanctioned residential real estate inventory and configuration catalog for Goyal My Home Sanctuary in Mamurdi, PCMC, Pune West.",
+      "url": "https://goyalmyhomesanctuary.in/price-cost-sheet",
+      "numberOfItems": 6,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "provider": {
+        "@type": "RealEstateAgent",
+        "@id": "https://goyalmyhomesanctuary.in/#developer",
+        "name": "PropSmart Realty & Goyal Properties",
+        "telephone": "+919175319441",
+        "email": "propsmartrealty@gmail.com",
+        "url": "https://goyalmyhomesanctuary.in/"
+      },
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "@id": "https://goyalmyhomesanctuary.in/catalog.jsonld#2bhk-classic",
+          "position": 1,
+          "name": "2 BHK Classic Residence",
+          "sku": "GMS-2BHK-CLS",
+          "price": "6900000",
+          "priceCurrency": "INR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "6900000",
+            "priceCurrency": "INR",
+            "valueAddedTaxIncluded": false,
+            "description": "Base launch price before statutory taxes, GST, and stamp duty."
+          },
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-01-01",
+          "itemOffered": {
+            "@type": "Apartment",
+            "name": "2 BHK Classic Luxury Flat",
+            "description": "Sanctioned 2 BHK unit optimized for high efficiency, dual bathrooms, and natural cross-ventilation.",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 638,
+              "unitCode": "FTK"
+            },
+            "numberOfRooms": 3,
+            "numberOfBedrooms": 2,
+            "numberOfBathroomsTotal": 2,
+            "amenityFeature": [
+              { "@type": "LocationFeatureSpecification", "name": "MIVAN Monolithic Construction", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Vastu Compliant East-Facing", "value": true }
+            ]
+          }
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://goyalmyhomesanctuary.in/catalog.jsonld#2bhk-premier",
+          "position": 2,
+          "name": "2 BHK Premier Residence",
+          "sku": "GMS-2BHK-PRM",
+          "price": "7600000",
+          "priceCurrency": "INR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "7600000",
+            "priceCurrency": "INR",
+            "valueAddedTaxIncluded": false
+          },
+          "availability": "https://schema.org/InStock",
+          "itemOffered": {
+            "@type": "Apartment",
+            "name": "2 BHK Premier Luxury Flat",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 704,
+              "unitCode": "FTK"
+            },
+            "numberOfRooms": 3,
+            "numberOfBedrooms": 2,
+            "numberOfBathroomsTotal": 2
+          }
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://goyalmyhomesanctuary.in/catalog.jsonld#2bhk-signature",
+          "position": 3,
+          "name": "2 BHK Signature Residence",
+          "sku": "GMS-2BHK-SIG",
+          "price": "8200000",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/LimitedAvailability",
+          "itemOffered": {
+            "@type": "Apartment",
+            "name": "2 BHK Signature Corner Flat",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 760,
+              "unitCode": "FTK"
+            },
+            "numberOfRooms": 3,
+            "numberOfBedrooms": 2,
+            "numberOfBathroomsTotal": 2
+          }
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://goyalmyhomesanctuary.in/catalog.jsonld#3bhk-classic",
+          "position": 4,
+          "name": "3 BHK Classic Residence",
+          "sku": "GMS-3BHK-CLS",
+          "price": "8600000",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "itemOffered": {
+            "@type": "Apartment",
+            "name": "3 BHK Classic Luxury Flat",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 848,
+              "unitCode": "FTK"
+            },
+            "numberOfRooms": 4,
+            "numberOfBedrooms": 3,
+            "numberOfBathroomsTotal": 3
+          }
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://goyalmyhomesanctuary.in/catalog.jsonld#3bhk-premier",
+          "position": 5,
+          "name": "3 BHK Premier Residence",
+          "sku": "GMS-3BHK-PRM",
+          "price": "9400000",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "itemOffered": {
+            "@type": "Apartment",
+            "name": "3 BHK Premier Luxury Flat",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 924,
+              "unitCode": "FTK"
+            },
+            "numberOfRooms": 4,
+            "numberOfBedrooms": 3,
+            "numberOfBathroomsTotal": 3
+          }
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://goyalmyhomesanctuary.in/catalog.jsonld#3bhk-signature",
+          "position": 6,
+          "name": "3 BHK Signature Flagship Residence",
+          "sku": "GMS-3BHK-SIG",
+          "price": "10500000",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/LimitedAvailability",
+          "itemOffered": {
+            "@type": "Apartment",
+            "name": "3 BHK Signature Masterpiece Flat",
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 1036,
+              "unitCode": "FTK"
+            },
+            "numberOfRooms": 5,
+            "numberOfBedrooms": 3,
+            "numberOfBathroomsTotal": 3
+          }
+        }
+      ]
+    }
+  ]
+}

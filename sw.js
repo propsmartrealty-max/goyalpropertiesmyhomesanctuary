@@ -5,7 +5,7 @@
  * Provides offline reliability, instant asset caching, and full PWA capabilities.
  */
 
-const CACHE_NAME = 'sanctuary-v4';
+const CACHE_NAME = 'sanctuary-v5';
 const PRECACHE_ASSETS = [
   '/',
   '/css/style.css',
@@ -17,12 +17,16 @@ const PRECACHE_ASSETS = [
   '/manifest.webmanifest',
   '/feed.xml',
   '/ai-facts.json',
+  '/catalog.jsonld',
+  '/embeddings.json',
   '/.well-known/ai.txt',
   '/js/commute-engine.js',
   '/js/international-tour-desk.js',
   '/js/lead-telemetry.js',
   '/js/web-vitals-rum.js',
   '/js/solar-vastu-engine.js',
+  '/js/currency-engine.js',
+  '/js/vector-search.js',
   '/2-bhk-flats-mamurdi',
   '/3-bhk-flats-mamurdi',
   '/price-cost-sheet',
