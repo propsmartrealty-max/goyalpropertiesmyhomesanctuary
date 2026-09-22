@@ -217,13 +217,16 @@ function parseSlug(slugParam) {
 
 function renderDirectoryHub() {
   return `<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-IN" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi</title>
   <meta name="description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
   <link rel="canonical" href="https://goyalmyhomesanctuary.in/market">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   
   <!-- Open Graph -->
   <meta property="og:locale" content="en_IN">
@@ -540,7 +543,7 @@ function renderProgrammaticLandingPage(data) {
     .slice(0, 4);
 
   return `<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-IN" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">

@@ -54,13 +54,18 @@ const KNOWN_BOTS = [
   'slackbot',
   'skypeuripreview',
   // AI Search & LLM Engines
+  'oai-searchbot',
   'gptbot',
   'chatgpt-user',
   'perplexitybot',
   'claudebot',
+  'claude-web',
   'anthropic-ai',
   'amazonbot',
   'cohere-ai',
+  'meta-externalagent',
+  'diffbot',
+  'youbot',
   'petalbot'
 ];
 
@@ -75,12 +80,24 @@ function isSearchBot(userAgent = '', request = null) {
 }
 
 class GoogleSEOInjector {
-  constructor(canonicalUrl, request) {
+  constructor(canonicalUrl, request, is404 = false) {
     this.canonicalUrl = canonicalUrl;
     this.request = request;
+    this.is404 = is404;
   }
 
   element(element) {
+    if (this.is404) {
+      element.append(
+        `\n  <!-- Astro Edge Engine: 404 Error Directives -->\n` +
+        `  <meta name="robots" content="noindex, follow" />\n` +
+        `  <meta name="googlebot" content="noindex, follow" />\n` +
+        `  <meta name="bingbot" content="noindex, follow" />\n`,
+        { html: true }
+      );
+      return;
+    }
+
     // Astro-grade Streaming Head Optimizations for Google Core Web Vitals & Search Engine Authority
     const rayId = this.request.headers.get('cf-ray') || 'edge';
     const colo = this.request.cf?.colo || 'PUN';
@@ -169,13 +186,23 @@ export async function onRequest(context) {
   const newHeaders = new Headers(response.headers);
   const contentType = newHeaders.get('content-type') || '';
   const canonicalUrl = `https://goyalmyhomesanctuary.in${url.pathname}`;
+  const is404 = response.status === 404 || url.pathname === '/404' || url.pathname === '/404.html';
 
   // Inject HTTP Canonical Link Header & Robots Directives strictly for HTML documents
   if (contentType.includes('text/html')) {
-    newHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
-    newHeaders.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+    if (is404) {
+      newHeaders.set('X-Robots-Tag', 'noindex, follow');
+    } else {
+      newHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
+      newHeaders.set('X-Robots-Tag', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+    }
   }
   
+  // Security & Resilience Headers
+  newHeaders.set('X-XSS-Protection', '1; mode=block');
+  newHeaders.set('X-Content-Type-Options', 'nosniff');
+  newHeaders.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+
   // Server-Timing & Edge Telemetry
   newHeaders.set('Server-Timing', `worker;dur=${duration};desc="Cloudflare SEO Worker", edge;dur=2.0`);
   newHeaders.set('X-Edge-Node', request.cf?.colo || 'PUN');
@@ -184,11 +211,15 @@ export async function onRequest(context) {
 
   // 6. Streaming HTML Transformation using native Cloudflare HTMLRewriter
   if (contentType.includes('text/html')) {
-    newHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800');
+    if (is404) {
+      newHeaders.set('Cache-Control', 'public, max-age=0, must-revalidate');
+    } else {
+      newHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800');
+    }
     
     if (typeof HTMLRewriter !== 'undefined') {
       const rewriter = new HTMLRewriter()
-        .on('head', new GoogleSEOInjector(canonicalUrl, request))
+        .on('head', new GoogleSEOInjector(canonicalUrl, request, is404))
         .on('html', new AstroPerformanceOptimizer())
         .on('img', new ImageLazyLoadOptimizer());
 

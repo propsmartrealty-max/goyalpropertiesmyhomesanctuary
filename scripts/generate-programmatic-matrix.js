@@ -149,7 +149,7 @@ export function buildSitemaps(items) {
   // Minimal static fallback index for /market/index.html
   const staticHubPath = path.join(marketDir, 'index.html');
   const staticHubHtml = `<!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content="0; url=/market">
