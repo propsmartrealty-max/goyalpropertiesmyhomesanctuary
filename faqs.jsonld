@@ -1,0 +1,171 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://goyalmyhomesanctuary.com/#faqs",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Goyal My Home Sanctuary located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Goyal My Home Sanctuary is located in Mamurdi, PCMC, Pune West, Maharashtra 412101, India, situated adjacent to Kiwale BRTS and the Mumbai-Pune Expressway, in close proximity to the MCA International Cricket Stadium."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the MahaRERA registration number for Goyal My Home Sanctuary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Goyal My Home Sanctuary is officially registered under MahaRERA registration numbers PR1261012502725 and P52100077438, verified on the official MahaRERA portal (maharera.maharashtra.gov.in)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the configuration types and starting prices at Goyal My Home Sanctuary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The project offers 2 BHK and 3 BHK luxury residences across six configurations: 2 BHK Classic (638 sq.ft) starting from ₹69 Lakhs*, 2 BHK Premier (704 sq.ft) from ₹76 Lakhs*, 2 BHK Signature (760 sq.ft) from ₹82 Lakhs*, 3 BHK Classic (848 sq.ft) from ₹86 Lakhs*, 3 BHK Premier (924 sq.ft) from ₹94 Lakhs*, and 3 BHK Signature (1036 sq.ft) from ₹1.05 Crore*."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is the possession date for Goyal My Home Sanctuary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Possession for Goyal My Home Sanctuary is scheduled for December 2028 per the official MahaRERA registered construction timeline and milestone plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far is Goyal My Home Sanctuary from Hinjawadi IT Park?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Goyal My Home Sanctuary is approximately 15 minutes away from Hinjawadi Phase 1 via the 6-lane bypass route, allowing commuters to bypass congested Wakad and Hinjawadi junction bottlenecks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Goyal My Home Sanctuary compliant with Vastu Shastra principles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Goyal My Home Sanctuary achieves 98.7% Vastu Shastra alignment with optimal East-West entrance configurations, North-East water features, South-East Agni kitchen zones, and master bedrooms situated in the South-West quadrant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the open space and landscape ratio at Goyal My Home Sanctuary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Goyal My Home Sanctuary features 72% dedicated open landscaped space, including a multi-tiered Miyawaki micro-forest, acupressure walking tracks, herbal fragrance gardens, and biophilic recreation zones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which banks have approved home loans with APF for Goyal My Home Sanctuary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The project is approved for home financing by major nationalized and private banking institutions including State Bank of India (SBI APF: PNE/APF/2025/0812), HDFC Bank (HDFC APF: PUN/MAM/2025/1194), ICICI Bank, Axis Bank, and Bank of Baroda with preferential interest rates from 8.35% p.a."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the nearest schools and educational institutions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nearby educational hubs include Symbiosis Skills & Professional University (SSPU) at 2.5 km (5 mins), Blossom Public School at 4.2 km (8 mins), Indira National School & Campus at 5.5 km (10 mins), Akshara International School at 6.0 km (12 mins), and D.Y. Patil International University at 6.5 km (14 mins)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What hospitals and emergency healthcare centers are near the project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Premier medical institutions in the vicinity include Unique Multispeciality Hospital at 3.0 km (6 mins), Ojas Multispeciality Hospital at 4.5 km (8 mins), and Aditya Birla Memorial Hospital at 7.5 km (14 mins drive time with emergency corridor access)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is municipal drinking water available in Mamurdi for Goyal My Home Sanctuary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Goyal My Home Sanctuary is sanctioned for Pimpri-Chinchwad Municipal Corporation (PCMC) piped drinking water, supplemented by an on-site dual filtration plant and 2.4 million liters/year rainwater percolation harvesting system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the stamp duty and registration fee structure in PCMC Maharashtra?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under Maharashtra government regulations, Mamurdi (PCMC) stamp duty is 7% for standard purchases (including 5% base stamp duty, 1% local body tax, and 1% transport surcharge). A 1% concession applies to female sole ownership (6% total), with a flat registration fee of ₹30,000 for properties valued above ₹30 Lakhs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What lifestyle and wellness amenities are provided in the project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Over 40 luxury amenities are provided, including a grand multi-level clubhouse, infinity-edge swimming pool, kid's splash pool, rooftop sky observatory, indoor squash and badminton courts, modern gymnasium, banquet hall, co-working pods, and electric vehicle charging bays."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Non-Resident Indians (NRIs) and OCIs purchase apartments in Goyal My Home Sanctuary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the project is fully FEMA compliant for NRIs, PIOs, and OCIs. Payments can be processed via NRE, NRO, or FCNR bank accounts with full repatriation eligibility under Reserve Bank of India (RBI) guidelines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can one access the Mumbai-Pune Expressway from Mamurdi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Goyal My Home Sanctuary is located within 3 minutes of the Kiwale expressway junction, offering immediate signal-free access toward Mumbai, Lonavala, and Navi Mumbai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What construction technology is used at Goyal My Home Sanctuary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The towers are constructed using high-precision aluminum Mivan formwork technology, ensuring seismic Zone III compliance, superior crack resistance, smooth monolithic concrete finishes, and maximum usable carpet area efficiency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are electric vehicle (EV) charging stations provided?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Goyal My Home Sanctuary includes 24 designated EV charging stations with dedicated smart electrical load management supporting both 2-wheeler and 4-wheeler fast charging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the historical capital appreciation rate for real estate in Mamurdi PCMC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mamurdi real estate has delivered a 12.8% Compound Annual Growth Rate (CAGR) between 2019 and 2026, driven by Pune West expressway connectivity, proximity to Hinjawadi IT Park, and major infrastructural expansion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the residential community pet friendly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the master layout includes a dedicated pet park with agility training equipment, pet relief stations, and pet-friendly walking paths."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book an apartment or reserve a priority inventory hold?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prospective buyers can connect with the official sales desk via WhatsApp (+91 98220 33333), call the concierge line (+91 98220 33333), or reserve a 48-hour priority hold through the live inventory system."
+          }
+        }
+      ]
+    }
+  ]
+}

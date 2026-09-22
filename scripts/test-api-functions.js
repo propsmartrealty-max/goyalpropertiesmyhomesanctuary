@@ -284,6 +284,32 @@ if (res16.status !== 200 || data16.total_institutions < 3) {
 }
 console.log('  ✓ Educational & Healthcare Transit Matrix Engine passed cleanly.');
 
-console.log('\n✓ ALL 16 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 17: IGBC Green Building & Carbon Footprint Telemetry API
+const { onRequestGet: sustainabilityGet } = await import('../functions/api/sustainability.js');
+const req17 = new Request('https://goyalmyhomesanctuary.in/api/sustainability?typology=3bhk-signature');
+const res17 = await sustainabilityGet({ request: req17 });
+const data17 = await res17.json();
+
+console.log(`[Sustainability API]: Status ${res17.status}, Project: ${data17.project}, Typology: ${data17.typology_esg_assessment?.selected_typology}, CO2 Offset: ${data17.typology_esg_assessment?.household_annual_co2_offset_kg}kg`);
+if (res17.status !== 200 || data17.community_metrics.landscaping.total_open_space_percentage !== 72 || !data17.typology_esg_assessment) {
+  console.error('✗ Sustainability API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Green Building & Carbon Offset Telemetry Engine passed cleanly.');
+
+// Test 18: Edge Bot Attribution & AI Crawler Telemetry API
+const { onRequestGet: botTelemetryGet } = await import('../functions/api/bot-telemetry.js');
+const req18 = new Request('https://goyalmyhomesanctuary.in/api/bot-telemetry?ua=Mozilla/5.0+(compatible;+GPTBot/1.2;+%2Bhttps://openai.com/gptbot)');
+const res18 = await botTelemetryGet({ request: req18, env: {} });
+const data18 = await res18.json();
+
+console.log(`[Bot Telemetry API]: Status ${res18.status}, Category: ${data18.category}, Is AI: ${data18.is_ai_agent}, Bot: ${data18.bot_details?.name}`);
+if (res18.status !== 200 || !data18.is_ai_agent || data18.bot_details?.provider !== 'OpenAI') {
+  console.error('✗ Bot Telemetry API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Edge Bot Attribution & AI Crawler Telemetry passed cleanly.');
+
+console.log('\n✓ ALL 18 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 
