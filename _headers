@@ -112,6 +112,15 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /favicon.svg
+  Content-Type: image/svg+xml; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.ico
+  Content-Type: image/x-icon
+  Cache-Control: public, max-age=31536000, immutable
+
+/apple-touch-icon.png
+  Content-Type: image/png
   Cache-Control: public, max-age=31536000, immutable
 
 /manifest.webmanifest
@@ -119,6 +128,10 @@
   Cache-Control: public, max-age=86400
 
 /sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/sitemap-videos.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400
 

@@ -243,7 +243,7 @@ function renderDirectoryHub() {
   <meta name="twitter:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#0c1410">
   <link rel="stylesheet" href="/css/style.css">
@@ -573,7 +573,7 @@ function renderProgrammaticLandingPage(data) {
   
   <meta name="theme-color" content="#0c1410">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">

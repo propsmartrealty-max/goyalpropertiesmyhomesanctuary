@@ -1,5 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#061813"/>
-  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#dfc298" stroke-width="2"/>
-  <text x="32" y="44" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="#dfc298" text-anchor="middle">G</text>
+  <defs>
+    <linearGradient id="goyalBrandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5C916"/>
+      <stop offset="100%" stop-color="#EF8C14"/>
+    </linearGradient>
+  </defs>
+  <!-- Goyal Properties Iconic Brand Tile -->
+  <rect width="64" height="64" rx="15" fill="url(#goyalBrandGrad)"/>
+  <!-- Goyal Properties Botanical Leaf Mark -->
+  <path d="M 32 10.5 C 26 17.5 17 25.5 17 34.5 C 17 42.5 24 47 32 47 C 40 47 47 42.5 47 34.5 C 47 25.5 38 17.5 32 10.5 Z" 
+        fill="none" 
+        stroke="#FFFFFF" 
+        stroke-width="3.8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  <!-- Central Vein & Stem Element -->
+  <path d="M 32 28.5 L 32 54" 
+        stroke="#FFFFFF" 
+        stroke-width="3.8" 
+        stroke-linecap="round"/>
 </svg>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/vir1opJSO3Q/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Goyal Properties My Home Sanctuary, Mamurdi — Vision Film AV</video:title>
+      <video:description>Official cinematic design thesis and 26-acre biophilic philosophy crafted by Goyal Properties for My Home Sanctuary in Mamurdi, Pune West.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/vir1opJSO3Q</video:player_loc>
+      <video:publication_date>2024-01-15T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/YLrltbchyig/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Goyal My Home Sanctuary Project Walkthrough &amp; Amenities Tour</video:title>
+      <video:description>Comprehensive 3D architectural fly-through across the 75+ lifestyle amenities, G+28 MIVAN monolithic towers, and 72% forest canopy at Goyal My Home Sanctuary Mamurdi.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/YLrltbchyig</video:player_loc>
+      <video:publication_date>2024-02-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/2mfOKkJaXCI/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Goyal My Home Sanctuary Mamurdi — Expressway &amp; Hinjawadi Connectivity</video:title>
+      <video:description>Aerial drone perspective showing the 2-minute connection to the Mumbai-Pune Expressway and 15-minute commute to Rajiv Gandhi IT Park Hinjawadi from My Home Sanctuary Mamurdi.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/2mfOKkJaXCI</video:player_loc>
+      <video:publication_date>2024-03-01T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+</urlset>

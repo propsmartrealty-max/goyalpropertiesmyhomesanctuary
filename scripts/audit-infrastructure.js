@@ -9,6 +9,7 @@ console.log('\n--- Auditing Sitemaps, Redirects, Headers, and Image Assets ---')
 const sitemaps = [
   'sitemap.xml',
   'sitemap-core.xml',
+  'sitemap-videos.xml',
   'sitemap-images.xml',
   'sitemap-market-1.xml',
   'sitemap-market-2.xml',
@@ -30,7 +31,7 @@ for (const sm of sitemaps) {
     process.exit(1);
   }
 }
-console.log(`✓ All 9 XML sitemaps exist and have valid root XML declarations.`);
+console.log(`✓ All 10 XML sitemaps exist and have valid root XML declarations.`);
 
 // 2. Check sitemap-images.xml images exist on disk
 const imgSitemap = fs.readFileSync(path.join(ROOT_DIR, 'sitemap-images.xml'), 'utf8');

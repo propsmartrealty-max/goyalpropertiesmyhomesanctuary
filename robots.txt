@@ -17,7 +17,10 @@ Allow: /css/*
 Allow: /js/*
 Allow: /assets/*
 Allow: /favicon.svg
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
 Allow: /sitemap.xml
+Allow: /sitemap-videos.xml
 Allow: /feed.xml
 Allow: /manifest.webmanifest
 Allow: /llms.txt
@@ -136,6 +139,7 @@ Disallow: /api/
 Sitemap: https://goyalmyhomesanctuary.in/sitemap.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-core.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-images.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-videos.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-1.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-2.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-3.xml
