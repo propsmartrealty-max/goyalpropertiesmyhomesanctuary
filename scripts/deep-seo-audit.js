@@ -59,14 +59,31 @@ for (const file of htmlFiles) {
     gaps.push({ file: relPath, category: 'Canonicals', issue: 'Missing canonical link tag' });
   }
 
-  // Check Open Graph Image & Twitter Cards
+  // Check Open Graph Image, Locale, Site Name & Twitter Cards
   const ogImg = content.match(/<meta\s+property=["']og:image["']/i);
   if (!ogImg) {
     gaps.push({ file: relPath, category: 'Social/OpenGraph', issue: 'Missing og:image' });
   }
+  if (!content.includes('og:site_name')) {
+    gaps.push({ file: relPath, category: 'Social/OpenGraph', issue: 'Missing og:site_name' });
+  }
+  if (!content.includes('og:locale')) {
+    gaps.push({ file: relPath, category: 'Social/OpenGraph', issue: 'Missing og:locale' });
+  }
   const twCard = content.match(/<meta\s+name=["']twitter:card["']/i);
   if (!twCard) {
     gaps.push({ file: relPath, category: 'Social/Twitter', issue: 'Missing twitter:card meta' });
+  }
+  if (!content.includes('twitter:site')) {
+    gaps.push({ file: relPath, category: 'Social/Twitter', issue: 'Missing twitter:site meta' });
+  }
+
+  // Check Viewport & Theme Color
+  if (!content.includes('viewport-fit=cover')) {
+    gaps.push({ file: relPath, category: 'Mobile Viewport', issue: 'Missing viewport-fit=cover in viewport meta' });
+  }
+  if (!content.includes('theme-color')) {
+    gaps.push({ file: relPath, category: 'Mobile Viewport', issue: 'Missing theme-color meta tag' });
   }
 
   // Check Schema JSON-LD

@@ -20,6 +20,8 @@ Allow: /favicon.svg
 Allow: /sitemap.xml
 Allow: /feed.xml
 Allow: /manifest.webmanifest
+Allow: /llms.txt
+Allow: /llms-full.txt
 Disallow: /api/
 
 # 2. Googlebot Image Indexer (Google Images Search Ecosystem)

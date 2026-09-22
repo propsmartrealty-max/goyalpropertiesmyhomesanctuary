@@ -220,12 +220,14 @@ function renderDirectoryHub() {
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi</title>
   <meta name="description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
   <link rel="canonical" href="https://goyalmyhomesanctuary.in/market">
   
   <!-- Open Graph -->
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:site_name" content="Goyal My Home Sanctuary">
   <meta property="og:title" content="Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi">
   <meta property="og:description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
   <meta property="og:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
@@ -234,6 +236,8 @@ function renderDirectoryHub() {
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GoyalSanctuary">
+  <meta name="twitter:creator" content="@GoyalSanctuary">
   <meta name="twitter:title" content="Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi">
   <meta name="twitter:description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
   <meta name="twitter:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
@@ -241,6 +245,7 @@ function renderDirectoryHub() {
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
   <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0c1410">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -538,7 +543,7 @@ function renderProgrammaticLandingPage(data) {
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>${pageTitle}</title>
   <meta name="description" content="${pageDescription}">
   <link rel="canonical" href="${canonicalUrl}">
@@ -547,12 +552,26 @@ function renderProgrammaticLandingPage(data) {
   <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   
   <!-- Open Graph / Social Tags -->
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:site_name" content="Goyal My Home Sanctuary">
   <meta property="og:title" content="${pageTitle}">
   <meta property="og:description" content="${pageDescription}">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="${pageTitle}">
   
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GoyalSanctuary">
+  <meta name="twitter:creator" content="@GoyalSanctuary">
+  <meta name="twitter:title" content="${pageTitle}">
+  <meta name="twitter:description" content="${pageDescription}">
+  <meta name="twitter:image" content="https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg">
+  
+  <meta name="theme-color" content="#0c1410">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
   <link rel="manifest" href="/manifest.webmanifest">

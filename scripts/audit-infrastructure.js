@@ -67,8 +67,21 @@ if (hashLines === 0) {
   console.log(`✓ _redirects contains 0 hash fragment destinations across all active rules.`);
 }
 
-// 4. Verify 404 rule in _headers
+// 4. Verify 404 rule and llms.txt in _headers
 const headers = fs.readFileSync(path.join(ROOT_DIR, '_headers'), 'utf8');
 console.log(`✓ _headers file is present (${headers.length} bytes).`);
+
+// 5. Verify llms.txt and llms-full.txt exist and are populated
+const llmsPath = path.join(ROOT_DIR, 'llms.txt');
+const llmsFullPath = path.join(ROOT_DIR, 'llms-full.txt');
+if (!fs.existsSync(llmsPath) || fs.statSync(llmsPath).size < 100) {
+  console.error(`✗ Missing or empty llms.txt`);
+  process.exit(1);
+}
+if (!fs.existsSync(llmsFullPath) || fs.statSync(llmsFullPath).size < 200) {
+  console.error(`✗ Missing or empty llms-full.txt`);
+  process.exit(1);
+}
+console.log(`✓ llms.txt and llms-full.txt exist and are populated for AI Overviews & Search LLMs.`);
 
 console.log('\n--- ALL INFRASTRUCTURE & DISCOVERY AUDITS PASSED CLEANLY ---\n');
