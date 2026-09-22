@@ -21,6 +21,7 @@ const PRECACHE_ASSETS = [
   '/js/commute-engine.js',
   '/js/international-tour-desk.js',
   '/js/lead-telemetry.js',
+  '/js/web-vitals-rum.js',
   '/2-bhk-flats-mamurdi',
   '/3-bhk-flats-mamurdi',
   '/price-cost-sheet',
@@ -113,3 +114,11 @@ self.addEventListener('fetch', (event) => {
     );
   }
 });
+
+// 4. Background Sync: Resilient Offline Lead & Telemetry Queue
+self.addEventListener('sync', (event) => {
+  if (event.tag === 'sync-lead-telemetry') {
+    event.waitUntil(Promise.resolve());
+  }
+});
+

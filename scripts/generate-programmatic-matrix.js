@@ -139,6 +139,10 @@ export function buildSitemaps(items) {
   indexXml += `    <loc>https://goyalmyhomesanctuary.in/sitemap-images.xml</loc>\n`;
   indexXml += `    <lastmod>${now}</lastmod>\n`;
   indexXml += `  </sitemap>\n`;
+  indexXml += `  <sitemap>\n`;
+  indexXml += `    <loc>https://goyalmyhomesanctuary.in/sitemap-market-images.xml</loc>\n`;
+  indexXml += `    <lastmod>${now}</lastmod>\n`;
+  indexXml += `  </sitemap>\n`;
 
   for (let i = 1; i <= totalChunks; i++) {
     indexXml += `  <sitemap>\n`;

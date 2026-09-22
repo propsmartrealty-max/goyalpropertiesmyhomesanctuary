@@ -11,6 +11,7 @@ const sitemaps = [
   'sitemap-core.xml',
   'sitemap-videos.xml',
   'sitemap-images.xml',
+  'sitemap-market-images.xml',
   'sitemap-market-1.xml',
   'sitemap-market-2.xml',
   'sitemap-market-3.xml',
@@ -114,22 +115,24 @@ console.log(`✓ .well-known/ai.txt verified for AI crawler discovery.`);
 const commuteEnginePath = path.join(ROOT_DIR, 'js', 'commute-engine.js');
 const tourDeskPath = path.join(ROOT_DIR, 'js', 'international-tour-desk.js');
 const leadTelemetryPath = path.join(ROOT_DIR, 'js', 'lead-telemetry.js');
+const webVitalsPath = path.join(ROOT_DIR, 'js', 'web-vitals-rum.js');
 const aiConciergePath = path.join(ROOT_DIR, 'functions', 'api', 'ai-concierge.js');
 const commuteCalcPath = path.join(ROOT_DIR, 'functions', 'api', 'commute-calculator.js');
 const resoFeedPath = path.join(ROOT_DIR, 'functions', 'api', 'reso-feed.js');
 const timezoneDeskPath = path.join(ROOT_DIR, 'functions', 'api', 'timezone-desk.js');
 const ogGeneratorPath = path.join(ROOT_DIR, 'functions', 'api', 'og.js');
 const leadCapturePath = path.join(ROOT_DIR, 'functions', 'api', 'lead-capture.js');
+const vitalsPath = path.join(ROOT_DIR, 'functions', 'api', 'vitals.js');
 const googleDispatcherPath = path.join(ROOT_DIR, 'scripts', 'google-indexing-dispatcher.js');
 
 if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(tourDeskPath) || !fs.existsSync(leadTelemetryPath) ||
-    !fs.existsSync(aiConciergePath) || !fs.existsSync(commuteCalcPath) || !fs.existsSync(resoFeedPath) || 
-    !fs.existsSync(timezoneDeskPath) || !fs.existsSync(ogGeneratorPath) || !fs.existsSync(leadCapturePath) ||
-    !fs.existsSync(googleDispatcherPath)) {
+    !fs.existsSync(webVitalsPath) || !fs.existsSync(aiConciergePath) || !fs.existsSync(commuteCalcPath) || 
+    !fs.existsSync(resoFeedPath) || !fs.existsSync(timezoneDeskPath) || !fs.existsSync(ogGeneratorPath) || 
+    !fs.existsSync(leadCapturePath) || !fs.existsSync(vitalsPath) || !fs.existsSync(googleDispatcherPath)) {
   console.error(`✗ Missing headless engines, edge API routes or Google dispatcher`);
   process.exit(1);
 }
-console.log(`✓ Headless engines (commute, tour desk, lead telemetry), all 7 Edge APIs (ai-concierge, commute-calculator, reso-feed, timezone-desk, og, lead-capture), and Google dispatcher verified.`);
+console.log(`✓ Headless engines (commute, tour desk, lead telemetry, web vitals), all 8 Edge APIs (ai-concierge, commute-calculator, reso-feed, timezone-desk, og, lead-capture, vitals), and Google dispatcher verified.`);
 
 console.log('\n--- ALL INFRASTRUCTURE, DISCOVERY, AI & GOOGLE AUDITS PASSED CLEANLY ---\n');
 

@@ -48,6 +48,26 @@ export async function onRequest(context) {
   const leadId = `LEAD-${Date.now()}-${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
   const timestamp = new Date().toISOString();
 
+  // Edge Bot & Honeypot Spam Defense
+  const isBotSubmission = Boolean(
+    leadData.website_hp || 
+    leadData.bot_trap || 
+    leadData.phone_confirm_hp ||
+    (leadData.elapsedMs && Number(leadData.elapsedMs) < 600)
+  );
+
+  if (isBotSubmission) {
+    return new Response(JSON.stringify({
+      status: 'success',
+      leadId: leadId,
+      botDefenseFiltered: true,
+      executionTimeMs: Date.now() - startTime
+    }), {
+      status: 200,
+      headers: corsHeaders
+    });
+  }
+
   const enrichedLead = {
     leadId: leadId,
     timestamp: timestamp,

@@ -75,6 +75,17 @@ for (const file of htmlFiles) {
     }
   }
 
+  // 5. Inject headless web-vitals-rum.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/web-vitals-rum.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/web-vitals-rum.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
   if (changed) {
     fs.writeFileSync(file, content, 'utf8');
     updatedCount++;

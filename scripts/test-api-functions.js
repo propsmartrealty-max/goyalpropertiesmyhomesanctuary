@@ -120,5 +120,27 @@ if (res7.status !== 200 || !data7.leadId.startsWith('LEAD-')) {
 }
 console.log('  ✓ Headless Lead Webhook Dispatcher passed cleanly.');
 
-console.log('\n✓ ALL 7 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 8: Native Real User Metrics (RUM) Core Web Vitals
+const { onRequest: vitalsReceiver } = await import('../functions/api/vitals.js');
+const req8 = new Request('https://goyalmyhomesanctuary.in/api/vitals', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    name: 'LCP',
+    value: 1200,
+    path: '/market/chinchwad-3-bhk-premier-floor-plans-brochure-families-top-schools'
+  })
+});
+const res8 = await vitalsReceiver({ request: req8, env: {} });
+const data8 = await res8.json();
+
+console.log(`[RUM Web Vitals]: Status ${res8.status}, Metric: ${data8.metric}, Rating: ${data8.rating}`);
+if (res8.status !== 200 || data8.rating !== 'good') {
+  console.error('✗ RUM Web Vitals test failed');
+  process.exit(1);
+}
+console.log('  ✓ Real User Metrics Core Web Vitals Endpoint passed cleanly.');
+
+console.log('\n✓ ALL 8 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+
 
