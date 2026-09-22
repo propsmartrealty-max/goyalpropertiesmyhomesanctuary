@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "GovernmentPermit",
+      "@id": "https://goyalmyhomesanctuary.com/#rera-permit",
+      "name": "MahaRERA Project Registration Certificate",
+      "permitAudience": "Public / Real Estate Homebuyers",
+      "validFor": {
+        "@type": "DateTime",
+        "startDate": "2025-01-01",
+        "endDate": "2028-12-31"
+      },
+      "issuedBy": {
+        "@type": "GovernmentOrganization",
+        "name": "Maharashtra Real Estate Regulatory Authority (MahaRERA)",
+        "url": "https://maharera.maharashtra.gov.in"
+      },
+      "permitNumber": "PR1261012502725 / P52100077438",
+      "about": {
+        "@type": "RealEstateListing",
+        "name": "Goyal My Home Sanctuary, Mamurdi, PCMC, Pune West"
+      }
+    },
+    {
+      "@type": "Legislation",
+      "@id": "https://goyalmyhomesanctuary.com/#statutory-sanctions",
+      "name": "Statutory Town Planning & Environmental Clearances",
+      "legislationType": "Statutory Municipal Sanctions & Environmental Approvals",
+      "legislationJurisdiction": "Pimpri-Chinchwad Municipal Corporation (PCMC), Maharashtra, India",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Mamurdi, PCMC, Pune West, Maharashtra 412101",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 18.66376,
+          "longitude": 73.7137836
+        }
+      },
+      "description": "Comprehensive municipal commencement certificates, non-agricultural land conversion, environmental clearance, and multi-agency NOCs for Goyal My Home Sanctuary.",
+      "hasPart": [
+        {
+          "@type": "GovernmentPermit",
+          "name": "PCMC Building Commencement Certificate (CC)",
+          "permitNumber": "PCMC/BP/COMM/2024/774",
+          "issuedBy": "Pimpri-Chinchwad Municipal Corporation Town Planning Authority"
+        },
+        {
+          "@type": "GovernmentPermit",
+          "name": "State Environmental Impact Clearance (EC)",
+          "permitNumber": "SEIAA-EC-0000003891",
+          "issuedBy": "State Level Environment Impact Assessment Authority (SEIAA) Maharashtra"
+        },
+        {
+          "@type": "GovernmentPermit",
+          "name": "Non-Agricultural (NA) Land Conversion Order",
+          "permitNumber": "REV/NA/PUNE/PCMC/2024/0912",
+          "issuedBy": "District Collectorate Pune"
+        },
+        {
+          "@type": "GovernmentPermit",
+          "name": "Airports Authority of India (AAI) Height Clearance NOC",
+          "permitNumber": "AAI/WRO/NOC/PUN/2024/481",
+          "issuedBy": "Airports Authority of India (AAI)"
+        },
+        {
+          "@type": "GovernmentPermit",
+          "name": "Maharashtra Fire Prevention & Life Safety Provisional NOC",
+          "permitNumber": "MFS/NOC/PCMC/2024/1104",
+          "issuedBy": "Maharashtra Fire Services Department"
+        }
+      ]
+    }
+  ]
+}

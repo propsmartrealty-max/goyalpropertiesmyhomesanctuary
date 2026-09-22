@@ -43,6 +43,10 @@
     "sizeBytes": 3336,
     "sri": "sha384-zl75iTgT301fCVRplNhsTnSCFPD9rKGaHSiByRmTUHfDjx3y1wVFjn81jX5pieao"
   },
+  "js/legal-engine.js": {
+    "sizeBytes": 1106,
+    "sri": "sha384-GXsSE2LFfR/9IfxFCqgWSXSZQVnra658LjvY5bLGWyCWfGuOcOIlqOwKTAQt7JQG"
+  },
   "js/main.js": {
     "sizeBytes": 13843,
     "sri": "sha384-Iknq1xTeWpej9SZHRSllEGOgppARplRRUr2PUJvfcd7YTVYIYzzXKxuEhBn61KZ1"

@@ -21,6 +21,8 @@ const SCHEMAS_TO_VALIDATE = [
   { file: 'faqs.jsonld', expectedType: 'FAQPage', expectedNodes: 1 },
   { file: 'engineering.jsonld', expectedType: 'TechArticle', expectedNodes: 1 },
   { file: 'developer.jsonld', expectedType: 'Corporation', expectedNodes: 1 },
+  { file: 'legal.jsonld', expectedType: 'GovernmentPermit', expectedNodes: 2 },
+  { file: 'breadcrumbs.jsonld', expectedType: 'BreadcrumbList', expectedNodes: 1 },
   { file: 'ai-facts.json', isAiFacts: true }
 ];
 

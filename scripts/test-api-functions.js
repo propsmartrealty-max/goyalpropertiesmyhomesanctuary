@@ -366,6 +366,36 @@ if (res22.status !== 200 || data22.status !== 'verified' || !data22.integrity_to
 }
 console.log('  ✓ Edge Cryptographic Lead Verification passed cleanly.');
 
-console.log('\n✓ ALL 22 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 23: Legal & Regulatory Compliance Audit API
+const { onRequestGet: legalAuditGet } = await import('../functions/api/legal-audit.js');
+const req23 = new Request('https://goyalmyhomesanctuary.in/api/legal-audit?authority=MahaRERA');
+const res23 = await legalAuditGet({ request: req23 });
+const data23 = await res23.json();
+
+console.log(`[Legal Audit API]: Status ${res23.status}, Project: ${data23.project_name}, Title: ${data23.title_clearance?.status}`);
+if (res23.status !== 200 || !data23.title_clearance || !data23.title_clearance.status.includes('Clear')) {
+  console.error('✗ Legal Audit API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Legal & Regulatory Compliance Audit Engine passed cleanly.');
+
+// Test 24: Smart Priority Queue Token Engine API
+const { onRequestPost: queueTokenPost } = await import('../functions/api/queue-token.js');
+const req24 = new Request('https://goyalmyhomesanctuary.in/api/queue-token', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name: 'Priority Investor', typology: '3bhk-signature' })
+});
+const res24 = await queueTokenPost({ request: req24, env: {} });
+const data24 = await res24.json();
+
+console.log(`[Queue Token API]: Status ${res24.status}, Token: ${data24.token_code}, Expires: ${data24.expires_at}`);
+if (res24.status !== 200 || !data24.token_code || !data24.token_code.startsWith('TOKEN-')) {
+  console.error('✗ Queue Token API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Smart Priority Token & Queue Engine passed cleanly.');
+
+console.log('\n✓ ALL 24 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 

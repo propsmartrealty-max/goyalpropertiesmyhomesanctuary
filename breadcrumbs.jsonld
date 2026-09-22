@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://goyalmyhomesanctuary.com/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://goyalmyhomesanctuary.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pune West Real Estate",
+          "item": "https://goyalmyhomesanctuary.com/pcmc-real-estate-market-guide"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PCMC Luxury Residences",
+          "item": "https://goyalmyhomesanctuary.com/mamurdi-real-estate-flats"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Mamurdi Kiwale Belt",
+          "item": "https://goyalmyhomesanctuary.com/kiwale-real-estate-properties"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Goyal My Home Sanctuary",
+          "item": "https://goyalmyhomesanctuary.com/#overview"
+        }
+      ]
+    }
+  ]
+}
