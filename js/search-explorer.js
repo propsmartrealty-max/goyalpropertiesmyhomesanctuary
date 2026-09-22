@@ -211,6 +211,31 @@ function initPermutationExplorer() {
   // Initial render
   renderCards(PERMUTATION_INDEX);
 
+  // Handle URL Search Query Parameter (?q=... or ?search=...) from Google Sitelinks SearchBox
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const incomingQuery = (urlParams.get("q") || urlParams.get("search") || "").trim();
+    if (incomingQuery) {
+      input.value = incomingQuery;
+      const term = incomingQuery.toLowerCase();
+      const filtered = PERMUTATION_INDEX.filter(item => {
+        return item.title.toLowerCase().includes(term) ||
+               item.query.toLowerCase().includes(term) ||
+               item.category.toLowerCase().includes(term) ||
+               item.answer.toLowerCase().includes(term);
+      });
+      renderCards(filtered.length > 0 ? filtered : PERMUTATION_INDEX);
+      const searchSec = document.getElementById("search-directory");
+      if (searchSec) {
+        setTimeout(() => {
+          searchSec.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 250);
+      }
+    }
+  } catch (err) {
+    // Ignore URL parameter parsing issues on legacy engines
+  }
+
   // Live input filtering
   input.addEventListener("input", (e) => {
     const term = e.target.value.toLowerCase().trim();
