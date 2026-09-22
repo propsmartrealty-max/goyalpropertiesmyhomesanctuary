@@ -455,7 +455,53 @@ function renderProgrammaticLandingPage(data) {
         "datePosted": "2026-09-22",
         "validThrough": "2027-12-31",
         "price": config.price,
-        "priceCurrency": "INR"
+        "priceCurrency": "INR",
+        "about": [
+          {
+            "@type": "Place",
+            "name": "Mamurdi, Pune West",
+            "sameAs": "https://en.wikipedia.org/wiki/Pimpri-Chinchwad"
+          },
+          {
+            "@type": "City",
+            "name": "Pimpri-Chinchwad",
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Pimpri-Chinchwad",
+              "https://www.wikidata.org/wiki/Q11854492"
+            ]
+          },
+          {
+            "@type": "City",
+            "name": "Pune",
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Pune",
+              "https://www.wikidata.org/wiki/Q892"
+            ]
+          }
+        ],
+        "mentions": [
+          {
+            "@type": "Thing",
+            "name": "Mumbai–Pune Expressway",
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Mumbai%E2%80%93Pune_Expressway",
+              "https://www.wikidata.org/wiki/Q3525167"
+            ]
+          },
+          {
+            "@type": "Thing",
+            "name": "Hinjawadi IT Park Rajiv Gandhi Infotech Park",
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Hinjawadi",
+              "https://www.wikidata.org/wiki/Q5767221"
+            ]
+          },
+          {
+            "@type": "GovernmentOrganization",
+            "name": "Maharashtra Real Estate Regulatory Authority (MahaRERA)",
+            "sameAs": "https://maharera.mahaonline.gov.in"
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",

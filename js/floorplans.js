@@ -18,7 +18,7 @@ const floorPlanMatrix = {
     deckSqM: 4.83,
     totalSqFt: 690,
     totalSqM: 64.10,
-    price: "₹62.50 Lakhs*",
+    price: "₹69.00 Lakhs*",
     orientation: "East Facing • Forest Greens",
     image: "assets/images/scraped/plan-2bhk-classic-638.jpg",
     specs: [
@@ -79,7 +79,7 @@ const floorPlanMatrix = {
     deckSqM: 5.20,
     totalSqFt: 760,
     totalSqM: 70.60,
-    price: "₹69.90 Lakhs*",
+    price: "₹74.00 Lakhs*",
     orientation: "North-East Facing • Sunrise Garden",
     image: "assets/images/scraped/plan-2bhk-premier-704.jpg",
     specs: [
@@ -131,7 +131,7 @@ const floorPlanMatrix = {
     deckSqM: 5.95,
     totalSqFt: 824,
     totalSqM: 76.55,
-    price: "₹74.80 Lakhs*",
+    price: "₹79.00 Lakhs*",
     orientation: "Corner Unit • 270° Mountain Horizon",
     image: "assets/images/scraped/plan-2bhk-signature-760.jpg",
     specs: [
@@ -174,7 +174,7 @@ const floorPlanMatrix = {
     deckSqM: 6.69,
     totalSqFt: 920,
     totalSqM: 85.47,
-    price: "₹81.50 Lakhs*",
+    price: "₹86.00 Lakhs*",
     orientation: "East Facing • Canopy Vista",
     image: "assets/images/scraped/plan-3bhk-classic-848.jpg",
     specs: [
@@ -221,7 +221,7 @@ const floorPlanMatrix = {
     deckSqM: 7.80,
     totalSqFt: 1008,
     totalSqM: 93.65,
-    price: "₹91.20 Lakhs*",
+    price: "₹97.00 Lakhs*",
     orientation: "North-East Corner • Hill Skyline",
     image: "assets/images/scraped/plan-3bhk-premier-924.jpg",
     specs: [
@@ -263,7 +263,7 @@ const floorPlanMatrix = {
     deckSqM: 9.10,
     totalSqFt: 1134,
     totalSqM: 105.35,
-    price: "₹1.02 Crore*",
+    price: "₹1.05 Crore*",
     orientation: "Highest Floor • 360° Hill & Sky Horizon",
     image: "assets/images/scraped/plan-3bhk-signature-1036.jpg",
     specs: [
@@ -324,6 +324,14 @@ function renderActivePlan() {
 
   const usableEl = document.getElementById("plan-usable");
   if (usableEl) usableEl.textContent = isSqFt ? `${data.totalSqFt} Sq. Ft.` : `${data.totalSqM} Sq. M.`;
+
+  const waBtn = document.getElementById("plan-whatsapp-cta");
+  if (waBtn) {
+    const configName = data.name || "Residence";
+    const carpet = isSqFt ? data.carpetSqFt + " sq.ft." : data.carpetSqM + " sq.m.";
+    const msg = `Hi Propsmart Realty, please share the official sanctioned PDF floor plan and cost sheet for ${configName} (${carpet}) at Goyal My Home Sanctuary Mamurdi.`;
+    waBtn.href = `https://wa.me/919175319441?text=${encodeURIComponent(msg)}`;
+  }
 
   const specsEl = document.getElementById("plan-highlights");
   if (specsEl) {
