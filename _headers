@@ -124,6 +124,14 @@
   Content-Type: image/png
   Cache-Control: public, max-age=31536000, immutable
 
+/android-chrome-192x192.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
+/android-chrome-512x512.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
 /manifest.webmanifest
   Content-Type: application/manifest+json; charset=utf-8
   Cache-Control: public, max-age=86400
@@ -166,6 +174,11 @@
 
 /llms-full.txt
   Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/.well-known/security.txt
+  Content-Type: text/plain; charset=utf-8
+  Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=86400
 
 /.well-known/*
