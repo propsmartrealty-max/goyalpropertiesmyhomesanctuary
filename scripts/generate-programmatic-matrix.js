@@ -81,7 +81,7 @@ export function generatePermutations() {
 export function buildSitemaps(items) {
   const CHUNK_SIZE = 1000;
   const totalChunks = Math.ceil(items.length / CHUNK_SIZE);
-  const now = '2026-09-21';
+  const now = '2026-09-22';
 
   console.log(`Generating ${items.length} programmatic URLs across ${totalChunks} sitemap files...`);
 

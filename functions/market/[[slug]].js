@@ -452,7 +452,7 @@ function renderProgrammaticLandingPage(data) {
         "name": `${config.name} - ${market.name} Pune Investment Matrix`,
         "description": pageDescription,
         "url": canonicalUrl,
-        "datePosted": "2026-09-21",
+        "datePosted": "2026-09-22",
         "validThrough": "2027-12-31",
         "price": config.price,
         "priceCurrency": "INR"

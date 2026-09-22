@@ -1,12 +1,25 @@
 # ==============================================================================
 # ROBOTS.TXT: GOYAL MY HOME SANCTUARY, MAMURDI, PUNE WEST
-# High-Authority Crawl Directives for Google, Bing, Apple, & Global Search Engines
+# High-Authority Crawl Directives for Google, AI Models & Global Search Engines
+# RFC 9309 Compliant • Standardized Apex Domain • Strict Host Binding
 # ==============================================================================
 
-# 1. Googlebot (Desktop, Mobile, Smartphone, Web Rendering Engine)
+# Preferred Canonical Host
+Host: https://goyalmyhomesanctuary.in
+
+# ------------------------------------------------------------------------------
+# 1. Googlebot Ecosystem (Desktop, Mobile, Rendering, News, Images, Video, Store)
+# ------------------------------------------------------------------------------
 User-agent: Googlebot
 User-agent: Googlebot-Mobile
 User-agent: Googlebot-News
+User-agent: Storebot-Google
+User-agent: Google-InspectionTool
+User-agent: Google-Other
+User-agent: apis-google
+User-agent: Mediapartners-Google
+User-agent: AdsBot-Google
+User-agent: AdsBot-Google-Mobile
 Allow: /
 Allow: /blog
 Allow: /blog/*
@@ -20,7 +33,10 @@ Allow: /favicon.svg
 Allow: /favicon.ico
 Allow: /apple-touch-icon.png
 Allow: /sitemap.xml
+Allow: /sitemap-core.xml
 Allow: /sitemap-videos.xml
+Allow: /sitemap-images.xml
+Allow: /sitemap-market-*.xml
 Allow: /feed.xml
 Allow: /manifest.webmanifest
 Allow: /opensearch.xml
@@ -31,85 +47,117 @@ Allow: /llms-full.txt
 Allow: /.well-known/*
 Disallow: /api/
 
-# 2. Googlebot Image Indexer (Google Images Search Ecosystem)
 User-agent: Googlebot-Image
 Allow: /
 Allow: /assets/
 Allow: /assets/images/*
 Allow: /favicon.svg
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
 
-# 3. Googlebot Video Indexer (Google Video & Discover Carousels)
 User-agent: Googlebot-Video
 Allow: /
 Allow: /assets/
+Allow: /sitemap-videos.xml
 
-# 4. Google StoreBot & Inspection Tools (Rich Snippet & Merchant Intelligence)
-User-agent: Storebot-Google
-User-agent: Google-InspectionTool
-User-agent: Google-Other
-Allow: /
-Disallow: /api/
-
-# 5. Microsoft Bingbot & MSN (Bing Search, Windows Search, Bing News)
+# ------------------------------------------------------------------------------
+# 2. Microsoft Bing & MSN Ecosystem (Bing Search, Bing Copilot, Windows Search)
+# ------------------------------------------------------------------------------
 User-agent: Bingbot
 User-agent: msnbot
 User-agent: msnbot-media
+User-agent: BingPreview
+User-agent: adidxbot
 Allow: /
 Allow: /blog/
 Allow: /pages/
+Allow: /market/
 Allow: /css/
 Allow: /js/
 Allow: /assets/
+Allow: /sitemap.xml
+Allow: /sitemap-core.xml
+Allow: /llms.txt
+Allow: /llms-full.txt
 Disallow: /api/
 
-# 6. Applebot (Apple Intelligence, Siri Suggestions, Spotlight Search)
+# ------------------------------------------------------------------------------
+# 3. Applebot (Apple Intelligence, Siri Suggestions, Spotlight Search, Safari)
+# ------------------------------------------------------------------------------
 User-agent: Applebot
 User-agent: Applebot-Extended
 Allow: /
 Allow: /blog/
 Allow: /pages/
+Allow: /market/
 Allow: /css/
 Allow: /js/
 Allow: /assets/
+Allow: /llms.txt
+Allow: /llms-full.txt
 Disallow: /api/
 
-# 7. Privacy & Alternate Search Engines (DuckDuckGo, Yahoo, Yandex, Baidu)
+# ------------------------------------------------------------------------------
+# 4. Privacy & Regional Search Engines (DuckDuckGo, Yahoo, Yandex, Baidu, Naver)
+# ------------------------------------------------------------------------------
 User-agent: DuckDuckBot
+User-agent: DuckAssistBot
 User-agent: Slurp
 User-agent: YandexBot
+User-agent: YandexMobileBot
+User-agent: YandexImages
 User-agent: Baiduspider
 User-agent: Qwantify
+User-agent: SeznamBot
+User-agent: Yeti
+User-agent: NaverBot
+User-agent: Sogou
 Allow: /
 Allow: /blog/
 Allow: /pages/
+Allow: /market/
+Allow: /assets/
 Disallow: /api/
 
-# 8. Social Crawlers (Facebook Open Graph, Twitter/X Cards, LinkedIn, Pinterest)
+# ------------------------------------------------------------------------------
+# 5. Social & Messaging Link Preview Crawlers (Rich OpenGraph / Twitter Cards)
+# ------------------------------------------------------------------------------
 User-agent: Twitterbot
 User-agent: facebookexternalhit
 User-agent: LinkedInBot
 User-agent: Pinterestbot
 User-agent: WhatsApp
+User-agent: TelegramBot
+User-agent: Slackbot
+User-agent: SkypeUriPreview
+User-agent: Discordbot
 Allow: /
 Allow: /assets/
 Disallow: /api/
 
-# 9. Modern AI & LLM Search Crawlers (ChatGPT Search, Perplexity, Gemini, Claude, Copilot, Apple Intelligence)
+# ------------------------------------------------------------------------------
+# 6. Advanced AI Models & LLM Search Agents (ChatGPT, Perplexity, Claude, Meta, Gemini)
+# ------------------------------------------------------------------------------
+User-agent: OAI-SearchBot
 User-agent: GPTBot
 User-agent: ChatGPT-User
-User-agent: OAI-SearchBot
 User-agent: PerplexityBot
 User-agent: ClaudeBot
 User-agent: Claude-Web
 User-agent: anthropic-ai
 User-agent: Google-Extended
-User-agent: Applebot
-User-agent: Applebot-Extended
 User-agent: Diffbot
 User-agent: Meta-ExternalAgent
+User-agent: Meta-ExternalFetcher
 User-agent: cohere-ai
 User-agent: YouBot
 User-agent: Amazonbot
+User-agent: Bytespider
+User-agent: PetalBot
+User-agent: CCBot
+User-agent: KagiBot
+User-agent: Timpibot
+User-agent: ia_archiver
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
@@ -124,7 +172,9 @@ Allow: /css/*
 Allow: /js/*
 Disallow: /api/
 
-# 10. Default Directives for All Other Crawlers
+# ------------------------------------------------------------------------------
+# 7. Default Directives for All Other Crawlers
+# ------------------------------------------------------------------------------
 User-agent: *
 Allow: /
 Allow: /blog/
@@ -137,16 +187,15 @@ Allow: /assets/
 Disallow: /api/
 
 # ==============================================================================
-# SITEMAP & DISCOVERY DECLARATIONS (RFC 9309 Compliant)
+# SITEMAP DECLARATIONS (10 Fully Validated Sitemaps • RFC 9309 Compliant)
 # ==============================================================================
 Sitemap: https://goyalmyhomesanctuary.in/sitemap.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-core.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-images.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-videos.xml
+Sitemap: https://goyalmyhomesanctuary.in/sitemap-images.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-1.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-2.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-3.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-4.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-5.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-6.xml
-
