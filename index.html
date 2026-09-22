@@ -64,12 +64,14 @@
   <link rel="alternate icon" href="favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="alternate" type="application/rss+xml" title="The Sanctuary Journal RSS Feed" href="https://goyalmyhomesanctuary.in/feed.xml" />
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Search Goyal My Home Sanctuary" />
 
   <!-- Preconnect & Resource Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
   <link rel="dns-prefetch" href="https://unpkg.com" />
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
   <link rel="preload" as="image" href="assets/images/scraped/elevation-main.jpg" fetchpriority="high" />
@@ -4461,6 +4463,15 @@
         window.lucide.createIcons();
       }
     });
+
+    // Progressive Web App: Resilient Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch((err) => {
+          console.debug('ServiceWorker optional:', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>

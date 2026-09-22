@@ -23,6 +23,9 @@ Allow: /sitemap.xml
 Allow: /sitemap-videos.xml
 Allow: /feed.xml
 Allow: /manifest.webmanifest
+Allow: /opensearch.xml
+Allow: /sw.js
+Allow: /humans.txt
 Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /.well-known/*

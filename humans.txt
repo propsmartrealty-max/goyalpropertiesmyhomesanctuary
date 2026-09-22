@@ -1,0 +1,15 @@
+/* TEAM */
+  Developer: Goyal Properties
+  Brand: Goyal My Home Sanctuary
+  Location: Mamurdi, Pune West, Maharashtra, India
+  Site: https://goyalmyhomesanctuary.in
+  Contact: propsmartrealty@gmail.com
+  VIP Helpline: +91 91753 19441
+
+/* SITE */
+  Standards: HTML5, CSS3, ES2024, Web Components, SVG, Service Worker, PWA
+  Components: Tailwind CSS, Lucide Icons
+  Infrastructure: Cloudflare Pages, Edge Functions, HTTP/3, Brotli, zstd
+  Architecture: Biophilic 26-Acre Integrated Township
+  MahaRERA: PR1261012502725
+  Last Update: 2026-09-22
