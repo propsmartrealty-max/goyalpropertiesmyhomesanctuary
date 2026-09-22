@@ -11,6 +11,8 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Cross-Origin-Opener-Policy: same-origin-allow-popups
   Cross-Origin-Resource-Policy: same-origin
+  Accept-CH: Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Model, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-DPR, Sec-CH-Width, Sec-CH-Viewport-Width
+  Critical-CH: Sec-CH-DPR, Sec-CH-Width
   Permissions-Policy: camera=(), microphone=(), geolocation=(self "https://maps.google.com" "https://www.google.com"), payment=(), usb=(), interest-cohort=(), screen-wake-lock=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://images.unsplash.com https://*.google.com https://*.googleapis.com https://*.gstatic.com https://www.google-analytics.com https://*.google-analytics.com https://api.whatsapp.com; frame-src 'self' https://www.google.com https://maps.google.com https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://api.whatsapp.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://api.whatsapp.com; upgrade-insecure-requests;
 
@@ -219,6 +221,11 @@
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
+/tour.jsonld
+  Content-Type: application/ld+json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
 /embeddings.json
   Content-Type: application/json; charset=utf-8
   Access-Control-Allow-Origin: *
@@ -228,6 +235,11 @@
   Content-Type: text/plain; charset=utf-8
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=86400
+
+/api/health
+  Content-Type: application/json; charset=utf-8
+  Access-Control-Allow-Origin: *
+  Cache-Control: no-store, no-cache, must-revalidate
 
 /api/*
   Content-Type: application/json; charset=utf-8

@@ -1,0 +1,55 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VirtualLocation",
+      "@id": "https://goyalmyhomesanctuary.in/tour.jsonld#virtual-sanctuary",
+      "name": "Goyal My Home Sanctuary 4K Virtual Drone & VR Walkthrough Experience",
+      "description": "Interactive virtual aerial drone tour and 3D architectural master plan walkthrough of the 26-acre sanctuary township in Mamurdi, PCMC, Pune West.",
+      "url": "https://goyalmyhomesanctuary.in/floor-plans-brochure",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.66376,
+        "longitude": 73.7137836,
+        "elevation": "580m"
+      },
+      "containsPlace": [
+        {
+          "@type": "Place",
+          "name": "35,000 sq.ft Grand Biophilic Clubhouse",
+          "description": "Multi-tier lifestyle epicenter featuring Olympic-length infinity pool, indoor badminton courts, gym, and forest promenade."
+        },
+        {
+          "@type": "Place",
+          "name": "Phase 1 Towers A & B",
+          "description": "22-storey high-rise monolithic MIVAN residential towers with 2 BHK and 3 BHK sanctioned residences."
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://goyalmyhomesanctuary.in/tour.jsonld#drone-tour",
+      "name": "Goyal My Home Sanctuary Official 4K Aerial Drone Tour & Expressway Flyover",
+      "description": "Cinematic 4K aerial drone perspective showcasing 26-acre township, 72% green canopy, Mumbai-Pune Expressway exit, and Hinjawadi IT Park connectivity.",
+      "thumbnailUrl": "https://goyalmyhomesanctuary.in/img/gallery-1.jpg",
+      "uploadDate": "2026-01-15T10:00:00+05:30",
+      "contentUrl": "https://goyalmyhomesanctuary.in/",
+      "embedUrl": "https://goyalmyhomesanctuary.in/floor-plans-brochure",
+      "duration": "PT3M45S",
+      "inLanguage": "en-IN",
+      "creator": {
+        "@type": "RealEstateAgent",
+        "@id": "https://goyalmyhomesanctuary.in/#developer"
+      }
+    },
+    {
+      "@type": "3DModel",
+      "@id": "https://goyalmyhomesanctuary.in/tour.jsonld#master-plan-3d",
+      "name": "Goyal My Home Sanctuary Interactive 3D Master Layout & CAD Blueprints",
+      "description": "Complete architectural CAD floor plan comparison model for sanctioned 2 BHK (638, 704, 760 sq.ft) and 3 BHK (848, 924, 1036 sq.ft) configurations.",
+      "encodingFormat": "model/gltf+json",
+      "url": "https://goyalmyhomesanctuary.in/floor-plans-brochure",
+      "isAccessibleForFree": true
+    }
+  ]
+}

@@ -116,6 +116,18 @@ if (!catalogJson['@graph'] || catalogJson['@graph'][0]['@type'] !== 'OfferCatalo
 }
 console.log(`✓ catalog.jsonld OfferCatalog verified with ${catalogJson['@graph'][0].itemListElement.length} sanctioned offers.`);
 
+const tourPath = path.join(ROOT_DIR, 'tour.jsonld');
+if (!fs.existsSync(tourPath)) {
+  console.error(`✗ Missing tour.jsonld`);
+  process.exit(1);
+}
+const tourJson = JSON.parse(fs.readFileSync(tourPath, 'utf8'));
+if (!tourJson['@graph'] || tourJson['@graph'][0]['@type'] !== 'VirtualLocation') {
+  console.error(`✗ Invalid tour.jsonld VirtualLocation schema`);
+  process.exit(1);
+}
+console.log(`✓ tour.jsonld 4K Virtual Drone Tour & 3D Walkthrough verified with ${tourJson['@graph'].length} graph nodes.`);
+
 const embeddingsPath = path.join(ROOT_DIR, 'embeddings.json');
 if (!fs.existsSync(embeddingsPath)) {
   console.error(`✗ Missing embeddings.json`);
@@ -139,6 +151,8 @@ const webVitalsPath = path.join(ROOT_DIR, 'js', 'web-vitals-rum.js');
 const solarVastuEnginePath = path.join(ROOT_DIR, 'js', 'solar-vastu-engine.js');
 const currencyEnginePath = path.join(ROOT_DIR, 'js', 'currency-engine.js');
 const vectorSearchPath = path.join(ROOT_DIR, 'js', 'vector-search.js');
+const offlineQueuePath = path.join(ROOT_DIR, 'js', 'offline-queue.js');
+const taxEnginePath = path.join(ROOT_DIR, 'js', 'tax-engine.js');
 
 const aiConciergePath = path.join(ROOT_DIR, 'functions', 'api', 'ai-concierge.js');
 const commuteCalcPath = path.join(ROOT_DIR, 'functions', 'api', 'commute-calculator.js');
@@ -151,21 +165,24 @@ const inventoryPath = path.join(ROOT_DIR, 'functions', 'api', 'inventory.js');
 const solarVastuPath = path.join(ROOT_DIR, 'functions', 'api', 'solar-vastu.js');
 const currencyApiPath = path.join(ROOT_DIR, 'functions', 'api', 'currency.js');
 const pushSubscribePath = path.join(ROOT_DIR, 'functions', 'api', 'push-subscribe.js');
+const taxCalcPath = path.join(ROOT_DIR, 'functions', 'api', 'tax-calculator.js');
+const healthPath = path.join(ROOT_DIR, 'functions', 'api', 'health.js');
 
 const googleDispatcherPath = path.join(ROOT_DIR, 'scripts', 'google-indexing-dispatcher.js');
 const gscBatchPath = path.join(ROOT_DIR, 'scripts', 'google-search-console-batch.js');
 
 if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(tourDeskPath) || !fs.existsSync(leadTelemetryPath) ||
     !fs.existsSync(webVitalsPath) || !fs.existsSync(solarVastuEnginePath) || !fs.existsSync(currencyEnginePath) ||
-    !fs.existsSync(vectorSearchPath) || !fs.existsSync(aiConciergePath) || 
-    !fs.existsSync(commuteCalcPath) || !fs.existsSync(resoFeedPath) || !fs.existsSync(timezoneDeskPath) || 
-    !fs.existsSync(ogGeneratorPath) || !fs.existsSync(leadCapturePath) || !fs.existsSync(vitalsPath) || 
-    !fs.existsSync(inventoryPath) || !fs.existsSync(solarVastuPath) || !fs.existsSync(currencyApiPath) ||
-    !fs.existsSync(pushSubscribePath) || !fs.existsSync(googleDispatcherPath) || !fs.existsSync(gscBatchPath)) {
+    !fs.existsSync(vectorSearchPath) || !fs.existsSync(offlineQueuePath) || !fs.existsSync(taxEnginePath) ||
+    !fs.existsSync(aiConciergePath) || !fs.existsSync(commuteCalcPath) || !fs.existsSync(resoFeedPath) ||
+    !fs.existsSync(timezoneDeskPath) || !fs.existsSync(ogGeneratorPath) || !fs.existsSync(leadCapturePath) ||
+    !fs.existsSync(vitalsPath) || !fs.existsSync(inventoryPath) || !fs.existsSync(solarVastuPath) ||
+    !fs.existsSync(currencyApiPath) || !fs.existsSync(pushSubscribePath) || !fs.existsSync(taxCalcPath) ||
+    !fs.existsSync(healthPath) || !fs.existsSync(googleDispatcherPath) || !fs.existsSync(gscBatchPath)) {
   console.error(`✗ Missing headless engines, edge API routes or Google dispatcher`);
   process.exit(1);
 }
-console.log(`✓ All 7 headless engines (commute, tour desk, lead telemetry, web vitals, solar-vastu, currency, vector-search), all 12 Edge APIs (ai-concierge, commute-calculator, reso-feed, timezone-desk, og, lead-capture, vitals, inventory, solar-vastu, currency, push-subscribe, market SSR), and Google/GSC dispatchers verified.`);
+console.log(`✓ All 9 headless engines (commute, tour desk, lead telemetry, web vitals, solar-vastu, currency, vector-search, offline-queue, tax-engine), all 14 Edge APIs (ai-concierge, commute-calculator, reso-feed, timezone-desk, og, lead-capture, vitals, inventory, solar-vastu, currency, push-subscribe, tax-calculator, health, market SSR), and Google/GSC dispatchers verified.`);
 
 console.log('\n--- ALL INFRASTRUCTURE, DISCOVERY, AI & GOOGLE AUDITS PASSED CLEANLY ---\n');
 

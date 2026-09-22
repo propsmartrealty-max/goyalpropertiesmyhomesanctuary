@@ -232,6 +232,32 @@ if (res12Post.status !== 200 || !data12Post.subId.startsWith('SUB-')) {
 }
 console.log('  ✓ Native VAPID Web Push Subscription Endpoint passed cleanly.');
 
-console.log('\n✓ ALL 12 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 13: Maharashtra Stamp Duty & Total Cost Calculator API
+const { onRequestGet: taxGet } = await import('../functions/api/tax-calculator.js');
+const req13 = new Request('https://goyalmyhomesanctuary.in/api/tax-calculator?amount=6900000&female_owner=true');
+const res13 = await taxGet({ request: req13 });
+const data13 = await res13.json();
+
+console.log(`[Tax Calculator API]: Status ${res13.status}, Statutory: ${data13.formatted_total_statutory}, Grand Total: ${data13.formatted_grand_total}`);
+if (res13.status !== 200 || !data13.female_ownership_concession_applied || data13.statutory_breakdown.stamp_duty.total_stamp_duty_inr !== 345000) {
+  console.error('✗ Tax Calculator API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Maharashtra Stamp Duty & Cost Engine passed cleanly.');
+
+// Test 14: Edge High-Availability Health Probe API
+const { onRequestGet: healthGet } = await import('../functions/api/health.js');
+const req14 = new Request('https://goyalmyhomesanctuary.in/api/health');
+const res14 = await healthGet({ request: req14, env: {} });
+const data14 = await res14.json();
+
+console.log(`[Health Probe API]: Status ${res14.status}, System Status: ${data14.status}, Latency: ${data14.probe_latency_ms}ms`);
+if (res14.status !== 200 || data14.status !== 'healthy' || data14.services.programmatic_routes.total_routes !== 10240) {
+  console.error('✗ Health Probe API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Edge Synthetic Health Probe Endpoint passed cleanly.');
+
+console.log('\n✓ ALL 14 EDGE API TESTS PASSED SUCCESSFULLY!\n');
 
 

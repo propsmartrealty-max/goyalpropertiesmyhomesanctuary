@@ -131,6 +131,40 @@ for (const file of htmlFiles) {
     }
   }
 
+  // 10. Inject tour.jsonld link in <head> if missing
+  if (!content.includes('href="/tour.jsonld"')) {
+    const catalogTag = '<link rel="alternate" type="application/ld+json" href="/catalog.jsonld" title="Goyal My Home Sanctuary Sanctioned Offer Catalog" />';
+    if (content.includes(catalogTag)) {
+      content = content.replace(
+        catalogTag,
+        `${catalogTag}\n  <link rel="alternate" type="application/ld+json" href="/tour.jsonld" title="Goyal My Home Sanctuary 4K Virtual Tour & 3D Master Layout" />`
+      );
+      changed = true;
+    }
+  }
+
+  // 11. Inject headless offline-queue.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/offline-queue.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/offline-queue.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
+  // 12. Inject headless tax-engine.js before </body> if missing (skip 404)
+  if (!file.endsWith('404.html') && !content.includes('/js/tax-engine.js')) {
+    if (content.includes('</body>')) {
+      content = content.replace(
+        '</body>',
+        '  <script src="/js/tax-engine.js" defer></script>\n</body>'
+      );
+      changed = true;
+    }
+  }
+
   if (changed) {
     fs.writeFileSync(file, content, 'utf8');
     updatedCount++;
