@@ -71,6 +71,10 @@
     "sizeBytes": 837,
     "sri": "sha384-q9spkLc11sbtwk7VWP1LvioWNjcfOSJ77+hmNRL4heqls60+dQBxkty9eVJ+yNh0"
   },
+  "js/roi-engine.js": {
+    "sizeBytes": 3208,
+    "sri": "sha384-6Fr8m7ZhEoeNV4VQ63u/DACIeikmJGWuCfI0NGRCVxd33oLHcuZVwku4Ha0/J2GD"
+  },
   "js/scheduler.js": {
     "sizeBytes": 12325,
     "sri": "sha384-M1SHlQILxNWb87fx8Eddqp59w7dPqPuRWqlJ3erPMF+jR/9p7YQL8/9leXISrNkK"
@@ -82,6 +86,10 @@
   "js/solar-vastu-engine.js": {
     "sizeBytes": 4419,
     "sri": "sha384-2XVdwgEE2huQ7mt+1fNxqy6Bk7VtrJ7oTHKXblNa4Zs/sPpyb0WYvANcVR1mRUe0"
+  },
+  "js/system-diagnostics.js": {
+    "sizeBytes": 3366,
+    "sri": "sha384-CvikPFSVNHm8seNWYhrN5zDDJ+T6+DfVgy/BtbWSJiHomEDwK7DeoNL25ta5Cs3X"
   },
   "js/tax-engine.js": {
     "sizeBytes": 1514,

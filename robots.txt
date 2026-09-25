@@ -191,21 +191,10 @@ Allow: /assets/
 Disallow: /api/
 
 # ==============================================================================
-# SITEMAP DECLARATIONS (16 Fully Validated Sitemaps • RFC 9309 Compliant)
+# SITEMAP DECLARATIONS (RFC 9309 Compliant Master Hierarchy)
 # ==============================================================================
 Sitemap: https://goyalmyhomesanctuary.in/sitemap.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-core.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-videos.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-images.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-images.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-1.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-2.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-3.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-4.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-5.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-6.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-7.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-8.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-9.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-10.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-11.xml

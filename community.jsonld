@@ -1,0 +1,122 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HousingComplex",
+      "@id": "https://goyalmyhomesanctuary.com/#gated-community",
+      "name": "Goyal My Home Sanctuary Gated Residential Community",
+      "alternateName": ["My Home Sanctuary Mamurdi", "Goyal Sanctuary Pune West"],
+      "description": "26-acre biophilic master-planned gated residential sanctuary in Mamurdi, PCMC Pune West by Goyal Properties. Features 72% green canopy, 4 MIVAN monolithic towers (G+28), and 75+ world-class lifestyle, sports, wellness, and executive amenities.",
+      "url": "https://goyalmyhomesanctuary.in/",
+      "telephone": "+919175319441",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Near MCA International Cricket Stadium, Off Mumbai-Pune Expressway, Kiwale-Mamurdi Road",
+        "addressLocality": "Mamurdi, PCMC",
+        "addressRegion": "Maharashtra",
+        "postalCode": "412101",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.66376,
+        "longitude": 73.7137836,
+        "elevation": "570 meters AMSL"
+      },
+      "developer": {
+        "@type": "Corporation",
+        "@id": "https://goyalmyhomesanctuary.com/#developer-goyal-properties",
+        "name": "Goyal Properties",
+        "url": "https://goyalproperties.in"
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Half-Olympic Temperature-Controlled Lap Pool",
+          "value": true,
+          "category": "Aquatic & Wellness"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Soundproof Executive Co-Working Suites & Podcast Studio",
+          "value": true,
+          "category": "Business & Remote Work"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "International Regulation Pickleball & Futsal Arena",
+          "value": true,
+          "category": "Sports & Recreation"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "26-Acre Biophilic Forest Canopy with 1,250+ Native Trees",
+          "value": true,
+          "category": "Eco & Biophilic Sanctuary"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Rooftop Sky Observatory with High-Power Telescopes",
+          "value": true,
+          "category": "Stargazing & Astronomy"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Dedicated High-Speed DC Fast EV Charging Stations",
+          "value": true,
+          "category": "Sustainable Mobility"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Pet Park & Agility Training Course",
+          "value": true,
+          "category": "Pet Friendly"
+        }
+      ],
+      "containsPlace": [
+        {
+          "@type": "Accommodation",
+          "name": "Tower A (West Wing)",
+          "description": "G+28 Monolithic Mivan residential tower featuring 2 & 3 BHK nature residences with uninterrupted Sahyadri valley views."
+        },
+        {
+          "@type": "Accommodation",
+          "name": "Tower B (Central Wing)",
+          "description": "G+28 Monolithic Mivan residential tower directly overlooking the central landscaped forest courtyard."
+        },
+        {
+          "@type": "Accommodation",
+          "name": "Tower C (Skyline Wing)",
+          "description": "G+28 Monolithic Mivan residential tower with panoramic vantage points toward MCA Cricket Stadium and Kiwale BRTS corridor."
+        },
+        {
+          "@type": "Accommodation",
+          "name": "Tower D (Forest Wing)",
+          "description": "G+28 Monolithic Mivan residential tower buffered by native tree groves with maximum acoustic privacy."
+        }
+      ],
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "MahaRERA Project Registration",
+          "value": "PR1261012502725 / P52100077438"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Total Land Parcel",
+          "value": "26 Acres Master Development"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Open Green Space Ratio",
+          "value": "72% Forest & Biophilic Sanctuary"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Construction Technology",
+          "value": "100% Monolithic Aluminum Mivan Formwork (Seismic Zone III Compliant)"
+        }
+      ]
+    }
+  ]
+}

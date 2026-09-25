@@ -29,7 +29,9 @@ const ENDPOINTS_TO_PROFILE = [
   { name: "/api/legal-audit", path: "../functions/api/legal-audit.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/legal-audit") },
   { name: "/api/queue-token", path: "../functions/api/queue-token.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/queue-token") },
   { name: "/api/microclimate", path: "../functions/api/microclimate.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/microclimate") },
-  { name: "/api/whatsapp-router", path: "../functions/api/whatsapp-router.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/whatsapp-router?intent=pricing&unit=2bhk-classic") }
+  { name: "/api/whatsapp-router", path: "../functions/api/whatsapp-router.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/whatsapp-router?intent=pricing&unit=2bhk-classic") },
+  { name: "/api/roi-calculator", path: "../functions/api/roi-calculator.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/roi-calculator?price=6900000") },
+  { name: "/api/rate-limit", path: "../functions/api/rate-limit.js", req: () => new Request("https://goyalmyhomesanctuary.in/api/rate-limit?ip=127.0.0.1") }
 ];
 
 export async function profileEdgeLatency() {

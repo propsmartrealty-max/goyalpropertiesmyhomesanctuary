@@ -25,7 +25,8 @@ const KNOWLEDGE_SOURCES = [
   { file: 'developer.jsonld', type: 'jsonld' },
   { file: 'legal.jsonld', type: 'jsonld' },
   { file: 'breadcrumbs.jsonld', type: 'jsonld' },
-  { file: 'microclimate.jsonld', type: 'jsonld' }
+  { file: 'microclimate.jsonld', type: 'jsonld' },
+  { file: 'community.jsonld', type: 'jsonld' }
 ];
 
 export async function runRagBenchmark() {
@@ -115,6 +116,10 @@ export async function runRagBenchmark() {
     {
       query: "Which mountain range provides natural wind corridor cooling for the microclimate?",
       expectedKeyword: "Sahyadri"
+    },
+    {
+      query: "Which sports facilities are curated in the master community?",
+      expectedKeyword: "Pickleball"
     }
   ];
 
@@ -128,7 +133,8 @@ export async function runRagBenchmark() {
     JSON.stringify(loadedData['developer.jsonld']),
     JSON.stringify(loadedData['legal.jsonld']),
     JSON.stringify(loadedData['breadcrumbs.jsonld']),
-    JSON.stringify(loadedData['microclimate.jsonld'])
+    JSON.stringify(loadedData['microclimate.jsonld']),
+    JSON.stringify(loadedData['community.jsonld'])
   ].join(' ');
 
   for (const bq of benchmarkQueries) {
@@ -139,7 +145,7 @@ export async function runRagBenchmark() {
     console.log(`  ✓ RAG Retrieval passed: "${bq.query}" -> Key "${bq.expectedKeyword}" resolved.`);
   }
 
-  console.log('\n✓ ALL 11 KNOWLEDGE GRAPHS PASSED RAG BENCHMARK & ENTITY RESOLUTION!\n');
+  console.log('\n✓ ALL 12 KNOWLEDGE GRAPHS PASSED RAG BENCHMARK & ENTITY RESOLUTION!\n');
   return true;
 }
 

@@ -422,6 +422,33 @@ if (res26.status !== 200 || !data26.whatsapp_url || !data26.whatsapp_url.include
 }
 console.log('  ✓ Context-Aware WhatsApp Concierge Router passed cleanly.');
 
-console.log('\n✓ ALL 26 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+// Test 27: ROI & Statutory Tax Deduction Calculator API
+const { onRequestGet: roiCalculatorGet } = await import('../functions/api/roi-calculator.js');
+const req27 = new Request('https://goyalmyhomesanctuary.in/api/roi-calculator?price=6900000&yield=4.5');
+const res27 = await roiCalculatorGet({ request: req27 });
+const data27 = await res27.json();
+
+console.log(`[ROI Calculator API]: Status ${res27.status}, EMI: ₹${data27.financing?.monthlyEmi}, 10-Yr Multiple: ${data27.capitalAppreciation?.year10CapitalAppreciationMultiple}`);
+if (res27.status !== 200 || !data27.wealthMetrics || !data27.taxOptimization) {
+  console.error('✗ ROI Calculator API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Investor ROI & Tax Deduction Engine passed cleanly.');
+
+// Test 28: Edge Sliding-Window Rate Limiter & Abuse Shield API
+const { onRequestGet: rateLimitGet } = await import('../functions/api/rate-limit.js');
+const req28 = new Request('https://goyalmyhomesanctuary.in/api/rate-limit?action=lead_submission&ip=192.168.1.1');
+const res28 = await rateLimitGet({ request: req28 });
+const data28 = await res28.json();
+
+console.log(`[Rate Limiter API]: Status ${res28.status}, Allowed: ${data28.allowed}, Remaining: ${data28.remaining}, Limit: ${data28.limit}`);
+if (res28.status !== 200 || data28.allowed !== true || !data28.limit) {
+  console.error('✗ Rate Limiter API test failed');
+  process.exit(1);
+}
+console.log('  ✓ Edge Sliding-Window Rate Limiter & Abuse Shield passed cleanly.');
+
+console.log('\n✓ ALL 28 EDGE API TESTS PASSED SUCCESSFULLY!\n');
+
 
 
