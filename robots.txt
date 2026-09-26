@@ -38,7 +38,7 @@ Allow: /sitemap.xml
 Allow: /sitemap-core.xml
 Allow: /sitemap-videos.xml
 Allow: /sitemap-images.xml
-Allow: /sitemap-market-*.xml
+Allow: /sitemap-market-images.xml
 Allow: /feed.xml
 Allow: /manifest.webmanifest
 Allow: /opensearch.xml
