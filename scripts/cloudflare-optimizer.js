@@ -51,38 +51,93 @@ if (fs.existsSync(envPath)) {
 
 // Credentials resolution
 const args = process.argv.slice(2);
-const cfEmail = args[0] || process.env.CLOUDFLARE_EMAIL || process.env.CF_EMAIL;
-const cfGlobalKey = args[1] || process.env.CLOUDFLARE_GLOBAL_KEY || process.env.CLOUDFLARE_API_KEY || process.env.CF_GLOBAL_KEY;
-const cfApiToken = process.env.CLOUDFLARE_API_TOKEN || process.env.CF_API_TOKEN;
+let cfEmail = process.env.CLOUDFLARE_EMAIL || process.env.CF_EMAIL;
+let cfKey = process.env.CLOUDFLARE_GLOBAL_KEY || process.env.CLOUDFLARE_API_KEY || process.env.CF_GLOBAL_KEY || process.env.CLOUDFLARE_API_TOKEN;
+
+// Auto-detect email vs key from arguments
+args.forEach(arg => {
+  if (arg.includes('@')) {
+    cfEmail = arg.trim();
+  } else if (arg.trim().length > 10) {
+    cfKey = arg.trim();
+  }
+});
+
+async function getWorkingHeaders(email, key) {
+  if (!key) return null;
+
+  // Test 1: Bearer Token
+  console.log('Testing Cloudflare Bearer Token auth...');
+  const bearerHeaders = {
+    'Authorization': `Bearer ${key}`,
+    'Content-Type': 'application/json'
+  };
+  try {
+    const res = await fetch('https://api.cloudflare.com/client/v4/user/tokens/verify', { headers: bearerHeaders });
+    const data = await res.json();
+    if (data.success) {
+      console.log('✓ Successfully authenticated via Bearer Token!');
+      return bearerHeaders;
+    }
+  } catch (e) {}
+
+  // Test 2: Global API Key with Email
+  if (email) {
+    console.log(`Testing Global API Key with ${email}...`);
+    const globalHeaders = {
+      'X-Auth-Email': email,
+      'X-Auth-Key': key,
+      'Content-Type': 'application/json'
+    };
+    try {
+      const res = await fetch(`https://api.cloudflare.com/client/v4/zones?name=${DOMAIN_NAME}`, { headers: globalHeaders });
+      const data = await res.json();
+      if (data.success) {
+        console.log('✓ Successfully authenticated via Global API Key!');
+        return globalHeaders;
+      }
+    } catch (e) {}
+  }
+
+  // Fallback to Bearer token if verify endpoint isn't supported for this token scope
+  console.log('Attempting direct zone lookup with Bearer token...');
+  try {
+    const res = await fetch(`https://api.cloudflare.com/client/v4/zones?name=${DOMAIN_NAME}`, { headers: bearerHeaders });
+    const data = await res.json();
+    if (data.success) {
+      console.log('✓ Successfully authenticated via Bearer Token for zone!');
+      return bearerHeaders;
+    }
+  } catch (e) {}
+
+  // If email was provided, return global headers as fallback
+  if (email) {
+    return {
+      'X-Auth-Email': email,
+      'X-Auth-Key': key,
+      'Content-Type': 'application/json'
+    };
+  }
+
+  return bearerHeaders;
+}
 
 async function runCloudflareOptimization() {
   console.log('\n================================================================');
   console.log('   CLOUDFLARE EDGE & GOOGLEBOT PERFORMANCE OPTIMIZER');
   console.log('================================================================');
 
-  let headers = {};
-  if (cfApiToken) {
-    console.log('🔐 Authenticating via Cloudflare Bearer API Token...');
-    headers = {
-      'Authorization': `Bearer ${cfApiToken}`,
-      'Content-Type': 'application/json'
-    };
-  } else if (cfEmail && cfGlobalKey) {
-    console.log(`🔐 Authenticating via Cloudflare Global API Key (${cfEmail})...`);
-    headers = {
-      'X-Auth-Email': cfEmail,
-      'X-Auth-Key': cfGlobalKey,
-      'Content-Type': 'application/json'
-    };
-  } else {
+  if (!cfKey) {
     console.log('\n⚠️  No Cloudflare Global Key or API Token detected.');
     console.log('\nTo run live optimization & edge purge:');
-    console.log('  node scripts/cloudflare-optimizer.js <EMAIL> <GLOBAL_API_KEY>');
+    console.log('  node scripts/cloudflare-optimizer.js <EMAIL> <KEY>');
     console.log('  OR set CLOUDFLARE_EMAIL and CLOUDFLARE_GLOBAL_KEY in .env or environment.\n');
     console.log('Running dry-run architecture validation...');
     await runDryRunAudit();
     return;
   }
+
+  const headers = await getWorkingHeaders(cfEmail, cfKey);
 
   try {
     // 1. Fetch Zone ID
