@@ -5,7 +5,7 @@
  * Provides offline reliability, instant asset caching, and full PWA capabilities.
  */
 
-const CACHE_NAME = 'sanctuary-v15';
+const CACHE_NAME = 'sanctuary-v16';
 const PRECACHE_ASSETS = [
   '/',
   '/css/style.css',
@@ -58,7 +58,9 @@ const PRECACHE_ASSETS = [
   '/mamurdi-vs-ravet-kiwale-comparison',
   '/pcmc-real-estate-market-guide',
   '/kiwale-real-estate-properties',
-  '/mamurdi-real-estate-flats'
+  '/mamurdi-real-estate-flats',
+  '/blog/goyal-my-home-sanctuary-vs-godrej-forest-grove-kohinoor-viva-city',
+  '/blog/nri-guide-pune-west-real-estate-investment'
 ];
 
 // 1. Install: Precache critical shell assets
