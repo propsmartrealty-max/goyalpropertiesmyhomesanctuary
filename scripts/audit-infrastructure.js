@@ -318,6 +318,7 @@ const stressTestPath = path.join(ROOT_DIR, 'scripts', 'stress-test-routes.js');
 const compressSitemapsPath = path.join(ROOT_DIR, 'scripts', 'compress-sitemaps.js');
 const verifySriPath = path.join(ROOT_DIR, 'scripts', 'verify-sri-integrity.js');
 const spiderSiteGraphPath = path.join(ROOT_DIR, 'scripts', 'spider-site-graph.js');
+const gscInspectorPath = path.join(ROOT_DIR, 'scripts', 'gsc-full-inspector.js');
 
 if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(tourDeskPath) || !fs.existsSync(leadTelemetryPath) ||
     !fs.existsSync(webVitalsPath) || !fs.existsSync(solarVastuEnginePath) || !fs.existsSync(currencyEnginePath) ||
@@ -339,7 +340,8 @@ if (!fs.existsSync(commuteEnginePath) || !fs.existsSync(tourDeskPath) || !fs.exi
     !fs.existsSync(googleDispatcherPath) || !fs.existsSync(gscBatchPath) || !fs.existsSync(pingSearchEnginesPath) ||
     !fs.existsSync(validateSchemasPath) || !fs.existsSync(benchmarkRagPath) || !fs.existsSync(generateSriPath) ||
     !fs.existsSync(auditBudgetsPath) || !fs.existsSync(profileLatencyPath) || !fs.existsSync(stressTestPath) ||
-    !fs.existsSync(compressSitemapsPath) || !fs.existsSync(verifySriPath) || !fs.existsSync(spiderSiteGraphPath)) {
+    !fs.existsSync(compressSitemapsPath) || !fs.existsSync(verifySriPath) || !fs.existsSync(spiderSiteGraphPath) ||
+    !fs.existsSync(gscInspectorPath)) {
   console.error(`✗ Missing headless engines, edge API routes or audit scripts`);
   process.exit(1);
 }
