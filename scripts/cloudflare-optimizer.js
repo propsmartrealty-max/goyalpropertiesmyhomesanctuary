@@ -160,12 +160,16 @@ async function runCloudflareOptimization() {
 
     const settingsToOptimize = [
       { setting: 'http3', value: 'on', label: 'HTTP/3 (QUIC)' },
-      { setting: 'zero_rtt', value: 'on', label: '0-RTT Connection Resumption' },
+      { setting: '0rtt', value: 'on', label: '0-RTT Connection Resumption' },
+      { setting: 'always_online', value: 'on', label: 'Always Online (Zero Downtime Fallback)' },
+      { setting: 'min_tls_version', value: '1.2', label: 'Minimum TLS Version 1.2' },
+      { setting: 'minify', value: { css: 'on', html: 'on', js: 'on' }, label: 'Edge Auto-Minification (HTML/CSS/JS)' },
       { setting: 'early_hints', value: 'on', label: 'Early Hints (HTTP 103)' },
       { setting: 'brotli', value: 'on', label: 'Brotli Compression' },
       { setting: 'always_use_https', value: 'on', label: 'Always Use HTTPS' },
       { setting: 'ssl', value: 'strict', label: 'SSL/TLS Strict Mode' },
-      { setting: 'security_level', value: 'medium', label: 'Security Level (Clean Googlebot Access)' }
+      { setting: 'security_level', value: 'medium', label: 'Security Level (Clean Googlebot Access)' },
+      { setting: 'security_header', value: { strict_transport_security: { enabled: true, max_age: 31536000, include_subdomains: true, preload: true, nosniff: true } }, label: 'Zone-Level HSTS Preload' }
     ];
 
     for (const item of settingsToOptimize) {
