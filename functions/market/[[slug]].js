@@ -37,10 +37,10 @@ const MICRO_MARKETS = {
 
 const CONFIGURATIONS = {
   '2-bhk-classic': { name: '2 BHK Classic', carpet: '638 - 745 sq.ft', price: '₹69 Lakhs*', tag: 'High-Efficiency Living', rooms: '2 Beds, 2 Baths, Living-Dining, Utility Balcony' },
-  '2-bhk-premier': { name: '2 BHK Premier', carpet: '704 - 820 sq.ft', price: '₹74 Lakhs*', tag: 'Spacious Master Suite', rooms: '2 Beds, 2 Baths, Extended Master Suite, Double Balcony' },
-  '2-bhk-signature': { name: '2 BHK Signature', carpet: '760 - 895 sq.ft', price: '₹79 Lakhs*', tag: 'Corner Unit with Dual Deck', rooms: '2 Beds, 2 Baths, Corner Panoramic Living Deck, Walk-in Wardrobe' },
+  '2-bhk-premier': { name: '2 BHK Premier', carpet: '704 - 820 sq.ft', price: '₹76 Lakhs*', tag: 'Spacious Master Suite', rooms: '2 Beds, 2 Baths, Extended Master Suite, Double Balcony' },
+  '2-bhk-signature': { name: '2 BHK Signature', carpet: '760 - 895 sq.ft', price: '₹82 Lakhs*', tag: 'Corner Unit with Dual Deck', rooms: '2 Beds, 2 Baths, Corner Panoramic Living Deck, Walk-in Wardrobe' },
   '3-bhk-classic': { name: '3 BHK Classic', carpet: '848 - 1045 sq.ft', price: '₹86 Lakhs*', tag: 'Family Luxury & Forest View', rooms: '3 Beds, 3 Baths, Dedicated Dining Foyer, Master Sky Balcony' },
-  '3-bhk-premier': { name: '3 BHK Premier', carpet: '924 - 1180 sq.ft', price: '₹97 Lakhs*', tag: 'Grand Living-Dining Deck', rooms: '3 Beds, 3 Baths, Grand 22-ft Living Deck, Italian Tile Finishes' },
+  '3-bhk-premier': { name: '3 BHK Premier', carpet: '924 - 1180 sq.ft', price: '₹94 Lakhs*', tag: 'Grand Living-Dining Deck', rooms: '3 Beds, 3 Baths, Grand 22-ft Living Deck, Italian Tile Finishes' },
   '3-bhk-signature': { name: '3 BHK Signature', carpet: '1036 - 1290 sq.ft', price: '₹1.05 Cr*', tag: 'Presidential Sky Suite', rooms: '3 Beds, 3 Baths, Private Elevator Access, 270-deg Biophilic Vista' },
   '4-bhk-duplex': { name: '4 BHK Duplex', carpet: '1850 sq.ft', price: '₹1.85 - 2.15 Cr*', tag: 'Double-Height Ceiling Sky Villa', rooms: '4 Beds, 4 Baths, Double Height Living, Private Sky Terrace' },
   'penthouse-sky-villa': { name: 'Penthouse Sky Villa', carpet: '2400 sq.ft', price: '₹2.40 - 2.85 Cr*', tag: 'Private Terrace & Plunge Pool', rooms: '5 Beds, 5 Baths, Rooftop Plunge Pool, 360-deg Horizon Views' }
@@ -232,6 +232,11 @@ export function renderDirectoryHub() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="My Home Sanctuary">
   <title>Pune Real Estate Market Hub | Goyal My Home Sanctuary Mamurdi</title>
   <meta name="description" content="Master Pune Real Estate Index for Goyal My Home Sanctuary in Mamurdi. Explore 5,000+ curated configurations, micro-market commute guides, cost sheets, and floor plans.">
   <link rel="canonical" href="https://goyalmyhomesanctuary.in/market">
@@ -258,6 +263,8 @@ export function renderDirectoryHub() {
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="alternate" type="application/json" href="/ai-facts.json" title="Goyal My Home Sanctuary AI Knowledge Graph">
   <meta name="theme-color" content="#0c1410">
@@ -614,6 +621,11 @@ function renderProgrammaticLandingPage(data) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="My Home Sanctuary">
   <title>${pageTitle}</title>
   <meta name="description" content="${pageDescription}">
   <link rel="canonical" href="${canonicalUrl}">
@@ -644,6 +656,8 @@ function renderProgrammaticLandingPage(data) {
   <meta name="theme-color" content="#0c1410">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="alternate" type="application/json" href="/ai-facts.json" title="Goyal My Home Sanctuary AI Knowledge Graph">
   <link rel="stylesheet" href="/css/style.css">
