@@ -200,7 +200,7 @@
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400
 
-/sitemap-market-*.xml
+/sitemap-market-images.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400
 
