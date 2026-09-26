@@ -50,6 +50,26 @@ const AI_CRAWLER_PATTERNS = [
   /Meta-ExternalAgent/i
 ];
 
+const SOCIAL_PREVIEW_PATTERNS = [
+  /WhatsApp/i,
+  /facebookexternalhit/i,
+  /Twitterbot/i,
+  /LinkedInBot/i,
+  /TelegramBot/i,
+  /Slackbot/i,
+  /Pinterest/i,
+  /SkypeUriPreview/i,
+  /Discordbot/i
+];
+
+const PERFORMANCE_AUDITOR_PATTERNS = [
+  /Chrome-Lighthouse/i,
+  /Google-PageSpeed/i,
+  /PTST/i,
+  /GTmetrix/i,
+  /Pingdom/i
+];
+
 const MALICIOUS_PATTERNS = [
   /sqlmap/i,
   /nikto/i,
@@ -118,10 +138,19 @@ export async function onRequest(context) {
   if (cleanPath === "/index") cleanPath = "/";
   const canonicalUrl = `https://${CANONICAL_HOST}${cleanPath}`;
 
-  // 4. Identify Crawler Telemetry
+  // 4. Identify Crawler & Visitor Telemetry
   const isGooglebot = GOOGLEBOT_PATTERNS.some(p => p.test(userAgent));
   const isSearchEngine = isGooglebot || SEARCH_ENGINE_PATTERNS.some(p => p.test(userAgent));
   const isAiCrawler = AI_CRAWLER_PATTERNS.some(p => p.test(userAgent));
+  const isSocialPreview = SOCIAL_PREVIEW_PATTERNS.some(p => p.test(userAgent));
+  const isAuditor = PERFORMANCE_AUDITOR_PATTERNS.some(p => p.test(userAgent));
+
+  let agentGuard = "standard-traffic";
+  if (isGooglebot) agentGuard = "googlebot-verified";
+  else if (isSearchEngine) agentGuard = "search-engine";
+  else if (isSocialPreview) agentGuard = "social-preview-verified";
+  else if (isAuditor) agentGuard = "lighthouse-auditor";
+  else if (isAiCrawler) agentGuard = "ai-crawler";
 
   // 5. Downstream Execution
   const response = await next();
@@ -132,7 +161,7 @@ export async function onRequest(context) {
   const newHeaders = new Headers(response.headers);
   newHeaders.set("X-Content-Type-Options", "nosniff");
   newHeaders.set("Referrer-Policy", "strict-origin-when-cross-origin");
-  newHeaders.set("X-Edge-Agent-Guard", isGooglebot ? "googlebot-verified" : (isSearchEngine ? "search-engine" : (isAiCrawler ? "ai-crawler" : "standard-traffic")));
+  newHeaders.set("X-Edge-Agent-Guard", agentGuard);
 
   if (isHtml && response.status === 200) {
     // RFC 5988 HTTP Header Canonicalization (Googlebot Fast Link Discovery)
