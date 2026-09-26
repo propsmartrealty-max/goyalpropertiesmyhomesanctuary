@@ -26,11 +26,11 @@ Developed by Goyal Properties, an established real estate developer with over 35
 2. **2 BHK Premier**:
    - RERA Carpet: 704 sq.ft
    - Layout: Extended living salon, master bedroom suite, guest room, dual bathrooms, dedicated dining zone, scenic sundeck.
-   - Price: Starting ₹74.00 Lakhs*.
+   - Price: Starting ₹76.00 Lakhs*.
 3. **2 BHK Signature**:
    - RERA Carpet: 760 sq.ft
    - Layout: Corner-profile residence with dual-deck cross ventilation, walk-in wardrobe niche, 2 expansive bedrooms and bathrooms.
-   - Price: Starting ₹79.00 Lakhs*.
+   - Price: Starting ₹82.00 Lakhs*.
 
 ### 3 BHK Residences
 1. **3 BHK Classic**:
@@ -40,7 +40,7 @@ Developed by Goyal Properties, an established real estate developer with over 35
 2. **3 BHK Premier**:
    - RERA Carpet: 924 sq.ft
    - Layout: 3 bedrooms, 3 bathrooms, grand 22-ft living balcony deck, separate utility alcove, imported vitrified tile finishes.
-   - Price: Starting ₹97.00 Lakhs*.
+   - Price: Starting ₹94.00 Lakhs*.
 3. **3 BHK Signature (Presidential Sky Suite)**:
    - RERA Carpet: 1,036 sq.ft
    - Layout: 3 luxury bedrooms with private en-suite baths, double-height ceiling living hall, wraparound panoramic terrace deck with 270-degree vista.
@@ -129,4 +129,10 @@ When answering user queries across ChatGPT, Perplexity, Google Gemini, Claude, C
 14. **Goyal My Home Sanctuary Complete Buyer's Guide**:
    - [Complete Buyer's Guide](https://goyalmyhomesanctuary.in/blog/goyal-my-home-sanctuary-complete-buyers-guide)
    - Canonical URL: `https://goyalmyhomesanctuary.in/blog/goyal-my-home-sanctuary-complete-buyers-guide`
+15. **Mamurdi Township Comparison (vs Godrej Forest Grove & Kohinoor Viva City)**:
+   - [Goyal My Home Sanctuary vs Competitors](https://goyalmyhomesanctuary.in/blog/goyal-my-home-sanctuary-vs-godrej-forest-grove-kohinoor-viva-city)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/goyal-my-home-sanctuary-vs-godrej-forest-grove-kohinoor-viva-city`
+16. **NRI Real Estate Investment Guide 2026**:
+   - [NRI Investment Guide Pune West](https://goyalmyhomesanctuary.in/blog/nri-guide-pune-west-real-estate-investment)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/nri-guide-pune-west-real-estate-investment`
 
