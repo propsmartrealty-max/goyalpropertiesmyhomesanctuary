@@ -3,7 +3,7 @@
   "@graph": [
     {
       "@type": "TechArticle",
-      "@id": "https://goyalmyhomesanctuary.com/#engineering-specifications",
+      "@id": "https://goyalmyhomesanctuary.in/#engineering-specifications",
       "headline": "Civil Engineering & Structural Quality Specifications: Goyal My Home Sanctuary",
       "description": "Comprehensive engineering audit, seismic compliance, Mivan formwork methodology, and material testing benchmarks for Goyal My Home Sanctuary, Mamurdi, PCMC, Pune.",
       "inLanguage": "en-IN",
@@ -14,7 +14,7 @@
       "publisher": {
         "@type": "Organization",
         "name": "Goyal Properties",
-        "url": "https://goyalmyhomesanctuary.com"
+        "url": "https://goyalmyhomesanctuary.in"
       },
       "about": [
         {

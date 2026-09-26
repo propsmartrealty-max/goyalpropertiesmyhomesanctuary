@@ -3,7 +3,7 @@
   "@graph": [
     {
       "@type": "HousingComplex",
-      "@id": "https://goyalmyhomesanctuary.com/#gated-community",
+      "@id": "https://goyalmyhomesanctuary.in/#gated-community",
       "name": "Goyal My Home Sanctuary Gated Residential Community",
       "alternateName": ["My Home Sanctuary Mamurdi", "Goyal Sanctuary Pune West"],
       "description": "26-acre biophilic master-planned gated residential sanctuary in Mamurdi, PCMC Pune West by Goyal Properties. Features 72% green canopy, 4 MIVAN monolithic towers (G+28), and 75+ world-class lifestyle, sports, wellness, and executive amenities.",
@@ -25,7 +25,7 @@
       },
       "developer": {
         "@type": "Corporation",
-        "@id": "https://goyalmyhomesanctuary.com/#developer-goyal-properties",
+        "@id": "https://goyalmyhomesanctuary.in/#developer-goyal-properties",
         "name": "Goyal Properties",
         "url": "https://goyalproperties.in"
       },

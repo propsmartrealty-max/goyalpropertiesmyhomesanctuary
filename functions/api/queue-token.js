@@ -51,7 +51,7 @@ export async function onRequestGet({ request }) {
   const typology = url.searchParams.get("typology") || "2bhk-classic";
   const name = url.searchParams.get("name") || "Prospective Buyer";
 
-  const syntheticReq = new Request("https://goyalmyhomesanctuary.com/api/queue-token", {
+  const syntheticReq = new Request("https://goyalmyhomesanctuary.in/api/queue-token", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, typology })

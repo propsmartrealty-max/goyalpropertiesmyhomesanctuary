@@ -3,12 +3,12 @@
   "@graph": [
     {
       "@type": "Corporation",
-      "@id": "https://goyalmyhomesanctuary.com/#developer-profile",
+      "@id": "https://goyalmyhomesanctuary.in/#developer-profile",
       "name": "Goyal Properties",
       "legalName": "Goyal Properties & Construction Private Limited",
       "alternateName": "Goyal Ganga Group Legacy",
-      "url": "https://goyalmyhomesanctuary.com",
-      "logo": "https://goyalmyhomesanctuary.com/assets/images/logo/logo.svg",
+      "url": "https://goyalmyhomesanctuary.in",
+      "logo": "https://goyalmyhomesanctuary.in/assets/images/logo/logo.svg",
       "foundingDate": "1990",
       "description": "Premier real estate developer in Pune and PCMC with 35+ years of excellence, having delivered over 40 landmark residential communities, 10+ million square feet of built-up space, and housing over 15,000 satisfied families.",
       "telephone": "+919822033333",

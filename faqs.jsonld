@@ -3,7 +3,7 @@
   "@graph": [
     {
       "@type": "FAQPage",
-      "@id": "https://goyalmyhomesanctuary.com/#faqs",
+      "@id": "https://goyalmyhomesanctuary.in/#faqs",
       "mainEntity": [
         {
           "@type": "Question",

@@ -3,7 +3,7 @@
   "@graph": [
     {
       "@type": "GovernmentPermit",
-      "@id": "https://goyalmyhomesanctuary.com/#rera-permit",
+      "@id": "https://goyalmyhomesanctuary.in/#rera-permit",
       "name": "MahaRERA Project Registration Certificate",
       "permitAudience": "Public / Real Estate Homebuyers",
       "validFor": {
@@ -24,7 +24,7 @@
     },
     {
       "@type": "Legislation",
-      "@id": "https://goyalmyhomesanctuary.com/#statutory-sanctions",
+      "@id": "https://goyalmyhomesanctuary.in/#statutory-sanctions",
       "name": "Statutory Town Planning & Environmental Clearances",
       "legislationType": "Statutory Municipal Sanctions & Environmental Approvals",
       "legislationJurisdiction": "Pimpri-Chinchwad Municipal Corporation (PCMC), Maharashtra, India",

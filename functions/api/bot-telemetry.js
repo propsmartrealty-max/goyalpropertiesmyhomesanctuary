@@ -76,13 +76,13 @@ export async function onRequestGet({ request, env }) {
       crawl_delay_seconds: 0
     },
     knowledge_islands_available: [
-      { uri: "https://goyalmyhomesanctuary.com/ai-facts.json", type: "canonical_ai_facts" },
-      { uri: "https://goyalmyhomesanctuary.com/faqs.jsonld", type: "voice_search_faqs" },
-      { uri: "https://goyalmyhomesanctuary.com/catalog.jsonld", type: "inventory_offer_catalog" },
-      { uri: "https://goyalmyhomesanctuary.com/tour.jsonld", type: "virtual_3d_tour" },
-      { uri: "https://goyalmyhomesanctuary.com/loans.jsonld", type: "approved_bank_apf_loans" },
-      { uri: "https://goyalmyhomesanctuary.com/schools.jsonld", type: "educational_transit_graph" },
-      { uri: "https://goyalmyhomesanctuary.com/.well-known/ai.txt", type: "ai_crawler_manifest" }
+      { uri: "https://goyalmyhomesanctuary.in/ai-facts.json", type: "canonical_ai_facts" },
+      { uri: "https://goyalmyhomesanctuary.in/faqs.jsonld", type: "voice_search_faqs" },
+      { uri: "https://goyalmyhomesanctuary.in/catalog.jsonld", type: "inventory_offer_catalog" },
+      { uri: "https://goyalmyhomesanctuary.in/tour.jsonld", type: "virtual_3d_tour" },
+      { uri: "https://goyalmyhomesanctuary.in/loans.jsonld", type: "approved_bank_apf_loans" },
+      { uri: "https://goyalmyhomesanctuary.in/schools.jsonld", type: "educational_transit_graph" },
+      { uri: "https://goyalmyhomesanctuary.in/.well-known/ai.txt", type: "ai_crawler_manifest" }
     ]
   };
 
@@ -105,6 +105,6 @@ export async function onRequestPost({ request, env }) {
   }
 
   const incomingUa = body.userAgent || request.headers.get("user-agent") || "";
-  const syntheticReq = new Request(`https://goyalmyhomesanctuary.com/api/bot-telemetry?ua=${encodeURIComponent(incomingUa)}`);
+  const syntheticReq = new Request(`https://goyalmyhomesanctuary.in/api/bot-telemetry?ua=${encodeURIComponent(incomingUa)}`);
   return onRequestGet({ request: syntheticReq, env });
 }
