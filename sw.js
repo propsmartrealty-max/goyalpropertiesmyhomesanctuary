@@ -5,7 +5,7 @@
  * Provides offline reliability, instant asset caching, and full PWA capabilities.
  */
 
-const CACHE_NAME = 'sanctuary-v14';
+const CACHE_NAME = 'sanctuary-v15';
 const PRECACHE_ASSETS = [
   '/',
   '/css/style.css',
