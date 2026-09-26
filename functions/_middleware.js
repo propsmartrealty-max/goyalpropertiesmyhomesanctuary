@@ -161,6 +161,10 @@ export async function onRequest(context) {
   const newHeaders = new Headers(response.headers);
   newHeaders.set("X-Content-Type-Options", "nosniff");
   newHeaders.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  newHeaders.set("X-Frame-Options", "SAMEORIGIN");
+  newHeaders.set("X-Permitted-Cross-Domain-Policies", "none");
+  newHeaders.set("X-Download-Options", "noopen");
+  newHeaders.set("Origin-Agent-Cluster", "?1");
   newHeaders.set("X-Edge-Agent-Guard", agentGuard);
 
   if (isHtml && response.status === 200) {
