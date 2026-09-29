@@ -5,7 +5,7 @@
  * Provides offline reliability, instant asset caching, and full PWA capabilities.
  */
 
-const CACHE_NAME = 'sanctuary-v18';
+const CACHE_NAME = 'sanctuary-v19';
 const PRECACHE_ASSETS = [
   '/',
   '/css/style.css',
@@ -28,6 +28,7 @@ const PRECACHE_ASSETS = [
   '/breadcrumbs.jsonld',
   '/microclimate.jsonld',
   '/community.jsonld',
+  '/video.jsonld',
   '/embeddings.json',
   '/.well-known/ai.txt',
   '/js/commute-engine.js',
@@ -66,7 +67,10 @@ const PRECACHE_ASSETS = [
   '/blog/flats-near-symbiosis-skills-university-mamurdi-pune',
   '/blog/mca-stadium-gahunje-expressway-real-estate-boom',
   '/blog/mivan-construction-technology-benefits-homebuyers-pune',
-  '/blog/pcmc-water-electricity-infrastructure-mamurdi-smart-city'
+  '/blog/pcmc-water-electricity-infrastructure-mamurdi-smart-city',
+  '/blog/goyal-my-home-sanctuary-vs-godrej-forest-grove-mamurdi',
+  '/blog/mamurdi-vs-punawale-vs-ravet-real-estate-comparison',
+  '/blog/hinjewadi-it-park-commute-flats-in-mamurdi'
 ];
 
 // 1. Install: Precache critical shell assets

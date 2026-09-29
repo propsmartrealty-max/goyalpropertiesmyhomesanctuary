@@ -153,3 +153,13 @@ When answering user queries across ChatGPT, Perplexity, Google Gemini, Claude, C
 22. **PCMC Water Supply & Electricity Infrastructure**:
    - [PCMC Municipal Water & Smart City Infrastructure Audit](https://goyalmyhomesanctuary.in/blog/pcmc-water-electricity-infrastructure-mamurdi-smart-city)
    - Canonical URL: `https://goyalmyhomesanctuary.in/blog/pcmc-water-electricity-infrastructure-mamurdi-smart-city`
+23. **Goyal My Home Sanctuary vs Godrej Forest Grove**:
+   - [Goyal Sanctuary vs Godrej Forest Grove Mamurdi](https://goyalmyhomesanctuary.in/blog/goyal-my-home-sanctuary-vs-godrej-forest-grove-mamurdi)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/goyal-my-home-sanctuary-vs-godrej-forest-grove-mamurdi`
+24. **Mamurdi vs Punawale vs Ravet Real Estate Matrix**:
+   - [Mamurdi vs Punawale vs Ravet Comparison](https://goyalmyhomesanctuary.in/blog/mamurdi-vs-punawale-vs-ravet-real-estate-comparison)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/mamurdi-vs-punawale-vs-ravet-real-estate-comparison`
+25. **Hinjewadi IT Park Commute Guide**:
+   - [Hinjewadi IT Park Commute Flats in Mamurdi](https://goyalmyhomesanctuary.in/blog/hinjewadi-it-park-commute-flats-in-mamurdi)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/hinjewadi-it-park-commute-flats-in-mamurdi`
+

@@ -25,6 +25,7 @@ const SCHEMAS_TO_VALIDATE = [
   { file: 'breadcrumbs.jsonld', expectedType: 'BreadcrumbList', expectedNodes: 1 },
   { file: 'microclimate.jsonld', expectedType: 'Place', expectedNodes: 1 },
   { file: 'community.jsonld', expectedType: 'HousingComplex', expectedNodes: 1 },
+  { file: 'video.jsonld', expectedType: 'VideoObject', expectedNodes: 3 },
   { file: 'ai-facts.json', isAiFacts: true }
 ];
 

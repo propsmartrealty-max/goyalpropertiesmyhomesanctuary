@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoObject",
+      "@id": "https://goyalmyhomesanctuary.in/#video-vision-film",
+      "name": "My Home Sanctuary Mamurdi - Official Vision Film & Design Philosophy",
+      "description": "The grand architectural design thesis and 26-acre biophilic philosophy of Goyal My Home Sanctuary in Mamurdi, PCMC Pune West, crafted by Goyal Properties.",
+      "thumbnailUrl": [
+        "https://img.youtube.com/vi/vir1opJSO3Q/maxresdefault.jpg",
+        "https://img.youtube.com/vi/vir1opJSO3Q/hqdefault.jpg"
+      ],
+      "uploadDate": "2026-03-15T09:00:00+05:30",
+      "duration": "PT3M45S",
+      "contentUrl": "https://www.youtube.com/watch?v=vir1opJSO3Q",
+      "embedUrl": "https://www.youtube.com/embed/vir1opJSO3Q",
+      "inLanguage": "en-IN",
+      "caption": "Official Vision AV showcasing Goyal My Home Sanctuary 26-acre biophilic township in Mamurdi Pune",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Goyal Properties",
+        "url": "https://goyalmyhomesanctuary.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://goyalmyhomesanctuary.in/favicon.svg"
+        }
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://goyalmyhomesanctuary.in/#video-walkthrough",
+      "name": "My Home Sanctuary Mamurdi - 3D Project Walkthrough & 75+ Amenities Tour",
+      "description": "Comprehensive architectural fly-through across the 75+ lifestyle amenities, G+28 MIVAN monolithic towers, semi-Olympic heated pool, and 72% green canopy at Goyal My Home Sanctuary.",
+      "thumbnailUrl": [
+        "https://img.youtube.com/vi/YLrltbchyig/maxresdefault.jpg",
+        "https://img.youtube.com/vi/YLrltbchyig/hqdefault.jpg"
+      ],
+      "uploadDate": "2026-03-20T10:00:00+05:30",
+      "duration": "PT4M12S",
+      "contentUrl": "https://www.youtube.com/watch?v=YLrltbchyig",
+      "embedUrl": "https://www.youtube.com/embed/YLrltbchyig",
+      "inLanguage": "en-IN",
+      "caption": "3D Architectural walkthrough of My Home Sanctuary Mamurdi residential towers and amenities",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Goyal Properties",
+        "url": "https://goyalmyhomesanctuary.in/"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://goyalmyhomesanctuary.in/#video-expressway",
+      "name": "My Home Sanctuary Mamurdi - Location, Connectivity & Expressway Aerial Drone Tour",
+      "description": "Aerial drone perspective highlighting the direct 2-minute connection to Mumbai-Pune Expressway, Kiwale-Mamurdi Road, and 15-minute commute to Hinjawadi IT Park from Goyal My Home Sanctuary.",
+      "thumbnailUrl": [
+        "https://img.youtube.com/vi/2mfOKkJaXCI/maxresdefault.jpg",
+        "https://img.youtube.com/vi/2mfOKkJaXCI/hqdefault.jpg"
+      ],
+      "uploadDate": "2026-03-25T11:00:00+05:30",
+      "duration": "PT2M58S",
+      "contentUrl": "https://www.youtube.com/watch?v=2mfOKkJaXCI",
+      "embedUrl": "https://www.youtube.com/embed/2mfOKkJaXCI",
+      "inLanguage": "en-IN",
+      "caption": "Aerial drone video of Mumbai-Pune Expressway exit and Goyal My Home Sanctuary connectivity in Mamurdi",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Goyal Properties",
+        "url": "https://goyalmyhomesanctuary.in/"
+      }
+    }
+  ]
+}

@@ -223,6 +223,7 @@
   <link rel="alternate" type="application/ld+json" href="/tour.jsonld" title="Goyal My Home Sanctuary 4K Virtual Tour & 3D Master Layout" />
   <link rel="alternate" type="application/ld+json" href="/loans.jsonld" title="Goyal My Home Sanctuary Pre-Approved Bank Loan & APF Catalog" />
   <link rel="alternate" type="application/ld+json" href="/schools.jsonld" title="Goyal My Home Sanctuary Nearby Educational & Healthcare Infrastructure" />
+  <link rel="alternate" type="application/ld+json" href="/video.jsonld" title="Goyal My Home Sanctuary Official Project Videos & Aerial Walkthrough" />
   <!-- Next-Gen Speculation Rules API for Instantaneous 0ms Page Transitions (Chromium / Google Chrome) -->
   <script type="speculationrules">
   {
@@ -460,6 +461,154 @@
       <p class="text-[11px] font-mono text-espresso-500">*Estimated monthly EMI calculated at 8.5% annual interest rate over a 20-year tenure on 80% loan amount. Taxes extra.</p>
     </section>
 
+    <!-- Interactive Precision Cost, Stamp Duty & EMI Calculator -->
+    <section id="interactive-cost-calculator" class="rounded-2xl bg-espresso-950 text-beige-100 p-6 sm:p-10 border border-bronze-500/40 shadow-2xl space-y-8" aria-label="Interactive Precision Cost and EMI Calculator">
+      <div class="border-b border-espresso-800 pb-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-bronze-500/20 text-bronze-300 border border-bronze-500/30">
+              Interactive Financial Engine
+            </span>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-emerald-950 text-emerald-400 border border-emerald-500/30">
+              Maharashtra RERA &amp; Stamp Duty Compliant
+            </span>
+          </div>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-2">
+            Mamurdi All-Inclusive Stamp Duty, Tax &amp; EMI Calculator
+          </h2>
+          <p class="text-xs sm:text-sm text-beige-300 mt-1 font-interface">
+            Simulate your personalized payment structure across all 6 sanctioned configurations with real-time Maharashtra statutory levies.
+          </p>
+        </div>
+        <a id="calc-whatsapp-btn" href="https://wa.me/919175319441?text=Hi,%20I%20am%20interested%20in%20a%20cost%20sheet%20for%20Goyal%20My%20Home%20Sanctuary" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs tracking-wider uppercase transition-all shadow-lg shadow-emerald-950/40 self-start md:self-auto shrink-0">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Send To WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Unit Selector Pills -->
+      <div class="space-y-3">
+        <label class="block text-xs font-mono uppercase tracking-wider text-beige-400">1. Select Sanctioned Residence Configuration</label>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5" id="calc-unit-pills">
+          <button type="button" data-price="6900000" data-unit="2 BHK Classic (638 sq.ft)" class="calc-unit-btn active text-left p-3 rounded-xl border border-bronze-400 bg-bronze-500/20 text-white transition-all text-xs">
+            <span class="font-bold block text-amber-300">2 BHK Classic</span>
+            <span class="text-[11px] text-beige-300 font-mono">638 sq.ft • ₹69 L*</span>
+          </button>
+          <button type="button" data-price="7600000" data-unit="2 BHK Premier (704 sq.ft)" class="calc-unit-btn text-left p-3 rounded-xl border border-espresso-800 bg-espresso-900/60 hover:bg-espresso-800 text-beige-200 transition-all text-xs">
+            <span class="font-bold block text-white">2 BHK Premier</span>
+            <span class="text-[11px] text-beige-400 font-mono">704 sq.ft • ₹76 L*</span>
+          </button>
+          <button type="button" data-price="8200000" data-unit="2 BHK Signature (760 sq.ft)" class="calc-unit-btn text-left p-3 rounded-xl border border-espresso-800 bg-espresso-900/60 hover:bg-espresso-800 text-beige-200 transition-all text-xs">
+            <span class="font-bold block text-white">2 BHK Signature</span>
+            <span class="text-[11px] text-beige-400 font-mono">760 sq.ft • ₹82 L*</span>
+          </button>
+          <button type="button" data-price="8600000" data-unit="3 BHK Classic (848 sq.ft)" class="calc-unit-btn text-left p-3 rounded-xl border border-espresso-800 bg-espresso-900/60 hover:bg-espresso-800 text-beige-200 transition-all text-xs">
+            <span class="font-bold block text-white">3 BHK Classic</span>
+            <span class="text-[11px] text-beige-400 font-mono">848 sq.ft • ₹86 L*</span>
+          </button>
+          <button type="button" data-price="9400000" data-unit="3 BHK Premier (924 sq.ft)" class="calc-unit-btn text-left p-3 rounded-xl border border-espresso-800 bg-espresso-900/60 hover:bg-espresso-800 text-beige-200 transition-all text-xs">
+            <span class="font-bold block text-white">3 BHK Premier</span>
+            <span class="text-[11px] text-beige-400 font-mono">924 sq.ft • ₹94 L*</span>
+          </button>
+          <button type="button" data-price="10500000" data-unit="3 BHK Signature (1,036 sq.ft)" class="calc-unit-btn text-left p-3 rounded-xl border border-espresso-800 bg-espresso-900/60 hover:bg-espresso-800 text-beige-200 transition-all text-xs">
+            <span class="font-bold block text-white">3 BHK Signature</span>
+            <span class="text-[11px] text-beige-400 font-mono">1,036 sq.ft • ₹1.05 Cr*</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Financial Sliders & Results Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
+        <!-- Input Sliders (7 cols) -->
+        <div class="lg:col-span-7 space-y-6 bg-espresso-900/80 p-5 sm:p-6 rounded-2xl border border-espresso-800">
+          <!-- Down Payment Slider -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-interface text-beige-300">Down Payment Percentage:</span>
+              <strong id="down-pct-val" class="font-mono text-amber-400 text-sm">20%</strong>
+            </div>
+            <input type="range" id="down-pct" min="10" max="50" step="5" value="20" class="w-full accent-bronze-400 cursor-pointer h-2 bg-espresso-950 rounded-lg">
+            <div class="flex justify-between text-[11px] font-mono text-espresso-400">
+              <span>10% (Min RERA)</span>
+              <span>20% (Standard)</span>
+              <span>50% (Self-Funded)</span>
+            </div>
+          </div>
+
+          <!-- Loan Tenure Slider -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-interface text-beige-300">Loan Tenure:</span>
+              <strong id="tenure-val" class="font-mono text-amber-400 text-sm">20 Years (240 Months)</strong>
+            </div>
+            <input type="range" id="tenure" min="5" max="30" step="1" value="20" class="w-full accent-bronze-400 cursor-pointer h-2 bg-espresso-950 rounded-lg">
+            <div class="flex justify-between text-[11px] font-mono text-espresso-400">
+              <span>5 Years</span>
+              <span>15 Years</span>
+              <span>30 Years</span>
+            </div>
+          </div>
+
+          <!-- Interest Rate Slider -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-interface text-beige-300">Annual Interest Rate (SBI / HDFC / ICICI):</span>
+              <strong id="interest-val" class="font-mono text-amber-400 text-sm">8.50%</strong>
+            </div>
+            <input type="range" id="interest" min="7.5" max="11.5" step="0.1" value="8.5" class="w-full accent-bronze-400 cursor-pointer h-2 bg-espresso-950 rounded-lg">
+            <div class="flex justify-between text-[11px] font-mono text-espresso-400">
+              <span>7.50% (Prime)</span>
+              <span>8.50% (Current Prevailing)</span>
+              <span>11.50% (Standard)</span>
+            </div>
+          </div>
+
+          <!-- Micro-Notice -->
+          <div class="p-3 rounded-xl bg-espresso-950 border border-espresso-800 text-[11px] text-beige-400 leading-relaxed font-mono">
+            ℹ️ All calculations include Maharashtra State Stamp Duty (7.0%), Registration Fees (₹30,000 statutory cap), and residential GST (5.0%). Actual values subject to specific floor rise and PLC choices at site office.
+          </div>
+        </div>
+
+        <!-- Output Metric Cards (5 cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          <!-- Monthly EMI Highlight Box -->
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-bronze-900/40 via-espresso-900 to-espresso-950 border border-bronze-500/50 shadow-lg text-center space-y-2">
+            <span class="text-xs uppercase font-mono tracking-widest text-beige-400">Estimated Monthly EMI</span>
+            <div id="result-emi" class="font-display text-3xl sm:text-4xl font-extrabold text-amber-300 tracking-tight">₹47,890</div>
+            <p class="text-[11px] font-mono text-beige-400">Fixed monthly installment on <span id="result-loan-amount" class="text-white font-bold">₹55.20 Lakh</span> principal</p>
+          </div>
+
+          <!-- Detailed Itemized Breakdown -->
+          <div class="p-5 rounded-2xl bg-espresso-900/80 border border-espresso-800 space-y-3 text-xs font-interface">
+            <div class="flex justify-between items-center border-b border-espresso-800 pb-2">
+              <span class="text-beige-300">Base Agreement Value:</span>
+              <strong id="result-base" class="font-mono text-white text-sm">₹69,00,000</strong>
+            </div>
+            <div class="flex justify-between items-center border-b border-espresso-800 pb-2">
+              <span class="text-beige-300">Your Down Payment (<span id="result-down-pct">20%</span>):</span>
+              <strong id="result-down-amt" class="font-mono text-emerald-400 text-sm">₹13,80,000</strong>
+            </div>
+            <div class="flex justify-between items-center border-b border-espresso-800 pb-2">
+              <span class="text-beige-300">MH Stamp Duty (7.0%):</span>
+              <strong id="result-stamp" class="font-mono text-beige-200">₹4,83,000</strong>
+            </div>
+            <div class="flex justify-between items-center border-b border-espresso-800 pb-2">
+              <span class="text-beige-300">Govt. Registration (Cap):</span>
+              <strong id="result-reg" class="font-mono text-beige-200">₹30,000</strong>
+            </div>
+            <div class="flex justify-between items-center border-b border-espresso-800 pb-2">
+              <span class="text-beige-300">Residential GST (5.0%):</span>
+              <strong id="result-gst" class="font-mono text-beige-200">₹3,45,000</strong>
+            </div>
+            <div class="flex justify-between items-center pt-1 font-bold">
+              <span class="text-amber-300 text-sm">Est. Total Investment Outlay:</span>
+              <strong id="result-total-outlay" class="font-mono text-amber-300 text-base">₹77,58,000</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Payment Milestones & CLP Details -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       
@@ -559,6 +708,124 @@
         navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
+  </script>
+  <script>
+    (function initCostCalculator() {
+      let currentPrice = 6900000;
+      let currentUnitName = "2 BHK Classic (638 sq.ft)";
+
+      const unitBtns = document.querySelectorAll('.calc-unit-btn');
+      const downPctInput = document.getElementById('down-pct');
+      const tenureInput = document.getElementById('tenure');
+      const interestInput = document.getElementById('interest');
+
+      const downPctVal = document.getElementById('down-pct-val');
+      const tenureVal = document.getElementById('tenure-val');
+      const interestVal = document.getElementById('interest-val');
+
+      const resultEmi = document.getElementById('result-emi');
+      const resultLoanAmount = document.getElementById('result-loan-amount');
+      const resultBase = document.getElementById('result-base');
+      const resultDownPct = document.getElementById('result-down-pct');
+      const resultDownAmt = document.getElementById('result-down-amt');
+      const resultStamp = document.getElementById('result-stamp');
+      const resultReg = document.getElementById('result-reg');
+      const resultGst = document.getElementById('result-gst');
+      const resultTotalOutlay = document.getElementById('result-total-outlay');
+      const whatsappBtn = document.getElementById('calc-whatsapp-btn');
+
+      if (!downPctInput || !tenureInput || !interestInput) return;
+
+      function formatINR(val) {
+        return '₹' + Math.round(val).toLocaleString('en-IN');
+      }
+
+      function formatLakhCr(val) {
+        if (val >= 10000000) {
+          return '₹' + (val / 10000000).toFixed(2) + ' Cr';
+        }
+        return '₹' + (val / 100000).toFixed(2) + ' Lakh';
+      }
+
+      function calculate() {
+        const downPct = parseFloat(downPctInput.value);
+        const tenureYears = parseInt(tenureInput.value, 10);
+        const annualRate = parseFloat(interestInput.value);
+
+        if (downPctVal) downPctVal.textContent = downPct + '%';
+        if (tenureVal) tenureVal.textContent = tenureYears + ' Years (' + (tenureYears * 12) + ' Months)';
+        if (interestVal) interestVal.textContent = annualRate.toFixed(2) + '%';
+
+        const downPayment = (currentPrice * downPct) / 100;
+        const loanPrincipal = currentPrice - downPayment;
+        const monthlyRate = (annualRate / 100) / 12;
+        const numMonths = tenureYears * 12;
+
+        let emi = 0;
+        if (monthlyRate > 0 && numMonths > 0) {
+          emi = (loanPrincipal * monthlyRate * Math.pow(1 + monthlyRate, numMonths)) / (Math.pow(1 + monthlyRate, numMonths) - 1);
+        }
+
+        const stampDuty = currentPrice * 0.07;
+        const registration = 30000;
+        const gst = currentPrice * 0.05;
+        const totalInvestment = currentPrice + stampDuty + registration + gst;
+
+        if (resultEmi) resultEmi.textContent = formatINR(emi) + ' / mo';
+        if (resultLoanAmount) resultLoanAmount.textContent = formatLakhCr(loanPrincipal);
+        if (resultBase) resultBase.textContent = formatINR(currentPrice);
+        if (resultDownPct) resultDownPct.textContent = downPct + '%';
+        if (resultDownAmt) resultDownAmt.textContent = formatINR(downPayment);
+        if (resultStamp) resultStamp.textContent = formatINR(stampDuty);
+        if (resultReg) resultReg.textContent = formatINR(registration);
+        if (resultGst) resultGst.textContent = formatINR(gst);
+        if (resultTotalOutlay) resultTotalOutlay.textContent = formatINR(totalInvestment);
+
+        if (whatsappBtn) {
+          const waText = encodeURIComponent(
+            "Hi Goyal Properties Team, I simulated my cost on your website for " + currentUnitName + ":\n" +
+            "• Base Agreement Value: " + formatINR(currentPrice) + "\n" +
+            "• Down Payment (" + downPct + "%): " + formatINR(downPayment) + "\n" +
+            "• Loan Required: " + formatLakhCr(loanPrincipal) + " (" + tenureYears + " yrs @ " + annualRate.toFixed(2) + "%)\n" +
+            "• Estimated Monthly EMI: " + formatINR(emi) + "\n" +
+            "• Est. Total All-Inclusive (with 7% Stamp Duty, Reg & 5% GST): " + formatINR(totalInvestment) + "\n" +
+            "Please verify exact floor inventory availability and send me the official bank payment schedule."
+          );
+          whatsappBtn.href = "https://wa.me/919175319441?text=" + waText;
+        }
+      }
+
+      unitBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          unitBtns.forEach(b => {
+            b.classList.remove('active', 'border-bronze-400', 'bg-bronze-500/20');
+            b.classList.add('border-espresso-800', 'bg-espresso-900/60');
+            const span1 = b.querySelector('span:first-child');
+            if (span1) {
+              span1.classList.remove('text-amber-300');
+              span1.classList.add('text-white');
+            }
+          });
+          btn.classList.add('active', 'border-bronze-400', 'bg-bronze-500/20');
+          btn.classList.remove('border-espresso-800', 'bg-espresso-900/60');
+          const activeSpan = btn.querySelector('span:first-child');
+          if (activeSpan) {
+            activeSpan.classList.remove('text-white');
+            activeSpan.classList.add('text-amber-300');
+          }
+
+          currentPrice = parseFloat(btn.getAttribute('data-price')) || 6900000;
+          currentUnitName = btn.getAttribute('data-unit') || "2 BHK Classic";
+          calculate();
+        });
+      });
+
+      downPctInput.addEventListener('input', calculate);
+      tenureInput.addEventListener('input', calculate);
+      interestInput.addEventListener('input', calculate);
+
+      calculate();
+    })();
   </script>
   <script src="/js/commute-engine.js" defer></script>
   <script src="/js/international-tour-desk.js" defer></script>
