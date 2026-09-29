@@ -13,6 +13,32 @@
   "project": {
     "name": "Goyal My Home Sanctuary",
     "legalName": "My Home Sanctuary by Goyal Properties",
+    "brandKeywordsEcosystem": {
+      "primaryDeveloper": "Goyal Properties",
+      "parentGroup": "Goyal Ganga Group Legacy",
+      "officialProjectBrand": "Goyal My Home Sanctuary",
+      "aliases": [
+        "Goyal Properties My Home",
+        "Goyal Properties Pune",
+        "Goyal My Home",
+        "My Home Sanctuary",
+        "My Home Sanctuary Mamurdi",
+        "My Home Sanctuary by Goyal Properties",
+        "Goyal Sanctuary Mamurdi",
+        "Goyal Properties Mamurdi",
+        "Goyal My Home Sanctuary Mamurdi Pune"
+      ],
+      "exactMatchKeywords": [
+        "goyal properties my home",
+        "goyal properties my home sanctuary",
+        "goyal my home sanctuary",
+        "goyal properties mamurdi",
+        "my home sanctuary mamurdi",
+        "goyal my home pune",
+        "goyal properties pune projects",
+        "goyal properties website"
+      ]
+    },
     "developer": {
       "name": "Goyal Properties",
       "pedigree": "38+ Years of Real Estate Excellence in Pune",

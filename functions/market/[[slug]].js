@@ -432,8 +432,8 @@ export function renderDirectoryHub() {
 
 function renderProgrammaticLandingPage(data) {
   const { slug, market, marketKey, config, configKey, intent, intentKey, persona, personaKey } = data;
-  const pageTitle = `${config.name} in ${market.name} Pune | ${intent.title} | Goyal My Home Sanctuary`;
-  const pageDescription = `Explore ${config.name} (${config.carpet}) at Goyal My Home Sanctuary, ${market.name} Pune West. ${intent.focus} Specially tailored for ${persona.title}. Starting ${config.price}. MahaRERA: PR1261012502725.`;
+  const pageTitle = `${config.name} in ${market.name} Pune | My Home Sanctuary | Goyal My Home Sanctuary Mamurdi`;
+  const pageDescription = `Explore ${config.name} (${config.carpet}) at Goyal My Home Sanctuary Mamurdi, ${market.name} Pune West. ${intent.focus} Specially tailored for ${persona.title}. Starting ${config.price}. MahaRERA: PR1261012502725.`;
   const canonicalUrl = `https://goyalmyhomesanctuary.in/market/${slug}`;
 
   // Structured Data (JSON-LD)
@@ -443,8 +443,14 @@ function renderProgrammaticLandingPage(data) {
       {
         "@type": "ApartmentComplex",
         "@id": "https://goyalmyhomesanctuary.in/#project",
-        "name": "Goyal My Home Sanctuary",
-        "alternateName": "My Home Sanctuary Mamurdi",
+        "name": "Goyal My Home Sanctuary Mamurdi",
+        "alternateName": [
+          "My Home Sanctuary",
+          "Goyal My Home Sanctuary",
+          "My Home Sanctuary Mamurdi",
+          "Goyal Properties My Home",
+          "Goyal Properties My Home Sanctuary"
+        ],
         "description": "26-acre luxury biophilic residential development by Goyal Properties in Mamurdi, Pune West featuring 72% green canopy, 75+ world-class amenities and MIVAN high-rise towers.",
         "url": "https://goyalmyhomesanctuary.in",
         "telephone": "+919175319441",

@@ -4,15 +4,21 @@
     {
       "@type": "OfferCatalog",
       "@id": "https://goyalmyhomesanctuary.in/catalog.jsonld#catalog",
-      "name": "Goyal My Home Sanctuary Sanctioned Offer Catalog",
-      "description": "Official MahaRERA sanctioned residential real estate inventory and configuration catalog for Goyal My Home Sanctuary in Mamurdi, PCMC, Pune West.",
+      "name": "Goyal Properties My Home Sanctuary Sanctioned Offer Catalog",
+      "alternateName": [
+        "Goyal Properties My Home Catalog",
+        "Goyal My Home Sanctuary Inventory",
+        "My Home Sanctuary Pricing Matrix"
+      ],
+      "description": "Official MahaRERA sanctioned residential real estate inventory and configuration catalog for Goyal Properties My Home Sanctuary in Mamurdi, PCMC, Pune West.",
       "url": "https://goyalmyhomesanctuary.in/price-cost-sheet",
       "numberOfItems": 6,
       "itemListOrder": "https://schema.org/ItemListOrderAscending",
       "provider": {
         "@type": "RealEstateAgent",
         "@id": "https://goyalmyhomesanctuary.in/#developer",
-        "name": "PropSmart Realty & Goyal Properties",
+        "name": "Goyal Properties & PropSmart Realty",
+        "alternateName": "Goyal Properties My Home Sales Desk",
         "telephone": "+919175319441",
         "email": "propsmartrealty@gmail.com",
         "url": "https://goyalmyhomesanctuary.in/"
