@@ -29,6 +29,8 @@ const URLS = [
   `https://${HOST}/blog/mivan-monolithic-construction-vs-conventional-brickwork`,
   `https://${HOST}/blog/goyal-my-home-sanctuary-vs-godrej-forest-grove-kohinoor-viva-city`,
   `https://${HOST}/blog/nri-guide-pune-west-real-estate-investment`,
+  `https://${HOST}/blog/mamurdi-vs-ravet-vs-kiwale-real-estate-investment-guide`,
+  `https://${HOST}/blog/72-percent-forest-canopy-microclimate-aqi-mamurdi-pune`,
   `https://${HOST}/feed.xml`,
   `https://${HOST}/llms.txt`,
   `https://${HOST}/llms-full.txt`,
