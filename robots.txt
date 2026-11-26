@@ -25,7 +25,7 @@ Allow: /blog
 Allow: /blog/*
 Allow: /pages/*
 Allow: /market
-Allow: /market/*
+Disallow: /market/*
 Allow: /css/*
 Allow: /js/*
 Allow: /assets/*
@@ -75,7 +75,8 @@ User-agent: adidxbot
 Allow: /
 Allow: /blog/
 Allow: /pages/
-Allow: /market/
+Allow: /market
+Disallow: /market/*
 Allow: /css/
 Allow: /js/
 Allow: /assets/
@@ -93,7 +94,8 @@ User-agent: Applebot-Extended
 Allow: /
 Allow: /blog/
 Allow: /pages/
-Allow: /market/
+Allow: /market
+Disallow: /market/*
 Allow: /css/
 Allow: /js/
 Allow: /assets/
@@ -119,7 +121,8 @@ User-agent: Sogou
 Allow: /
 Allow: /blog/
 Allow: /pages/
-Allow: /market/
+Allow: /market
+Disallow: /market/*
 Allow: /assets/
 Disallow: /api/
 
@@ -167,7 +170,7 @@ Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /.well-known/*
 Allow: /market
-Allow: /market/*
+Disallow: /market/*
 Allow: /blog
 Allow: /blog/*
 Allow: /pages/*
@@ -183,7 +186,8 @@ User-agent: *
 Allow: /
 Allow: /blog/
 Allow: /pages/
-Allow: /market/
+Allow: /market
+Disallow: /market/*
 Allow: /market
 Allow: /css/
 Allow: /js/
@@ -197,4 +201,3 @@ Sitemap: https://goyalmyhomesanctuary.in/sitemap.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-core.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-videos.xml
 Sitemap: https://goyalmyhomesanctuary.in/sitemap-images.xml
-Sitemap: https://goyalmyhomesanctuary.in/sitemap-market-images.xml

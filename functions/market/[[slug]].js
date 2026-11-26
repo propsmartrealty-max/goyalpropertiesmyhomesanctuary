@@ -635,9 +635,9 @@ function renderProgrammaticLandingPage(data) {
   <title>${pageTitle}</title>
   <meta name="description" content="${pageDescription}">
   <link rel="canonical" href="${canonicalUrl}">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="googlebot" content="noindex, follow">
+  <meta name="bingbot" content="noindex, follow">
   
   <!-- Open Graph / Social Tags -->
   <meta property="og:locale" content="en_IN">
@@ -1108,12 +1108,16 @@ export async function onRequest(context) {
     html = renderProgrammaticLandingPage(parsed);
   }
 
+  const robotsHeader = parsed
+    ? 'noindex, follow'
+    : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+
   return new Response(html, {
     status: 200,
     headers: {
       'Content-Type': 'text/html; charset=UTF-8',
       'Cache-Control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=86400',
-      'X-Robots-Tag': 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+      'X-Robots-Tag': robotsHeader,
       'X-Programmatic-SEO': 'Goyal-Sanctuary-Matrix-v1',
       'Link': `<https://goyalmyhomesanctuary.in${url.pathname}>; rel="canonical"`
     }

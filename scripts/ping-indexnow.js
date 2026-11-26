@@ -38,6 +38,7 @@ const URLS = [
   `https://${HOST}/blog/goyal-my-home-sanctuary-vs-godrej-forest-grove-mamurdi`,
   `https://${HOST}/blog/mamurdi-vs-punawale-vs-ravet-real-estate-comparison`,
   `https://${HOST}/blog/hinjewadi-it-park-commute-flats-in-mamurdi`,
+  `https://${HOST}/press`,
   `https://${HOST}/feed.xml`,
   `https://${HOST}/llms.txt`,
   `https://${HOST}/llms-full.txt`,
