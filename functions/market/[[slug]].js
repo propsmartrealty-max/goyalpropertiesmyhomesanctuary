@@ -1096,30 +1096,33 @@ ${JSON.stringify(schemaJsonLd, null, 2)}
 
 export async function onRequest(context) {
   const { request, params } = context;
-  const url = new URL(request.url);
+  const slug = params.slug ? (Array.isArray(params.slug) ? params.slug.join('/') : params.slug) : '';
+  const cleanSlug = slug.toLowerCase().replace(/^\/+|\/+$/g, '');
 
-  // If root /market or no specific slug, render directory hub
-  const parsed = parseSlug(params.slug);
-  let html = '';
+  let targetUrl = 'https://goyalmyhomesanctuary.in/goyal-my-home-pune-ecosystem';
 
-  if (!parsed) {
-    html = renderDirectoryHub();
+  if (cleanSlug.includes('2-bhk') || cleanSlug.includes('2bhk')) {
+    targetUrl = 'https://goyalmyhomesanctuary.in/2-bhk-flats-mamurdi';
+  } else if (cleanSlug.includes('3-bhk') || cleanSlug.includes('3bhk') || cleanSlug.includes('4-bhk') || cleanSlug.includes('penthouse')) {
+    targetUrl = 'https://goyalmyhomesanctuary.in/3-bhk-flats-mamurdi';
+  } else if (cleanSlug.includes('price') || cleanSlug.includes('cost') || cleanSlug.includes('payment') || cleanSlug.includes('emi')) {
+    targetUrl = 'https://goyalmyhomesanctuary.in/price-cost-sheet';
+  } else if (cleanSlug.includes('floor-plan') || cleanSlug.includes('brochure') || cleanSlug.includes('layout')) {
+    targetUrl = 'https://goyalmyhomesanctuary.in/floor-plans-brochure';
   } else {
-    html = renderProgrammaticLandingPage(parsed);
+    targetUrl = 'https://goyalmyhomesanctuary.in/goyal-my-home-pune-ecosystem';
   }
 
-  const robotsHeader = parsed
-    ? 'noindex, follow'
-    : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
-
-  return new Response(html, {
-    status: 200,
-    headers: {
-      'Content-Type': 'text/html; charset=UTF-8',
-      'Cache-Control': 'public, max-age=0, s-maxage=604800, stale-while-revalidate=86400',
-      'X-Robots-Tag': robotsHeader,
-      'X-Programmatic-SEO': 'Goyal-Sanctuary-Matrix-v1',
-      'Link': `<https://goyalmyhomesanctuary.in${url.pathname}>; rel="canonical"`
+  return new Response(
+    `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=${targetUrl}"><link rel="canonical" href="${targetUrl}"></head><body>Moved to <a href="${targetUrl}">${targetUrl}</a></body></html>`,
+    {
+      status: 301,
+      headers: {
+        'Location': targetUrl,
+        'Content-Type': 'text/html; charset=UTF-8',
+        'Cache-Control': 'public, max-age=604800, stale-while-revalidate=86400',
+        'X-Robots-Tag': 'noindex, follow'
+      }
     }
-  });
+  );
 }

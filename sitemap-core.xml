@@ -63,10 +63,21 @@
     </image:image>
   </url>
   <url>
-    <loc>https://goyalmyhomesanctuary.in/market</loc>
-    <lastmod>2026-11-26</lastmod>
+    <loc>https://goyalmyhomesanctuary.in/contact-us</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/goyal-my-home-pune-ecosystem</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.98</priority>
+    <priority>0.99</priority>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg</image:loc>
+      <image:title>Goyal My Home Pune Ecosystem Developer Legacy &amp; Catchment Matrix</image:title>
+      <image:caption>Goyal Properties 35+ Year Pune Real Estate Ecosystem and Flagship My Home Sanctuary Township</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://goyalmyhomesanctuary.in/2-bhk-flats-mamurdi</loc>

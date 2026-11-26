@@ -99,27 +99,15 @@ function optimizeIndexHtml() {
     console.log(`✓ Injected LCP image preload into index.html`);
   }
 
-  // Add Market Hub link to Desktop Navigation
-  if (!content.includes('href="/market"')) {
+  // Add Pune Ecosystem link to Desktop Navigation
+  if (!content.includes('href="/goyal-my-home-pune-ecosystem"')) {
     // Desktop Nav
     content = content.replace(
       '<a href="/blog" class="hover:text-bronze-600 transition-colors font-bold text-bronze-700">Journal</a>',
-      '<a href="/market" class="hover:text-bronze-600 transition-colors font-bold text-bronze-700">Market Hub</a>\n        <a href="/blog" class="hover:text-bronze-600 transition-colors font-bold text-bronze-700">Journal</a>'
+      '<a href="/goyal-my-home-pune-ecosystem" class="hover:text-bronze-600 transition-colors font-bold text-bronze-700">Pune Ecosystem</a>\n        <a href="/blog" class="hover:text-bronze-600 transition-colors font-bold text-bronze-700">Journal</a>'
     );
 
-    // Mobile Nav
-    content = content.replace(
-      '<a href="/blog" onclick="toggleMobileMenu()" class="text-espresso-800 hover:text-bronze-600 py-1.5 border-b border-beige-200 font-bold text-bronze-600">The Sanctuary Journal</a>',
-      '<a href="/market" onclick="toggleMobileMenu()" class="text-espresso-800 hover:text-bronze-600 py-1.5 border-b border-beige-200 font-bold text-bronze-600">Pune Market Hub (5,000+ Permutations)</a>\n        <a href="/blog" onclick="toggleMobileMenu()" class="text-espresso-800 hover:text-bronze-600 py-1.5 border-b border-beige-200 font-bold text-bronze-600">The Sanctuary Journal</a>'
-    );
-
-    // Footer Links
-    content = content.replace(
-      '<li><a href="/price-cost-sheet" class="hover:text-amber-400">Official Cost Sheet &amp; EMI Matrix</a></li>',
-      '<li><a href="/market" class="hover:text-amber-400 font-bold text-amber-300">Pune Real Estate Market Hub (5,000+ Permutations) ↗</a></li>\n              <li><a href="/price-cost-sheet" class="hover:text-amber-400">Official Cost Sheet &amp; EMI Matrix</a></li>'
-    );
-
-    console.log(`✓ Added /market link equity connections across desktop nav, mobile nav, and footer in index.html`);
+    console.log(`✓ Verified /goyal-my-home-pune-ecosystem link equity connections in index.html`);
   }
 
   fs.writeFileSync(indexPath, content, 'utf8');

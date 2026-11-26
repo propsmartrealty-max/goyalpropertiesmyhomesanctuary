@@ -43,12 +43,28 @@
 /possession    /maharera-pr1261012502725-approvals             301
 /reviews       /                                               301
 /contact       /                                               301
+/contact-us    /                                               301
 /site-visit    /                                               301
 /faq           /                                               301
+/hinjewadi-it-park-commute /hinjawadi-it-park-commute          301
 
 # ==============================================================================
 # Legacy /pages/ Directory Redirects (Canonical 301 to Apex Clean URLs)
 # ==============================================================================
 /pages/:slug                         /:slug                                          301
 /pages/                              /                                               301
+
+# ==============================================================================
+# Programmatic Market De-bloat & Consolidation (Permanent 301 to Authority Hubs)
+# ==============================================================================
+/market                              /goyal-my-home-pune-ecosystem                   301
+/market/                             /goyal-my-home-pune-ecosystem                   301
+/market/*2-bhk*                      /2-bhk-flats-mamurdi                            301
+/market/*3-bhk*                      /3-bhk-flats-mamurdi                            301
+/market/*price*                      /price-cost-sheet                               301
+/market/*cost*                       /price-cost-sheet                               301
+/market/*floor-plan*                 /floor-plans-brochure                           301
+/market/*brochure*                   /floor-plans-brochure                           301
+/market/*                            /goyal-my-home-pune-ecosystem                   301
+
 
