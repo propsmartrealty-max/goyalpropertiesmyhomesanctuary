@@ -5,7 +5,7 @@
  * Provides offline reliability, instant asset caching, and full PWA capabilities.
  */
 
-const CACHE_NAME = 'sanctuary-v21';
+const CACHE_NAME = 'sanctuary-v22';
 const PRECACHE_ASSETS = [
   '/',
   '/css/style.css',
@@ -72,7 +72,13 @@ const PRECACHE_ASSETS = [
   '/blog/mamurdi-vs-punawale-vs-ravet-real-estate-comparison',
   '/blog/hinjewadi-it-park-commute-flats-in-mamurdi',
   '/press',
-  '/goyal-my-home-pune-ecosystem'
+  '/goyal-my-home-pune-ecosystem',
+  '/contact-us',
+  '/blog/mumbai-pune-expressway-missing-link-toll-charges-2026',
+  '/blog/pune-metro-line-3-hinjawadi-shivajinagar-route-map-stations-timing',
+  '/blog/navi-mumbai-international-airport-to-pune-distance-travel-time',
+  '/blog/maharashtra-stamp-duty-registration-charges-pune-pcmc-2026',
+  '/blog/top-residential-localities-pune-west-pcmc-it-professionals'
 ];
 
 // 1. Install: Precache critical shell assets

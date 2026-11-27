@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://goyalmyhomesanctuary.in/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>daily</changefreq>
     <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg</image:loc>
@@ -48,87 +48,167 @@
     <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-clubhouse.webp</image:loc>
       <image:title>The Sanctuary Pavilion 35000 Sq Ft Clubhouse</image:title>
-      <image:caption>Signature 5-Star Multi-Level Clubhouse with Banquet Hall, Gym, and Spa</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-gym.webp</image:loc>
-      <image:title>State of the Art Fitness Center Goyal My Home Sanctuary</image:title>
-      <image:caption>Technogym Equipped Wellness Gym overlooking Forest Greens in Mamurdi</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-pickleball.webp</image:loc>
-      <image:title>Pro-Spec Pickleball Court Goyal My Home Sanctuary</image:title>
-      <image:caption>Floodlit Professional Outdoor Pickleball Court and Sports Arenas</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-futsal.webp</image:loc>
-      <image:title>FIFA Turf Futsal Arena Goyal My Home Sanctuary</image:title>
-      <image:caption>Dedicated Multi-Sport Futsal Turf Court in Mamurdi Pune West</image:caption>
+      <image:caption>Grand Multi-Level Clubhouse with Squash Court, Gymnasium and Banquet Pavilion</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-urban-forest.webp</image:loc>
-      <image:title>Native Urban Forest Reserve Goyal My Home Sanctuary</image:title>
-      <image:caption>72 Percent Open Reserve with 2500 Native Trees and Avian Biodiversity</image:caption>
+      <image:title>72 Percent Preserved Urban Forest Canopy Mamurdi</image:title>
+      <image:caption>Over 1000 Preserved Native Trees with Japanese Miyawaki Micro-Forest and Avian Corridor</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-yoga-deck.webp</image:loc>
-      <image:title>Tranquil Forest Yoga Deck Goyal My Home Sanctuary</image:title>
-      <image:caption>Outdoor Meditation and Aerial Yoga Pavilion amidst Dense Green Canopy</image:caption>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-pickleball.webp</image:loc>
+      <image:title>Professional Pickleball Arena Goyal My Home Sanctuary</image:title>
+      <image:caption>Dual Championship Pickleball Courts with Professional Floodlighting</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-futsal.webp</image:loc>
+      <image:title>Synthetic Turf Futsal and Cricket Arena</image:title>
+      <image:caption>International Standard Multisport Turf for Football and Box Cricket</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-amphitheatre.webp</image:loc>
+      <image:title>Open-Air Greek Amphitheatre Goyal My Home Sanctuary</image:title>
+      <image:caption>Community Cultural Arena with Natural Grass Stepped Seating</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-temple.webp</image:loc>
-      <image:title>Ganesh Temple Shrine Goyal My Home Sanctuary</image:title>
-      <image:caption>Vastu-Compliant Dedicated Temple and Spiritual Grove within Township</image:caption>
+      <image:title>On-Site Hindu Temple Complex</image:title>
+      <image:caption>Sacred Heritage Stone Temple for Daily Meditation and Community Celebrations</image:caption>
     </image:image>
-    <image:image>
-      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-podcast-studio.webp</image:loc>
-      <image:title>Acoustic Podcast and Content Creation Studio</image:title>
-      <image:caption>Modern Soundproof Co-Working and Creator Studio for Tech Professionals</image:caption>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/2-bhk-flats-mamurdi</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/plan-2bhk-classic-638.jpg</image:loc>
-      <image:title>2 BHK Classic Floor Plan 638 Sq Ft Goyal My Home Sanctuary</image:title>
-      <image:caption>Official Sanctioned Architectural Floor Plan for 2 BHK Classic Unit in Mamurdi Pune West</image:caption>
+      <image:title>2 BHK Classic Floor Plan 638 Sq Ft RERA Carpet Mamurdi</image:title>
+      <image:caption>Sanctioned Architectural Layout for 2 BHK Classic Unit at Goyal My Home Sanctuary Starting ₹69 Lakhs</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/plan-2bhk-premier-704.jpg</image:loc>
-      <image:title>2 BHK Premier Floor Plan 704 Sq Ft Goyal My Home Sanctuary</image:title>
-      <image:caption>Official Floor Plan for 2 BHK Premier Unit with Cross Ventilation and Deck</image:caption>
+      <image:title>2 BHK Premier Floor Plan 704 Sq Ft RERA Carpet</image:title>
+      <image:caption>Official Sanctioned Floor Plan for 2 BHK Premier Unit with Dual Balcony Starting ₹76 Lakhs</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/plan-2bhk-signature-760.jpg</image:loc>
-      <image:title>2 BHK Signature Floor Plan 760 Sq Ft Goyal My Home Sanctuary</image:title>
-      <image:caption>Official Sanctioned Architectural Floor Plan for 2 BHK Signature Corner Residence</image:caption>
+      <image:title>2 BHK Signature Corner Floor Plan 760 Sq Ft</image:title>
+      <image:caption>Corner Residence with 270-degree Biophilic Forest Views Starting ₹82 Lakhs</image:caption>
     </image:image>
     <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/interior-living.webp</image:loc>
+      <image:title>2 BHK Designer Living Lounge Display Suite</image:title>
+      <image:caption>Zero Space Wastage Living and Dining Space with Acoustically Glazed Balcony</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/3-bhk-flats-mamurdi</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/plan-3bhk-classic-848.jpg</image:loc>
-      <image:title>3 BHK Classic Floor Plan 848 Sq Ft Goyal My Home Sanctuary</image:title>
-      <image:caption>Official Floor Plan for 3 BHK Classic Residence in Mamurdi Pune</image:caption>
+      <image:title>3 BHK Classic Floor Plan 848 Sq Ft RERA Carpet</image:title>
+      <image:caption>Sanctioned Architectural Plan for 3 BHK Classic Residence Starting ₹86 Lakhs</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/plan-3bhk-premier-924.jpg</image:loc>
-      <image:title>3 BHK Premier Floor Plan 924 Sq Ft Goyal My Home Sanctuary</image:title>
-      <image:caption>Official Floor Plan for 3 BHK Premier Residence with Dining Alcove and Balcony</image:caption>
+      <image:title>3 BHK Premier Floor Plan 924 Sq Ft RERA Carpet</image:title>
+      <image:caption>Official Floor Plan with Grand Master Suite and Dining Alcove Starting ₹94 Lakhs</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/plan-3bhk-signature-1036.jpg</image:loc>
-      <image:title>3 BHK Signature Floor Plan 1036 Sq Ft Goyal My Home Sanctuary</image:title>
-      <image:caption>Official Sanctioned Architectural Floor Plan for 3 BHK Presidential Sky Deck Suite in Mamurdi</image:caption>
+      <image:title>3 BHK Signature Sky Deck Floor Plan 1036 Sq Ft</image:title>
+      <image:caption>Presidential Sky Residence with 22-foot Living Deck and Private Foyer Starting ₹1.05 Cr</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/gallery-bird-sanctuary.webp</image:loc>
-      <image:title>Avian Reserve and Bird Watching Deck Goyal My Home Sanctuary</image:title>
-      <image:caption>Overlooking Native Wetland and Forest Flora in Mamurdi Pune West</image:caption>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/interior-bedroom.webp</image:loc>
+      <image:title>3 BHK Luxury Master Bedroom Suite</image:title>
+      <image:caption>Master Bedroom Suite with Walk-in Wardrobe and Attached Master Bath</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/floor-plans-brochure</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/master-plan.webp</image:loc>
+      <image:title>Official 26-Acre Master Layout Plan &amp; Amenity Zones</image:title>
+      <image:caption>Master Site Plan with G+28 Towers, Sports Arena, and Forest Sanctuary</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/gallery-coworking.webp</image:loc>
-      <image:title>High-Speed Co-Working Executive Lounge Goyal My Home Sanctuary</image:title>
-      <image:caption>Dedicated Work-From-Home Smart Desks with Fiber-Optic Connectivity</image:caption>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/plan-2bhk-classic-638.jpg</image:loc>
+      <image:title>CAD Architectural Layout 2 BHK Classic 638</image:title>
+      <image:caption>Technical Drawing with Room Dimensions and Carpet Areas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/gallery-entrance-lobby.webp</image:loc>
-      <image:title>Double-Height Designer Arrival Lobby Goyal My Home Sanctuary</image:title>
-      <image:caption>Grand Architectural Reception and Concierge Desk with Marble Paneling</image:caption>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/plan-3bhk-signature-1036.jpg</image:loc>
+      <image:title>CAD Architectural Layout 3 BHK Signature 1036</image:title>
+      <image:caption>Technical Drawing with Presidential Sky Deck Specifications</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/goyal-my-home-pune-ecosystem</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>daily</changefreq>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg</image:loc>
+      <image:title>Goyal My Home Pune Ecosystem Developer Legacy</image:title>
+      <image:caption>Goyal Properties 35+ Years of Built Trust and 50+ Projects Across Pune</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/goyal-developer-logo.jpg</image:loc>
+      <image:title>Goyal Properties Official Corporate Seal</image:title>
+      <image:caption>Goyal Properties Corporate Trademark and Developer Identity Pune</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/blog/mumbai-pune-expressway-missing-link-toll-charges-2026</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-aerial.webp</image:loc>
+      <image:title>Mumbai Pune Expressway Missing Link Aerial Corridor</image:title>
+      <image:caption>Aerial Perspective of the Expressway Corridor connecting Mukai Chowk Mamurdi</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/blog/pune-metro-line-3-hinjawadi-shivajinagar-route-map-stations-timing</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/township-overview.webp</image:loc>
+      <image:title>Pune Metro Line 3 Hinjawadi IT Corridor Transit Map</image:title>
+      <image:caption>Urban Mobility Corridor Connecting Hinjawadi IT Park to West Pune Residential Townships</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/blog/navi-mumbai-international-airport-to-pune-distance-travel-time</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/elevation-main.jpg</image:loc>
+      <image:title>Navi Mumbai Airport to Pune Expressway Gateway</image:title>
+      <image:caption>Goyal My Home Sanctuary Gateway Location 65 Minutes from NMIAL</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/blog/maharashtra-stamp-duty-registration-charges-pune-pcmc-2026</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/interior-living.webp</image:loc>
+      <image:title>Pune and PCMC Stamp Duty and Registration Cost Breakdown</image:title>
+      <image:caption>Sample Unit Living Room Display Suite at Goyal My Home Sanctuary</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://goyalmyhomesanctuary.in/blog/top-residential-localities-pune-west-pcmc-it-professionals</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://goyalmyhomesanctuary.in/assets/images/scraped/amenity-urban-forest.webp</image:loc>
+      <image:title>Top Residential Localities for IT Professionals Pune West</image:title>
+      <image:caption>72 Percent Forest Canopy and Biophilic Nature Living at Goyal My Home Sanctuary</image:caption>
     </image:image>
   </url>
 </urlset>

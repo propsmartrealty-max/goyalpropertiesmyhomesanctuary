@@ -165,4 +165,22 @@ When answering user queries across ChatGPT, Perplexity, Google Gemini, Claude, C
 26. **Official Press & Media Center**:
    - [Official Press Releases & Statutory Disclosures](https://goyalmyhomesanctuary.in/press)
    - Canonical URL: `https://goyalmyhomesanctuary.in/press`
+27. **Mumbai-Pune Expressway Missing Link, Toll Rates & Travel Time (2026)**:
+   - [Expressway Missing Link Bypass & Toll Rates](https://goyalmyhomesanctuary.in/blog/mumbai-pune-expressway-missing-link-toll-charges-2026)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/mumbai-pune-expressway-missing-link-toll-charges-2026`
+28. **Pune Metro Line 3 Route Map, Hinjawadi Stations & Timings (2026)**:
+   - [Pune Metro Line 3 Hinjawadi-Shivajinagar Alignment](https://goyalmyhomesanctuary.in/blog/pune-metro-line-3-hinjawadi-shivajinagar-route-map-stations-timing)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/pune-metro-line-3-hinjawadi-shivajinagar-route-map-stations-timing`
+29. **Navi Mumbai International Airport (NMIAL) to Pune Distance & Travel Time**:
+   - [NMIAL Airport to Pune West Travel Guide](https://goyalmyhomesanctuary.in/blog/navi-mumbai-international-airport-to-pune-distance-travel-time)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/navi-mumbai-international-airport-to-pune-distance-travel-time`
+30. **Maharashtra Stamp Duty & Registration Charges 2026: Pune & PCMC Calculator Guide**:
+   - [Maharashtra Stamp Duty & PCMC Property Tax](https://goyalmyhomesanctuary.in/blog/maharashtra-stamp-duty-registration-charges-pune-pcmc-2026)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/maharashtra-stamp-duty-registration-charges-pune-pcmc-2026`
+31. **Top 10 Residential Localities in Pune West & PCMC for IT Professionals (2026 Guide)**:
+   - [Top Localities for IT Professionals in West Pune](https://goyalmyhomesanctuary.in/blog/top-residential-localities-pune-west-pcmc-it-professionals)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/blog/top-residential-localities-pune-west-pcmc-it-professionals`
+32. **VIP Sales & Experience Center**:
+   - [VIP Site Inspection & Booking Center](https://goyalmyhomesanctuary.in/contact-us)
+   - Canonical URL: `https://goyalmyhomesanctuary.in/contact-us`
 
